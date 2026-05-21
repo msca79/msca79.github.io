@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petőfi Sándor Általános Iskola és Gimnázium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1b3a5c;
+      --navy-lt:   #244a75;
+      --blue:      #2a6db5;
+      --accent:    #e07b28;
+      --bg:        #f5f7fa;
+      --white:     #ffffff;
+      --border:    #e2e8f0;
+      --text:      #1a2533;
+      --muted:     #64748b;
+      --sidebar-w: 240px;
+      --topbar-h:  64px;
+      --t:         160ms ease;
+    }
+
+    html, body { height: 100%; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ═══════════════════════════════
+       TOPBAR
+    ═══════════════════════════════ */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--topbar-h);
+      background: var(--navy);
+      display: flex; align-items: center;
+      padding: 0 24px 0 calc(var(--sidebar-w) + 24px);
+      gap: 16px;
+      z-index: 100;
+      box-shadow: 0 1px 6px rgba(0,0,0,.18);
+    }
+
+    .topbar-brand {
+      display: flex; flex-direction: column; margin-right: auto;
+      min-width: 0;
+    }
+    .topbar-label {
+      font-size: 10px; font-weight: 500; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.5);
+      line-height: 1;
+    }
+    .topbar-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px; color: #fff;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    .search-wrap {
+      position: relative; flex-shrink: 0;
+    }
+    .search-wrap input {
+      width: 220px; height: 36px;
+      padding: 0 36px 0 14px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 6px;
+      font-family: inherit; font-size: 13px;
+      color: #fff;
+      transition: background var(--t), border-color var(--t);
+      outline: none;
+    }
+    .search-wrap input::placeholder { color: rgba(255,255,255,.45); }
+    .search-wrap input:focus {
+      background: rgba(255,255,255,.16);
+      border-color: rgba(255,255,255,.4);
+    }
+    .search-wrap .search-icon {
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      color: rgba(255,255,255,.45); font-size: 14px; pointer-events: none;
+    }
+
+    .kreta-btn {
+      flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 7px;
+      height: 36px; padding: 0 16px;
+      background: var(--accent);
+      color: #fff; font-size: 13px; font-weight: 600;
+      border-radius: 6px;
+      transition: background var(--t), transform var(--t);
+      white-space: nowrap;
+    }
+    .kreta-btn:hover { background: #c96d20; transform: translateY(-1px); }
+
+    /* ═══════════════════════════════
+       SIDEBAR
+    ═══════════════════════════════ */
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0;
+      width: var(--sidebar-w);
+      background: var(--white);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      overflow-y: auto;
+      z-index: 110;
+    }
+
+    .sidebar-logo {
+      height: var(--topbar-h);
+      display: flex; align-items: center; gap: 10px;
+      padding: 0 18px;
+      background: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .logo-text { font-size: 13px; font-weight: 600; color: #fff; line-height: 1.3; }
+    .logo-text small { display: block; font-size: 10px; font-weight: 400; opacity: .6; letter-spacing: .05em; }
+
+    .nav-section {
+      padding: 20px 0 8px;
+    }
+    .nav-section-label {
+      padding: 0 18px 6px;
+      font-size: 10px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    .nav-item { }
+    .nav-link {
+      display: flex; align-items: center; gap: 9px;
+      padding: 8px 18px;
+      font-size: 13.5px; font-weight: 400; color: var(--text);
+      border-left: 3px solid transparent;
+      transition: background var(--t), color var(--t), border-color var(--t);
+      cursor: pointer;
+    }
+    .nav-link .icon { font-size: 15px; width: 18px; text-align: center; flex-shrink: 0; opacity: .7; }
+    .nav-link:hover { background: var(--bg); color: var(--blue); }
+    .nav-link.active {
+      background: #eef4fd; color: var(--blue);
+      border-left-color: var(--blue); font-weight: 600;
+    }
+    .nav-link .arrow {
+      margin-left: auto; font-size: 10px; opacity: .5;
+      transition: transform var(--t);
+    }
+    .nav-item.open > .nav-link .arrow { transform: rotate(90deg); }
+
+    .sub-nav {
+      display: none;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-item.open > .sub-nav { display: block; }
+
+    .sub-nav a {
+      display: block;
+      padding: 7px 18px 7px 44px;
+      font-size: 13px; color: var(--muted);
+      transition: color var(--t), background var(--t);
+      border-left: 3px solid transparent;
+    }
+    .sub-nav a:hover { color: var(--blue); background: #eef4fd; border-left-color: var(--blue); }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 16px 18px;
+      border-top: 1px solid var(--border);
+      font-size: 11px; color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════
+       MAIN CONTENT
+    ═══════════════════════════════ */
+    .main-wrap {
+      margin-left: var(--sidebar-w);
+      margin-top: var(--topbar-h);
+      padding: 32px 32px 48px;
+      flex: 1;
+    }
+
+    /* Üdvözlő banner */
+    .welcome-banner {
+      background: linear-gradient(110deg, var(--navy) 0%, var(--blue) 100%);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      overflow: hidden; position: relative;
+    }
+    .welcome-banner::after {
+      content: '🏫';
+      position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
+      font-size: 72px; opacity: .12;
+    }
+    .welcome-text h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px; color: #fff; margin-bottom: 6px;
+    }
+    .welcome-text p { font-size: 13.5px; color: rgba(255,255,255,.7); line-height: 1.6; }
+
+    /* Gyors info blokkok */
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .info-card .ic-icon { font-size: 22px; margin-bottom: 4px; }
+    .info-card .ic-val { font-size: 20px; font-weight: 700; color: var(--navy); }
+    .info-card .ic-label { font-size: 12px; color: var(--muted); }
+
+    /* Tartalom rács */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ── HÍREK ── */
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px; color: var(--navy);
+      margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .section-title a { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--blue); font-weight: 500; }
+
+    .news-list { display: flex; flex-direction: column; gap: 14px; }
+
+    .news-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex; gap: 16px;
+      cursor: pointer;
+      transition: box-shadow var(--t), border-color var(--t), transform var(--t);
+    }
+    .news-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      border-color: #b8cfe8;
+      transform: translateY(-1px);
+    }
+    .news-thumb {
+      width: 70px; height: 70px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px;
+    }
+    .news-body { flex: 1; min-width: 0; }
+    .news-meta {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 5px;
+    }
+    .news-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 2px 8px; border-radius: 4px;
+    }
+    .tag-event   { background: #e0f0ff; color: #1a6bc4; }
+    .tag-sport   { background: #e6f9ee; color: #1a8044; }
+    .tag-culture { background: #fff3e0; color: #b85c00; }
+    .tag-info    { background: #f0eeff; color: #5c3dc4; }
+    .tag-school  { background: #fde8e8; color: #b82020; }
+
+    .news-date { font-size: 12px; color: var(--muted); }
+    .news-body h3 {
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-bottom: 5px; line-height: 1.4;
+    }
+    .news-body p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ── OLDALSÁV WIDGETEK ── */
+    .sidebar-widgets { display: flex; flex-direction: column; gap: 18px; }
+
+    .widget {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .widget-head {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px; font-weight: 600; color: var(--navy);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .widget-head span { font-size: 16px; }
+    .widget-body { padding: 12px 16px; }
+
+    /* Naptár widget */
+    .cal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .cal-month { font-size: 14px; font-weight: 600; color: var(--navy); }
+    .cal-grid {
+      display: grid; grid-template-columns: repeat(7, 1fr);
+      gap: 2px; text-align: center;
+    }
+    .cal-day-name { font-size: 10px; font-weight: 600; color: var(--muted); padding: 4px 0; }
+    .cal-day {
+      font-size: 12px; padding: 5px 2px; border-radius: 5px;
+      cursor: default; color: var(--text);
+    }
+    .cal-day.empty { color: transparent; }
+    .cal-day.today { background: var(--blue); color: #fff; font-weight: 700; }
+    .cal-day.has-event { background: #e0f0ff; color: var(--blue); font-weight: 600; }
+    .cal-day:not(.empty):not(.today):hover { background: var(--bg); }
+
+    /* Esemény lista */
+    .event-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .event-item:last-child { border-bottom: none; }
+    .event-date {
+      flex-shrink: 0; width: 36px; text-align: center;
+      background: var(--bg); border-radius: 6px;
+      padding: 4px 0;
+    }
+    .event-date .ed-day { font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1; }
+    .event-date .ed-mon { font-size: 9px; text-transform: uppercase; color: var(--muted); letter-spacing: .05em; }
+    .event-info h4 { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.3; }
+    .event-info p  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* Hasznos linkek */
+    .quick-links { display: flex; flex-direction: column; gap: 2px; }
+    .quick-link {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px; border-radius: 6px;
+      font-size: 13px; color: var(--text);
+      transition: background var(--t), color var(--t);
+    }
+    .quick-link:hover { background: var(--bg); color: var(--blue); }
+    .quick-link .ql-icon { font-size: 16px; width: 20px; text-align: center; }
+    .quick-link .ql-arr { margin-left: auto; font-size: 11px; color: var(--muted); }
+
+    /* ═══════════════════════════════
+       RESZPONZÍV
+    ═══════════════════════════════ */
+    @media (max-width: 960px) {
+      .content-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      :root { --sidebar-w: 0px; }
+      .sidebar { transform: translateX(-100%); transition: transform var(--t); }
+      .sidebar.open { transform: translateX(0); --sidebar-w: 240px; }
+      .topbar { padding-left: 60px; }
+      .main-wrap { margin-left: 0; padding: 20px 16px 40px; }
+      .mob-burger {
+        display: flex !important;
+        position: fixed; top: 14px; left: 14px; z-index: 200;
+        flex-direction: column; gap: 5px;
+        background: none; border: none; cursor: pointer; padding: 4px;
+      }
+      .mob-burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+    }
+    .mob-burger { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Mobil burger -->
+  <button class="mob-burger" id="mobBurger" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🏫</div>
+      <div class="logo-text">
+        Petőfi Sándor
+        <small>Általános Iskola és Gimnázium</small>
+      </div>
+    </div>
+
+    <nav>
+      <div class="nav-section">
+        <div class="nav-section-label">Főmenü</div>
+        <ul>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <span class="icon">🏠</span> Főoldal
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="icon">📰</span> Hírek
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-label">Iskolánk</div>
+        <ul>
+          <li class="nav-item" id="ni-iskola">
+            <div class="nav-link" onclick="toggleNav('ni-iskola')">
+              <span class="icon">📖</span> Iskolánk <span class="arrow">›</span>
+            </div>
+            <ul class="sub-nav">
+              <li><a href="#">Bemutatkozás</a></li>
+              <li><a href="#">Pedagógusok</a></li>
+              <li><a href="#">Tanév rendje</a></li>
+              <li><a href="#">Csengetési rend</a></li>
+              <li><a href="#">Alaprajz</a></li>
+              <li><a href="#">Pedagógiai program</a></li>
+              <li><a href="#">Házirend</a></li>
+              <li><a href="#">Elérhetőség</a></li>
+              <li><a href="#">Álláspályázat</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item" id="ni-beis">
+            <div class="nav-link" onclick="toggleNav('ni-beis')">
+              <span class="icon">🎒</span> Beiskolázás <span class="arrow">›</span>
+            </div>
+            <ul class="sub-nav">
+              <li><a href="#">Körzethatárok</a></li>
+              <li><a href="#">Körzeten kívüliek</a></li>
+              <li><a href="#">Általános iskola</a></li>
+              <li><a href="#">Gimnázium</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item" id="ni-ugy">
+            <div class="nav-link" onclick="toggleNav('ni-ugy')">
+              <span class="icon">📋</span> Ügyintézés <span class="arrow">›</span>
+            </div>
+            <ul class="sub-nav">
+              <li><a href="#">Ebédbefizetés</a></li>
+              <li><a href="#">Diákigazolvány</a></li>
+              <li><a href="#">Bizonyítvány másolat</a></li>
+              <li><a href="#">Közösségi szolgálat</a></li>
+              <li><a href="#">Közérdekű adatok</a></li>
+              <li><a href="#">Adatkezelés</a></li>
+              <li><a href="#">Szülői munkaközösség</a></li>
+              <li><a href="#">Dokumentumok</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-label">Programok & Szolgáltatások</div>
+        <ul>
+          <li class="nav-item" id="ni-prog">
+            <div class="nav-link" onclick="toggleNav('ni-prog')">
+              <span class="icon">🎯</span> Programok <span class="arrow">›</span>
+            </div>
+            <ul class="sub-nav">
+              <li><a href="#">Versenyek</a></li>
+              <li><a href="#">Témahetek</a></li>
+              <li><a href="#">Határtalanul</a></li>
+              <li><a href="#">Erasmus</a></li>
+              <li><a href="#">Pályázatok</a></li>
+              <li><a href="#">Médiatár</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item" id="ni-szolg">
+            <div class="nav-link" onclick="toggleNav('ni-szolg')">
+              <span class="icon">⭐</span> Szolgáltatások <span class="arrow">›</span>
+            </div>
+            <ul class="sub-nav">
+              <li><a href="#">Gyógytestnevelés</a></li>
+              <li><a href="#">Tanórán kívüli sport</a></li>
+              <li><a href="#">Iskolapszichológus</a></li>
+              <li><a href="#">Egészségügy / védőnő</a></li>
+              <li><a href="#">Zeneiskola</a></li>
+              <li><a href="#">Könyvtár</a></li>
+              <li><a href="#">Hittan / erkölcstan</a></li>
+              <li><a href="#">Szakkörök</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item" id="ni-korny">
+            <div class="nav-link" onclick="toggleNav('ni-korny')">
+              <span class="icon">🌿</span> Környezet <span class="arrow">›</span>
+            </div>
+            <ul class="sub-nav">
+              <li><a href="#">Környezeti nevelés</a></li>
+              <li><a href="#">Iskolakert</a></li>
+              <li><a href="#">Használt olaj gyűjtés</a></li>
+              <li><a href="#">Papírgyűjtés</a></li>
+              <li><a href="#">Energiatakarékosság</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      1117 Budapest, Petőfi u. 1.<br>
+      Tel: +36 1 123 4567<br>
+      titkarsag@petofi-iskola.hu
+    </div>
+  </aside>
+
+  <!-- ═══ TOPBAR ═══ -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="topbar-label">Intézmény</span>
+      <span class="topbar-name">Petőfi Sándor Általános Iskola és Gimnázium</span>
+    </div>
+
+    <div class="search-wrap">
+      <input type="search" placeholder="Keresés…" aria-label="Keresés">
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <a href="https://kreta.e-kreta.hu" class="kreta-btn" target="_blank" rel="noopener">
+      🔐 Kréta belépés
+    </a>
+  </header>
+
+  <!-- ═══ FŐTARTALOM ═══ -->
+  <main class="main-wrap">
+
+    <!-- Üdvözlő banner -->
+    <div class="welcome-banner">
+      <div class="welcome-text">
+        <h2>Üdvözöljük iskolánk weboldalán!</h2>
+        <p>Petőfi Sándor Általános Iskola és Gimnázium – Budapest, XI. kerület.<br>
+           Ahol a tudás és a közösség együtt formálja a jövőt.</p>
+      </div>
+    </div>
+
+    <!-- Gyors statisztikák -->
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="ic-icon">👩‍🎓</div>
+        <div class="ic-val">847</div>
+        <div class="ic-label">Tanuló</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">👨‍🏫</div>
+        <div class="ic-val">64</div>
+        <div class="ic-label">Pedagógus</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🏆</div>
+        <div class="ic-val">23</div>
+        <div class="ic-label">Versenyeredmény idén</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">📅</div>
+        <div class="ic-val">2024/25</div>
+        <div class="ic-label">Tanév</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">📚</div>
+        <div class="ic-val">38</div>
+        <div class="ic-label">Osztály</div>
+      </div>
+    </div>
+
+    <!-- Kéthasábos tartalom -->
+    <div class="content-grid">
+
+      <!-- Hírek -->
+      <div>
+        <div class="section-title">
+          Legújabb hírek
+          <a href="#">Összes hír →</a>
+        </div>
+        <div class="news-list">
+
+          <article class="news-card">
+            <div class="news-thumb" style="background:#e8f4fd;">🏅</div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span class="news-tag tag-sport">Sport</span>
+                <span class="news-date">2025. május 10.</span>
+              </div>
+              <h3>Területi bajnokság: négy aranyérem kosárlabdában</h3>
+              <p>Iskolánk kosárlabdacsapata kiemelkedő eredményt ért el a Budapest XI. kerületi területi bajnokságon – a fiú és lány csapat egyaránt aranyérmet szerzett.</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb" style="background:#fff4e0;">🎭</div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span class="news-tag tag-culture">Kultúra</span>
+                <span class="news-date">2025. május 8.</span>
+              </div>
+              <h3>Tavaszi színházi előadás: „Légy jó mindhalálig"</h3>
+              <p>A 8. évfolyam drámaköre május 15-én és 16-án mutatja be évi nagyelőadását az iskola aulájában. A belépés ingyenes, helyek foglalhatók a titkárságon.</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb" style="background:#eef3ff;">🔬</div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span class="news-tag tag-event">Verseny</span>
+                <span class="news-date">2025. május 5.</span>
+              </div>
+              <h3>Kémia Olimpia – tanulóink a döntőben</h3>
+              <p>Három diákunk jutott az Országos Kémia Olimpia döntőjébe. Munkájukat és felkészítő tanáraikat ezúton is gratulálunk!</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb" style="background:#f0fdf4;">🌱</div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span class="news-tag tag-school">Iskolai élet</span>
+                <span class="news-date">2025. április 30.</span>
+              </div>
+              <h3>Iskolakerti vetési nap – csatlakozz te is!</h3>
+              <p>Idén is megrendezzük hagyományos tavaszi vetési napunkat az iskolakertben. A részvétel minden évfolyam számára nyitott, előzetes regisztrációt nem igényel.</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb" style="background:#fdf0ff;">🎨</div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span class="news-tag tag-culture">Kultúra</span>
+                <span class="news-date">2025. április 25.</span>
+              </div>
+              <h3>Képzőművészeti kiállítás a folyosón</h3>
+              <p>A rajz szakköri tanulók alkotásaiból nyílt időszaki kiállítás az iskola első emeleti folyosóján. Látható minden héten, tanítási napokon 7–17 óra között.</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb" style="background:#fff0f0;">📢</div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span class="news-tag tag-info">Közlemény</span>
+                <span class="news-date">2025. április 22.</span>
+              </div>
+              <h3>Szülői értekezlet időpontjai – május</h3>
+              <p>A május havi szülői értekezletek időpontjai megjelentek a Kréta rendszerben. Kérjük a szülőket, hogy a meghívóban jelzett időpontot jegyezzék fel.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Oldalsáv widgetek -->
+      <div class="sidebar-widgets">
+
+        <!-- Naptár -->
+        <div class="widget">
+          <div class="widget-head"><span>📅</span> 2025. május</div>
+          <div class="widget-body">
+            <div class="cal-grid">
+              <div class="cal-day-name">H</div>
+              <div class="cal-day-name">K</div>
+              <div class="cal-day-name">Sz</div>
+              <div class="cal-day-name">Cs</div>
+              <div class="cal-day-name">P</div>
+              <div class="cal-day-name">Szo</div>
+              <div class="cal-day-name">V</div>
+              <!-- 1 -->
+              <div class="cal-day empty"></div>
+              <div class="cal-day empty"></div>
+              <div class="cal-day empty"></div>
+              <div class="cal-day">1</div>
+              <div class="cal-day">2</div>
+              <div class="cal-day">3</div>
+              <div class="cal-day">4</div>
+              <!-- 2 -->
+              <div class="cal-day has-event">5</div>
+              <div class="cal-day">6</div>
+              <div class="cal-day">7</div>
+              <div class="cal-day">8</div>
+              <div class="cal-day">9</div>
+              <div class="cal-day">10</div>
+              <div class="cal-day">11</div>
+              <!-- 3 -->
+              <div class="cal-day">12</div>
+              <div class="cal-day today">13</div>
+              <div class="cal-day">14</div>
+              <div class="cal-day has-event">15</div>
+              <div class="cal-day has-event">16</div>
+              <div class="cal-day">17</div>
+              <div class="cal-day">18</div>
+              <!-- 4 -->
+              <div class="cal-day">19</div>
+              <div class="cal-day">20</div>
+              <div class="cal-day">21</div>
+              <div class="cal-day">22</div>
+              <div class="cal-day">23</div>
+              <div class="cal-day">24</div>
+              <div class="cal-day">25</div>
+              <!-- 5 -->
+              <div class="cal-day has-event">26</div>
+              <div class="cal-day">27</div>
+              <div class="cal-day">28</div>
+              <div class="cal-day">29</div>
+              <div class="cal-day">30</div>
+              <div class="cal-day">31</div>
+              <div class="cal-day empty"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Közelgő események -->
+        <div class="widget">
+          <div class="widget-head"><span>🗓️</span> Közelgő események</div>
+          <div class="widget-body">
+            <div class="event-item">
+              <div class="event-date">
+                <div class="ed-day">15</div>
+                <div class="ed-mon">máj</div>
+              </div>
+              <div class="event-info">
+                <h4>Tavaszi színházi előadás</h4>
+                <p>Aula, 17:00 – 8. évfolyam</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <div class="ed-day">20</div>
+                <div class="ed-mon">máj</div>
+              </div>
+              <div class="event-info">
+                <h4>Iskolakerti vetési nap</h4>
+                <p>Iskolakert, 9:00</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <div class="ed-day">26</div>
+                <div class="ed-mon">máj</div>
+              </div>
+              <div class="event-info">
+                <h4>Szülői értekezlet</h4>
+                <p>Osztálytermek, 17:30</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <div class="ed-day">6</div>
+                <div class="ed-mon">jún</div>
+              </div>
+              <div class="event-info">
+                <h4>Ballagás – 8. és 12. évf.</h4>
+                <p>Tornaterem, 10:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hasznos linkek -->
+        <div class="widget">
+          <div class="widget-head"><span>🔗</span> Hasznos linkek</div>
+          <div class="widget-body">
+            <div class="quick-links">
+              <a href="https://kreta.e-kreta.hu" class="quick-link" target="_blank" rel="noopener">
+                <span class="ql-icon">🔐</span> Kréta e-napló
+                <span class="ql-arr">↗</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="ql-icon">🗓️</span> Tanév rendje
+                <span class="ql-arr">›</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="ql-icon">🍽️</span> Étlap ezen a héten
+                <span class="ql-arr">›</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="ql-icon">📄</span> Házirend (PDF)
+                <span class="ql-arr">↓</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="ql-icon">🚌</span> Menetrend
+                <span class="ql-arr">↗</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="ql-icon">📞</span> Elérhetőségek
+                <span class="ql-arr">›</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /content-grid -->
+  </main>
+
+  <script>
+    function toggleNav(id) {
+      const item = document.getElementById(id);
+      item.classList.toggle('open');
+    }
+
+    // Mobil burger
+    const burger  = document.getElementById('mobBurger');
+    const sidebar = document.getElementById('sidebar');
+    burger.addEventListener('click', () => sidebar.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
