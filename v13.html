@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue-50:  #e8f2fc;
+            --blue-100: #c4dcf7;
+            --blue-200: #9ec5f1;
+            --blue-300: #6da8e8;
+            --blue-400: #3f8bd9;
+            --blue-500: #1c6dbf;
+            --blue-600: #1358a0;
+            --blue-700: #0d4280;
+            --blue-800: #082e5e;
+            --blue-900: #041d3e;
+
+            --page-bg:   #eef5fc;
+            --banner-bg: #1c5fa8;
+            --banner-text: #e8f2fc;
+
+            --font-display: 'Merriweather', Georgia, serif;
+            --font-body: 'Source Sans 3', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--page-bg);
+            color: #1a2e42;
+            min-height: 100vh;
+        }
+
+        /* ===== BANNER ===== */
+        #banner {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--banner-bg);
+            color: var(--banner-text);
+            box-shadow: 0 2px 12px rgba(8,46,94,0.25);
+        }
+
+        .banner-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            min-height: 80px;
+        }
+
+        /* Hamburger */
+        #hamburger-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        #hamburger-btn span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--banner-text);
+            border-radius: 2px;
+            transition: all 0.25s;
+        }
+        #hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        #hamburger-btn.open span:nth-child(2) { opacity: 0; }
+        #hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Nav Drawer */
+        #nav-drawer {
+            position: fixed;
+            top: 0; left: 0;
+            width: 300px; height: 100vh;
+            background: #0d4280;
+            z-index: 2000;
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+            overflow-y: auto;
+            padding: 1rem 0 2rem;
+            box-shadow: 4px 0 24px rgba(0,0,0,0.2);
+        }
+        #nav-drawer.open { transform: translateX(0); }
+
+        #drawer-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(4,29,62,0.45);
+            z-index: 1999;
+        }
+        #drawer-overlay.open { display: block; }
+
+        .drawer-close {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0.5rem 1rem 1rem;
+        }
+        .drawer-close button {
+            background: none;
+            border: none;
+            color: #b0ccee;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .nav-category { }
+        .nav-category > .nav-cat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.7rem 1.4rem;
+            color: #c4dcf7;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: background 0.15s;
+            user-select: none;
+        }
+        .nav-category > .nav-cat-header:hover { background: rgba(255,255,255,0.07); }
+        .nav-cat-arrow { font-size: 0.75rem; transition: transform 0.2s; }
+        .nav-category.expanded .nav-cat-arrow { transform: rotate(180deg); }
+
+        .nav-cat-links {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .nav-category.expanded .nav-cat-links { max-height: 800px; }
+
+        .nav-cat-links a {
+            display: block;
+            padding: 0.5rem 1.4rem 0.5rem 2.2rem;
+            color: #9ec5f1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.15s, background 0.15s;
+        }
+        .nav-cat-links a:hover {
+            color: #ffffff;
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* School name & info */
+        .banner-title-block {
+            flex: 1;
+            min-width: 0;
+        }
+        .banner-school-name {
+            font-family: var(--font-display);
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            font-weight: 700;
+            color: #e8f2fc;
+            line-height: 1.25;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .banner-info {
+            font-size: 0.75rem;
+            color: #9ec5f1;
+            margin-top: 0.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .banner-info span { margin-right: 1.2rem; }
+
+        /* Banner buttons */
+        .banner-btns {
+            display: flex;
+            gap: 0.6rem;
+            flex-shrink: 0;
+        }
+        .banner-btn {
+            display: inline-block;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+            white-space: nowrap;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-kreta {
+            background: #3f8bd9;
+            color: #fff;
+        }
+        .btn-kreta:hover { background: #1c6dbf; }
+        .btn-fb {
+            background: transparent;
+            color: #c4dcf7;
+            border: 1.5px solid #3f8bd9;
+        }
+        .btn-fb:hover { background: rgba(63,139,217,0.18); color: #fff; }
+
+        /* ===== HERO STRIP ===== */
+        #hero {
+            width: 100%;
+            height: clamp(260px, 38vw, 480px);
+            overflow: hidden;
+            position: relative;
+        }
+        #hero img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center 60%;
+            display: block;
+        }
+        #hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(28,95,168,0.12) 0%, rgba(4,29,62,0.35) 100%);
+        }
+
+        /* ===== CATEGORY STRIPS ===== */
+        .cat-strip {
+            display: flex;
+            align-items: stretch;
+            min-height: 320px;
+        }
+        .cat-strip.reverse { flex-direction: row-reverse; }
+
+        .strip-img {
+            flex: 0 0 60%;
+            position: relative;
+            overflow: hidden;
+        }
+        .strip-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: blur(0.5px) brightness(0.95);
+            display: block;
+        }
+
+        /* Fade from image toward links */
+        .cat-strip:not(.reverse) .strip-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent 55%, var(--strip-bg) 100%);
+        }
+        .cat-strip.reverse .strip-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to left, transparent 55%, var(--strip-bg) 100%);
+        }
+
+        .strip-links {
+            flex: 0 0 40%;
+            padding: 2.5rem 2.5rem 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--strip-bg);
+        }
+        .cat-strip.reverse .strip-links { padding: 2.5rem 2rem 2.5rem 2.5rem; }
+
+        .strip-cat-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue-700);
+            margin-bottom: 1.1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--blue-200);
+        }
+
+        .strip-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        .strip-links ul li a {
+            display: block;
+            font-size: 1.55rem;
+            font-weight: 400;
+            color: var(--blue-700);
+            text-decoration: none;
+            padding-left: 0;
+            border-left: 2px solid transparent;
+            transition: color 0.15s, padding-left 0.15s, border-color 0.15s;
+            line-height: 1.4;
+        }
+        .strip-links ul li a:hover {
+            color: var(--blue-500);
+            padding-left: 0.6rem;
+            border-left-color: var(--blue-400);
+        }
+
+        /* Strip color alternation */
+        .strip-1  { --strip-bg: #dceefa; }
+        .strip-2  { --strip-bg: #d4e9f8; }
+        .strip-3  { --strip-bg: #cce3f7; }
+        .strip-4  { --strip-bg: #c4dcf5; }
+        .strip-5  { --strip-bg: #bcd6f2; }
+        .strip-6  { --strip-bg: #d4e9f8; }
+
+        /* ===== FOOTER BAR ===== */
+        footer {
+            min-height: 50px;
+            background: var(--blue-100);
+            border-top: 1.5px solid var(--blue-200);
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        footer a {
+            color: var(--blue-700);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+        footer a:hover { color: var(--blue-500); }
+    </style>
+</head>
+<body>
+
+<!-- ===== OVERLAY ===== -->
+<div id="drawer-overlay" onclick="closeDrawer()"></div>
+
+<!-- ===== NAV DRAWER ===== -->
+<nav id="nav-drawer" aria-label="Főmenü">
+    <div class="drawer-close"><button onclick="closeDrawer()" aria-label="Menü bezárása">✕</button></div>
+
+    <!-- Iskolánk -->
+    <div class="nav-category">
+        <div class="nav-cat-header" onclick="toggleCat(this)">Iskolánk <span class="nav-cat-arrow">▼</span></div>
+        <div class="nav-cat-links">
+            <a href="#">Pedagógusok/Munkatársaink</a>
+            <a href="#">Tanév rendje</a>
+            <a href="#">Csengetési rend</a>
+            <a href="#">Alapítvány</a>
+            <a href="#">Szülői munkaközösség</a>
+            <a href="#">Álláspályázat</a>
+            <a href="#">Névadónkról</a>
+            <a href="#">Általános Dokumentumok</a>
+        </div>
+    </div>
+
+    <!-- ÖKOiskola -->
+    <div class="nav-category">
+        <div class="nav-cat-header" onclick="toggleCat(this)">Örökös ÖKOiskola <span class="nav-cat-arrow">▼</span></div>
+        <div class="nav-cat-links">
+            <a href="#">Környezeti nevelés</a>
+            <a href="#">Kert</a>
+            <a href="#">Használt olaj</a>
+            <a href="#">Papírgyűjtés</a>
+            <a href="#">Energiatakarékosság</a>
+        </div>
+    </div>
+
+    <!-- Általános iskola -->
+    <div class="nav-category">
+        <div class="nav-cat-header" onclick="toggleCat(this)">Általános iskola <span class="nav-cat-arrow">▼</span></div>
+        <div class="nav-cat-links">
+            <a href="#">Körzethatárok</a>
+            <a href="#">Körzeten kívüliek jelentkezése</a>
+            <a href="#">Felvett tanulók névsora</a>
+            <a href="#">Felvételi információk</a>
+            <a href="#">Nyílt nap / Csalogató</a>
+        </div>
+    </div>
+
+    <!-- Gimnázium -->
+    <div class="nav-category">
+        <div class="nav-cat-header" onclick="toggleCat(this)">Gimnázium <span class="nav-cat-arrow">▼</span></div>
+        <div class="nav-cat-links">
+            <a href="#">Információk (induló szakok)</a>
+            <a href="#">Felvételi tudnivalók</a>
+            <a href="#">Felvett tanulók névsora</a>
+            <a href="#">Felvételi követelmények</a>
+            <a href="#">Szóbeli</a>
+            <a href="#">Tájékoztató a központi felvételi menetéről</a>
+            <a href="#">Felvételi tájékoztató 2026–2027</a>
+            <a href="#">Felvételi előkészítő jelentkezési lap</a>
+            <a href="#">Érettségi anyagok</a>
+            <a href="#">Közösségi szolgálat</a>
+            <a href="#">Gólyatábor jelentkezési lapja</a>
+        </div>
+    </div>
+
+    <!-- Ügyintézés -->
+    <div class="nav-category">
+        <div class="nav-cat-header" onclick="toggleCat(this)">Ügyintézés <span class="nav-cat-arrow">▼</span></div>
+        <div class="nav-cat-links">
+            <a href="#">Elérhetőségek</a>
+            <a href="#">Ebédbefizetés</a>
+            <a href="#">Diákigazolvány</a>
+            <a href="#">Bizonyítvány másolat kérése</a>
+            <a href="#">Kréta bejelentkezési problémák</a>
+            <a href="#">Felmentési kérelem 16 óra előtt</a>
+            <a href="#">Kérelem testnevelés alóli felmentéshez</a>
+            <a href="#">Egyéni tanrend igénylése</a>
+            <a href="#">Felvételi előkészítő jelentkezési lapja</a>
+            <a href="#">Informatikai, Teams problémák</a>
+        </div>
+    </div>
+
+    <!-- Iskolai élet -->
+    <div class="nav-category">
+        <div class="nav-cat-header" onclick="toggleCat(this)">Iskolai élet <span class="nav-cat-arrow">▼</span></div>
+        <div class="nav-cat-links">
+            <a href="#">Témahetek</a>
+            <a href="#">Könyvtár</a>
+            <a href="#">Tanulmányi versenyek</a>
+            <a href="#">Zeneiskola</a>
+            <a href="#">Pályázatok</a>
+            <a href="#">Iskolaújság</a>
+            <a href="#">Határtalanul</a>
+            <a href="#">Erasmus</a>
+            <a href="#">Tanórán kívüli sportolás</a>
+        </div>
+    </div>
+
+    <!-- Támogató Szolgáltatások -->
+    <div class="nav-category">
+        <div class="nav-cat-header" onclick="toggleCat(this)">Támogató Szolgáltatások <span class="nav-cat-arrow">▼</span></div>
+        <div class="nav-cat-links">
+            <a href="#">Iskolai egészségügy, védőnő</a>
+            <a href="#">Gyógytestnevelés</a>
+            <a href="#">Iskolapszichológus</a>
+            <a href="#">Hittan</a>
+            <a href="#">Erkölcstan</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== BANNER ===== -->
+<header id="banner">
+    <div class="banner-inner">
+        <button id="hamburger-btn" onclick="openDrawer()" aria-label="Menü megnyitása">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="banner-title-block">
+            <div class="banner-school-name">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
+            <div class="banner-info">
+                <span>📍 1048 Budapest, Bőrfestő utca 5–9.</span>
+                <span>📞 +36 1 380 7170</span>
+                <span>OM-azonosító: 034877</span>
+            </div>
+        </div>
+        <div class="banner-btns">
+            <a href="#" class="banner-btn btn-kreta">Kréta belépés</a>
+            <a href="#" class="banner-btn btn-fb">Facebook</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<!--<section id="hero">-->
+<!--    <img src="images/iskola.png" alt="Az iskola épülete" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#c4dcf7 0%,#9ec5f1 60%,#6da8e8 100%)'">-->
+<!--</section>-->
+
+<!-- ===== STRIP 1 – Iskolánk ===== -->
+<section class="cat-strip strip-1">
+    <div class="strip-img">
+        <img src="images/background-sample2.png"
+             alt="Iskolai folyosó"
+             onerror="this.style.display='none';this.parentElement.style.background='#c4dcf7'">
+    </div>
+    <div class="strip-links" >
+<!--        <h2 class="strip-cat-title">Iskolánk</h2>-->
+        <ul>
+            <li><a href="#">Pedagógusok / Munkatársaink</a></li>
+            <li><a href="#">Tanév rendje</a></li>
+            <li><a href="#">Csengetési rend</a></li>
+            <li><a href="#">Alapítvány</a></li>
+            <li><a href="#">Szülői munkaközösség</a></li>
+            <li><a href="#">Álláspályázat</a></li>
+            <li><a href="#">Névadónkról</a></li>
+            <li><a href="#">Általános Dokumentumok</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== STRIP 2 – ÖKOiskola (reverse) ===== -->
+<section class="cat-strip reverse strip-2">
+    <div class="strip-img">
+        <img src="images/sav-oko.png"
+             alt="Iskolai kert, természet"
+             onerror="this.style.display='none';this.parentElement.style.background='#bcd6f2'">
+    </div>
+    <div class="strip-links">
+<!--        <h2 class="strip-cat-title">Örökös ÖKOiskola</h2>-->
+        <ul>
+            <li><a href="#">Környezeti nevelés</a></li>
+            <li><a href="#">Kert</a></li>
+            <li><a href="#">Használt olaj</a></li>
+            <li><a href="#">Papírgyűjtés</a></li>
+            <li><a href="#">Energiatakarékosság</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== STRIP 3 – Általános iskola ===== -->
+<section class="cat-strip strip-3">
+    <div class="strip-img">
+        <img src="images/sav-altalanos.png"
+             alt="Általános iskolai tanterem"
+             onerror="this.style.display='none';this.parentElement.style.background='#c4dcf7'">
+    </div>
+    <div class="strip-links">
+        <h2 class="strip-cat-title">Általános iskola</h2>
+        <ul>
+            <li><a href="#">Körzethatárok</a></li>
+            <li><a href="#">Körzeten kívüliek jelentkezése</a></li>
+            <li><a href="#">Felvett tanulók névsora</a></li>
+            <li><a href="#">Felvételi információk</a></li>
+            <li><a href="#">Nyílt nap / Csalogató</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== STRIP 4 – Gimnázium (reverse) ===== -->
+<section class="cat-strip reverse strip-4">
+    <div class="strip-img">
+        <img src="images/sav-gimnazium.png"
+             alt="Gimnáziumi diákok"
+             onerror="this.style.display='none';this.parentElement.style.background='#bcd6f2'">
+    </div>
+    <div class="strip-links">
+        <h2 class="strip-cat-title">Gimnázium</h2>
+        <ul>
+            <li><a href="#">Információk (induló szakok)</a></li>
+            <li><a href="#">Felvételi tudnivalók</a></li>
+            <li><a href="#">Felvett tanulók névsora</a></li>
+            <li><a href="#">Felvételi követelmények</a></li>
+            <li><a href="#">Szóbeli</a></li>
+            <li><a href="#">Tájékoztató a központi felvételi menetéről</a></li>
+            <li><a href="#">Felvételi tájékoztató 2026–2027</a></li>
+            <li><a href="#">Felvételi előkészítő jelentkezési lap</a></li>
+            <li><a href="#">Érettségi anyagok</a></li>
+            <li><a href="#">Közösségi szolgálat</a></li>
+            <li><a href="#">Gólyatábor jelentkezési lapja</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== STRIP 5 – Ügyintézés ===== -->
+<section class="cat-strip strip-5">
+    <div class="strip-img">
+        <img src="images/sav-ugyintezes.png"
+             alt="Ügyintézés, irodai munka"
+             onerror="this.style.display='none';this.parentElement.style.background='#c4dcf7'">
+    </div>
+    <div class="strip-links">
+<!--        <h2 class="strip-cat-title">Ügyintézés</h2>-->
+        <ul>
+            <li><a href="#">Elérhetőségek</a></li>
+            <li><a href="#">Ebédbefizetés</a></li>
+            <li><a href="#">Diákigazolvány</a></li>
+            <li><a href="#">Bizonyítvány másolat kérése</a></li>
+            <li><a href="#">Kréta bejelentkezési problémák</a></li>
+            <li><a href="#">Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól</a></li>
+            <li><a href="#">Kérelem két testnevelés óra alóli felmentéshez</a></li>
+            <li><a href="#">Egyéni tanrend igénylése</a></li>
+            <li><a href="#">Felvételi előkészítő jelentkezési lapja</a></li>
+            <li><a href="#">Informatikai, Teams problémák esetén</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== STRIP 6 – Iskolai élet (reverse) ===== -->
+<section class="cat-strip reverse strip-6">
+    <div class="strip-img">
+        <img src="images/sav-elet.png"
+             alt="Iskolai élet, diákok"
+             onerror="this.style.display='none';this.parentElement.style.background='#bcd6f2'">
+    </div>
+    <div class="strip-links">
+<!--        <h2 class="strip-cat-title">Iskolai élet</h2>-->
+        <ul>
+            <li><a href="#">Témahetek</a></li>
+            <li><a href="#">Könyvtár</a></li>
+            <li><a href="#">Tanulmányi versenyek</a></li>
+            <li><a href="#">Zeneiskola</a></li>
+            <li><a href="#">Pályázatok</a></li>
+            <li><a href="#">Iskolaújság</a></li>
+            <li><a href="#">Határtalanul</a></li>
+            <li><a href="#">Erasmus</a></li>
+            <li><a href="#">Tanórán kívüli sportolás</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== STRIP 7 – Támogató Szolgáltatások ===== -->
+<section class="cat-strip strip-1">
+    <div class="strip-img">
+        <img src="images/sav-mental.png"
+             alt="Egészségügy, támogató szolgáltatások"
+             onerror="this.style.display='none';this.parentElement.style.background='#c4dcf7'">
+    </div>
+    <div class="strip-links">
+<!--        <h2 class="strip-cat-title"></h2>-->
+        <ul>
+            <li><a href="#">Iskolai egészségügy, védőnő</a></li>
+            <li><a href="#">Gyógytestnevelés</a></li>
+            <li><a href="#">Iskolapszichológus</a></li>
+            <li><a href="#">Hittan</a></li>
+            <li><a href="#">Erkölcstan</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <a href="#">Elérhetőségek</a>
+    <a href="#">Kréta belépés</a>
+    <a href="#">Tanév rendje</a>
+    <a href="#">Felvételi tájékoztató</a>
+    <a href="#">Iskolaújság</a>
+</footer>
+
+<script>
+    function openDrawer() {
+        document.getElementById('nav-drawer').classList.add('open');
+        document.getElementById('drawer-overlay').classList.add('open');
+        document.getElementById('hamburger-btn').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+        document.getElementById('nav-drawer').classList.remove('open');
+        document.getElementById('drawer-overlay').classList.remove('open');
+        document.getElementById('hamburger-btn').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    function toggleCat(header) {
+        const cat = header.parentElement;
+        cat.classList.toggle('expanded');
+    }
+</script>
+</body>
+</html>

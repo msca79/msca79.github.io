@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --page-bg: #f4efe9;
+            --nav-bg: #e2dbd2;
+            --text: #2e2820;
+            --text-mid: #5a5048;
+            --text-light: #8a7e74;
+            --red:    #c83a2e;
+            --yellow: #dda520;
+            --blue:   #2f6ab0;
+            --green:  #4d9468;
+            --purple: #7a5faa;
+            --teal:   #3b96a0;
+            --orange: #d46b30;
+            --radius: 14px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Nunito', sans-serif; background: var(--page-bg); color: var(--text); }
+        a { text-decoration: none; color: inherit; }
+
+        /* ══════════════════════════════════════════════
+           STICKY NAV
+        ══════════════════════════════════════════════ */
+        #nav {
+            position: sticky; top: 0; z-index: 900;
+            background: var(--nav-bg);
+            border-bottom: 2px solid #cdc4ba;
+            height: 58px;
+            display: flex; align-items: center;
+            padding: 0 24px; gap: 14px;
+            box-shadow: 0 2px 10px rgba(46,40,32,.1);
+        }
+        #nav .name {
+            font-family: 'Lora', serif;
+            font-size: 14.5px; font-weight: 600;
+            color: var(--text);
+            flex: 1;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .nbtn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 7px 16px; border-radius: 24px; border: none;
+            font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+            cursor: pointer; white-space: nowrap;
+            transition: opacity .15s, transform .15s;
+        }
+        .nbtn:hover { opacity: .88; transform: translateY(-1px); }
+        .nbtn-blue  { background: var(--blue);  color: #fff; }
+        .nbtn-fb    { background: #3b5998; color: #fff; }
+
+        /* hamburger */
+        .hbtn {
+            background: none; border: none; cursor: pointer;
+            display: flex; flex-direction: column; gap: 4.5px; padding: 4px;
+        }
+        .hbtn span {
+            display: block; width: 22px; height: 2.5px;
+            background: var(--text); border-radius: 2px;
+            transition: all .28s;
+        }
+        .hbtn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hbtn.open span:nth-child(2) { opacity: 0; }
+        .hbtn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── Drawer ── */
+        .overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(46,40,32,.35); z-index: 800;
+        }
+        .overlay.on { display: block; }
+        .drawer {
+            position: fixed; top: 0; right: -360px;
+            width: 340px; height: 100dvh; overflow-y: auto;
+            background: #faf7f3; z-index: 910;
+            transition: right .3s cubic-bezier(.4,0,.2,1);
+            box-shadow: -6px 0 28px rgba(46,40,32,.14);
+            padding-top: 62px;
+        }
+        .drawer.on { right: 0; }
+        .dc { border-bottom: 1px solid #e4ddd5; }
+        .dh {
+            display: flex; align-items: center; gap: 10px;
+            padding: 13px 22px;
+            font-weight: 800; font-size: 13px; letter-spacing: .04em; text-transform: uppercase;
+            cursor: pointer; user-select: none;
+        }
+        .dh .arr { margin-left: auto; font-size: 11px; transition: transform .2s; }
+        .dh.on .arr { transform: rotate(90deg); }
+        .dl { display: none; }
+        .dl.on { display: block; background: rgba(255,255,255,.55); }
+        .dl a {
+            display: block; padding: 9px 22px 9px 38px;
+            font-size: 13px; color: var(--text-mid);
+            transition: background .13s, color .13s;
+        }
+        .dl a:hover { background: rgba(46,40,32,.06); color: var(--text); }
+
+        /* ══════════════════════════════════════════════
+           STRIPES
+        ══════════════════════════════════════════════ */
+        .stripe {
+            width: 100%;
+            padding: 52px 0;
+        }
+        .stripe-inner {
+            max-width: 1160px; margin: 0 auto; padding: 0 32px;
+            display: flex; align-items: center; gap: 60px;
+        }
+        .stripe-inner.rev { flex-direction: row-reverse; }
+
+        /* image / icon side */
+        .stripe-visual {
+            flex: 0 0 320px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .stripe-icon {
+            width: 220px; height: 220px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 88px;
+            box-shadow: 0 8px 32px rgba(46,40,32,.12);
+        }
+
+        /* links side */
+        .stripe-content { flex: 1; }
+        .stripe-title {
+            font-family: 'Lora', serif;
+            font-size: 26px; font-weight: 600;
+            margin-bottom: 20px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .stripe-title .ti { font-size: 28px; }
+        .stripe-links a {
+            display: block;
+            font-size: 17px; font-weight: 600;
+            padding: 6px 0;
+            color: var(--text);
+            border-bottom: 1px solid transparent;
+            transition: color .15s;
+            line-height: 1.4;
+        }
+        .stripe-links a:hover { color: var(--accent); }
+
+        /* ── Individual stripe colours ── */
+        .s1 { background: #f0ebe4; --accent: var(--red); }
+        .s1 .stripe-icon { background: #fce4e2; }
+        .s1 .stripe-title { color: var(--red); }
+
+        .s2 { background: #e8f3ec; --accent: var(--green); }
+        .s2 .stripe-icon { background: #d4ecda; }
+        .s2 .stripe-title { color: var(--green); }
+
+        .s3 { background: #e6eef8; --accent: var(--blue); }
+        .s3 .stripe-icon { background: #ccddf4; }
+        .s3 .stripe-title { color: var(--blue); }
+
+        .s4 { background: #f0ecf8; --accent: var(--purple); }
+        .s4 .stripe-icon { background: #e2d8f4; }
+        .s4 .stripe-title { color: var(--purple); }
+
+        .s5 { background: #fef4e4; --accent: var(--yellow); }
+        .s5 .stripe-icon { background: #fce8bc; }
+        .s5 .stripe-title { color: #b07800; }
+
+        .s6 { background: #e6f7f8; --accent: var(--teal); }
+        .s6 .stripe-icon { background: #c8eef0; }
+        .s6 .stripe-title { color: var(--teal); }
+
+        .s7 { background: #feeee6; --accent: var(--orange); }
+        .s7 .stripe-icon { background: #fcd8c4; }
+        .s7 .stripe-title { color: var(--orange); }
+
+        /* ══════════════════════════════════════════════
+           CONTACT STRIPE
+        ══════════════════════════════════════════════ */
+        .contact-stripe {
+            background: #ede7df;
+            border-bottom: 2px solid #d8d0c6;
+            padding: 28px 32px;
+            display: flex; align-items: center; gap: 36px;
+            flex-wrap: wrap;
+        }
+        /* diamond logo */
+        .dlogo {
+            width: 72px; height: 72px;
+            transform: rotate(45deg);
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+            flex-shrink: 0;
+            border-radius: 6px; overflow: hidden;
+        }
+        .dq { width:100%; height:100%; }
+        .dq.r { background: #c83232; }
+        .dq.y { background: #e8b832; }
+        .dq.b { background: #3264c8; }
+        .dq.w { background: #f0ecf8; }
+        .contact-info { display: flex; flex-direction: column; gap: 5px; }
+        .contact-info .cname {
+            font-family: 'Lora', serif;
+            font-size: 17px; font-weight: 600; color: var(--text);
+        }
+        .contact-info .cdetails {
+            display: flex; gap: 24px; flex-wrap: wrap;
+            font-size: 13.5px; color: var(--text-mid);
+        }
+        .contact-info .cdetails span { display: flex; align-items: center; gap: 5px; }
+
+        /* ══════════════════════════════════════════════
+           FOOTER SPACER
+        ══════════════════════════════════════════════ */
+        .footer-spacer {
+            height: 50px;
+            background: var(--nav-bg);
+            border-top: 2px solid #cdc4ba;
+        }
+
+        /* ══════════════════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════════════════ */
+        @media (max-width: 720px) {
+            .stripe-inner, .stripe-inner.rev { flex-direction: column; gap: 28px; }
+            .stripe-visual { flex: none; }
+            .stripe-icon { width: 140px; height: 140px; font-size: 56px; }
+            #nav .name { font-size: 12px; }
+            .nbtn { font-size: 11.5px; padding: 6px 11px; }
+            .contact-stripe { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════ STICKY NAV -->
+<header id="nav">
+    <span class="name">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</span>
+    <a href="https://kreta.hu" target="_blank" class="nbtn nbtn-blue">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Kréta belépés
+    </a>
+    <a href="https://facebook.com" target="_blank" class="nbtn nbtn-fb">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+    </a>
+    <button class="hbtn" id="hbtn"><span></span><span></span><span></span></button>
+</header>
+
+<div class="overlay" id="ov"></div>
+<nav class="drawer" id="drw">
+
+    <div class="dc">
+        <div class="dh" style="color:#c83a2e" onclick="tog(this)">🏫 Iskolánk <span class="arr">▶</span></div>
+        <div class="dl">
+            <a href="#">Pedagógusok / Munkatársaink</a>
+            <a href="#">Tanév rendje</a><a href="#">Csengetési rend</a>
+            <a href="#">Alapítvány</a><a href="#">Szülői munkaközösség</a>
+            <a href="#">Álláspályázat</a><a href="#">Névadónkról</a>
+            <a href="#">Általános Dokumentumok</a>
+        </div>
+    </div>
+    <div class="dc">
+        <div class="dh" style="color:#4d9468" onclick="tog(this)">🌿 Örökös ÖKOiskola <span class="arr">▶</span></div>
+        <div class="dl">
+            <a href="#">Környezeti nevelés</a><a href="#">Kert</a>
+            <a href="#">Használt olaj</a><a href="#">Papírgyűjtés</a>
+            <a href="#">Energiatakarékosság</a>
+        </div>
+    </div>
+    <div class="dc">
+        <div class="dh" style="color:#2f6ab0" onclick="tog(this)">📚 Általános iskola <span class="arr">▶</span></div>
+        <div class="dl">
+            <a href="#">Körzethatárok</a><a href="#">Körzeten kívüliek jelentkezése</a>
+            <a href="#">Felvett tanulók névsora</a><a href="#">Felvételi információk</a>
+            <a href="#">Nyílt nap / Csalogató</a>
+        </div>
+    </div>
+    <div class="dc">
+        <div class="dh" style="color:#7a5faa" onclick="tog(this)">🎓 Gimnázium <span class="arr">▶</span></div>
+        <div class="dl">
+            <a href="#">Információk (induló szakok)</a><a href="#">Felvételi tudnivalók</a>
+            <a href="#">Felvett tanulók névsora</a><a href="#">Felvételi követelmények</a>
+            <a href="#">Szóbeli</a><a href="#">Tájékoztató a felvételi menetéről</a>
+            <a href="#">Felvételi Tájékoztató 2026-2027</a>
+            <a href="#">Felvételi előkészítő jelentkezési lap</a>
+            <a href="#">Érettségi anyagok</a><a href="#">Közösségi szolgálat</a>
+            <a href="#">Gólyatábor jelentkezési lapja</a>
+        </div>
+    </div>
+    <div class="dc">
+        <div class="dh" style="color:#b07800" onclick="tog(this)">📋 Ügyintézés <span class="arr">▶</span></div>
+        <div class="dl">
+            <a href="#">Elérhetőségek</a><a href="#">Ebédbefizetés</a>
+            <a href="#">Diákigazolvány</a><a href="#">Bizonyítvány másolat kérése</a>
+            <a href="#">Kréta bejelentkezési problémák</a>
+            <a href="#">Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól</a>
+            <a href="#">Kérelem két testnevelés óra alóli felmentéshez</a>
+            <a href="#">Egyéni tanrend igénylése</a>
+            <a href="#">Felvételi előkészítő jelentkezési lapja</a>
+            <a href="#">Informatikai, Teams problémák esetén</a>
+        </div>
+    </div>
+    <div class="dc">
+        <div class="dh" style="color:#3b96a0" onclick="tog(this)">🎨 Iskolai élet <span class="arr">▶</span></div>
+        <div class="dl">
+            <a href="#">Témahetek</a><a href="#">Könyvtár</a>
+            <a href="#">Tanulmányi versenyek</a><a href="#">Zeneiskola</a>
+            <a href="#">Pályázatok</a><a href="#">Iskola újság</a>
+            <a href="#">Határtalanul</a><a href="#">Erasmus</a>
+            <a href="#">Tanórán kívüli sportolás</a>
+        </div>
+    </div>
+    <div class="dc">
+        <div class="dh" style="color:#d46b30" onclick="tog(this)">💛 Támogató Szolgáltatások <span class="arr">▶</span></div>
+        <div class="dl">
+            <a href="#">Iskola egészségügy, védőnő</a>
+            <a href="#">Gyógytestnevelés</a><a href="#">Iskola pszichológus</a>
+            <a href="#">Hittan</a><a href="#">Erkölcstan</a>
+        </div>
+    </div>
+
+</nav>
+
+<!-- ══════════════════════ CONTACT -->
+<div class="contact-stripe">
+    <div class="dlogo">
+        <div class="dq r"></div><div class="dq y"></div>
+        <div class="dq b"></div><div class="dq w"></div>
+    </div>
+    <div class="contact-info">
+        <div class="cname">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
+        <div class="cdetails">
+      <span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        1048 Budapest, Bőrfestő utca 5-9.
+      </span>
+            <span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +36 38 07 170
+      </span>
+            <span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        OM-azonosító: 034877
+      </span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════ STRIPES -->
+
+<!-- 1. Iskolánk — visual LEFT -->
+<section class="stripe s1">
+    <div class="stripe-inner">
+        <div class="stripe-visual">
+            <div class="stripe-icon">🏫</div>
+        </div>
+        <div class="stripe-content">
+            <div class="stripe-title"><span class="ti">🏫</span> Iskolánk</div>
+            <div class="stripe-links">
+                <a href="#">Pedagógusok / Munkatársaink</a>
+                <a href="#">Tanév rendje</a>
+                <a href="#">Csengetési rend</a>
+                <a href="#">Alapítvány</a>
+                <a href="#">Szülői munkaközösség</a>
+                <a href="#">Álláspályázat</a>
+                <a href="#">Névadónkról</a>
+                <a href="#">Általános Dokumentumok</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. ÖKOiskola — visual RIGHT -->
+<section class="stripe s2">
+    <div class="stripe-inner rev">
+        <div class="stripe-visual">
+            <div class="stripe-icon">🌿</div>
+        </div>
+        <div class="stripe-content">
+            <div class="stripe-title"><span class="ti">🌿</span> Örökös ÖKOiskola</div>
+            <div class="stripe-links">
+                <a href="#">Környezeti nevelés</a>
+                <a href="#">Kert</a>
+                <a href="#">Használt olaj</a>
+                <a href="#">Papírgyűjtés</a>
+                <a href="#">Energiatakarékosság</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Általános iskola — visual LEFT -->
+<section class="stripe s3">
+    <div class="stripe-inner">
+        <div class="stripe-visual">
+            <div class="stripe-icon">📚</div>
+        </div>
+        <div class="stripe-content">
+            <div class="stripe-title"><span class="ti">📚</span> Általános iskola</div>
+            <div class="stripe-links">
+                <a href="#">Körzethatárok</a>
+                <a href="#">Körzeten kívüliek jelentkezése</a>
+                <a href="#">Felvett tanulók névsora</a>
+                <a href="#">Felvételi információk</a>
+                <a href="#">Nyílt nap / Csalogató</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Gimnázium — visual RIGHT -->
+<section class="stripe s4">
+    <div class="stripe-inner rev">
+        <div class="stripe-visual">
+            <div class="stripe-icon">🎓</div>
+        </div>
+        <div class="stripe-content">
+            <div class="stripe-title"><span class="ti">🎓</span> Gimnázium</div>
+            <div class="stripe-links">
+                <a href="#">Információk (induló szakok)</a>
+                <a href="#">Felvételi tudnivalók</a>
+                <a href="#">Felvett tanulók névsora</a>
+                <a href="#">Felvételi követelmények</a>
+                <a href="#">Szóbeli</a>
+                <a href="#">Tájékoztató a központi felvételi menetéről</a>
+                <a href="#">Felvételi Tájékoztató 2026-2027</a>
+                <a href="#">Felvételi előkészítő jelentkezési lap</a>
+                <a href="#">Érettségi anyagok</a>
+                <a href="#">Közösségi szolgálat</a>
+                <a href="#">Gólyatábor jelentkezési lapja</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Ügyintézés — visual LEFT -->
+<section class="stripe s5">
+    <div class="stripe-inner">
+        <div class="stripe-visual">
+            <div class="stripe-icon">📋</div>
+        </div>
+        <div class="stripe-content">
+            <div class="stripe-title"><span class="ti">📋</span> Ügyintézés</div>
+            <div class="stripe-links">
+                <a href="#">Elérhetőségek</a>
+                <a href="#">Ebédbefizetés</a>
+                <a href="#">Diákigazolvány</a>
+                <a href="#">Bizonyítvány másolat kérése</a>
+                <a href="#">Kréta bejelentkezési problémák</a>
+                <a href="#">Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól</a>
+                <a href="#">Kérelem két testnevelés óra alóli felmentéshez</a>
+                <a href="#">Egyéni tanrend igénylése</a>
+                <a href="#">Felvételi előkészítő jelentkezési lapja</a>
+                <a href="#">Informatikai, Teams problémák esetén</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. Iskolai élet — visual RIGHT -->
+<section class="stripe s6">
+    <div class="stripe-inner rev">
+        <div class="stripe-visual">
+            <div class="stripe-icon">🎨</div>
+        </div>
+        <div class="stripe-content">
+            <div class="stripe-title"><span class="ti">🎨</span> Iskolai élet</div>
+            <div class="stripe-links">
+                <a href="#">Témahetek</a>
+                <a href="#">Könyvtár</a>
+                <a href="#">Tanulmányi versenyek</a>
+                <a href="#">Zeneiskola</a>
+                <a href="#">Pályázatok</a>
+                <a href="#">Iskola újság</a>
+                <a href="#">Határtalanul</a>
+                <a href="#">Erasmus</a>
+                <a href="#">Tanórán kívüli sportolás</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. Támogató Szolgáltatások — visual LEFT -->
+<section class="stripe s7">
+    <div class="stripe-inner">
+        <div class="stripe-visual">
+            <div class="stripe-icon">💛</div>
+        </div>
+        <div class="stripe-content">
+            <div class="stripe-title"><span class="ti">💛</span> Támogató Szolgáltatások / Egyéb foglalkozások</div>
+            <div class="stripe-links">
+                <a href="#">Iskola egészségügy, védőnő</a>
+                <a href="#">Gyógytestnevelés</a>
+                <a href="#">Iskola pszichológus</a>
+                <a href="#">Hittan</a>
+                <a href="#">Erkölcstan</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="footer-spacer"></div>
+
+<script>
+    const hbtn = document.getElementById('hbtn');
+    const drw  = document.getElementById('drw');
+    const ov   = document.getElementById('ov');
+
+    hbtn.addEventListener('click', () => {
+        const on = drw.classList.toggle('on');
+        ov.classList.toggle('on', on);
+        hbtn.classList.toggle('open', on);
+    });
+    ov.addEventListener('click', () => {
+        drw.classList.remove('on');
+        ov.classList.remove('on');
+        hbtn.classList.remove('open');
+    });
+
+    function tog(header) {
+        const links = header.nextElementSibling;
+        const on = links.classList.toggle('on');
+        header.classList.toggle('on', on);
+    }
+</script>
+</body>
+</html>

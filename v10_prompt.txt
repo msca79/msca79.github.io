@@ -1,14 +1,36 @@
-Készíts egy iskola honlapot.
-A háttérben egy kép lesz: bg.png néven
-Az előtérben a lentebbi csoportok mint dobozok jelennek meg linkekkel az adott oldalra.
-Legyen világos, pasztel színű
-Egy html oldalban adj css, js -t is.
+Claude
+
+Készíts egy iskola honlapot. Az egész oldal világos, pasztel színű legyen.
+
+A nyitólap felépítése:
+ - banner fent
+ - középen egy kép (bg.png nevű kb 1200 széles 500 magas)
+ - alatta kategóriákba rendezve linkek
+ - legalul pár gyakori link
+
+Banner
+ - név: Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium
+ - gomb: Kréta belépés
+ - gomb Facebook események
+ - valamilyen sötétebb színnel
+ - az iskola logója a piros sárga kék színű négyzet élére állítva. Ez valamelyik sarokban legyen ott
+
+Kategóriák
+ - lentebb felvannak sorolva
+ - egy kategória fejléce egyedi színű saját ikonnal
+ - a kategóriák lekerekített téglalapokba vannak
+ - a linkek simán felsorolva. nincs rajtuk effektus, nem mozog se jobbra se balra. Átszíneződik ha feléáll.
+
+Legalul:
+ - Cím: 1048 Budapest, Bőrfestő utca 5-9.
+ - Telefonszám: +363807170
+ - OM-azonosító: 034877
 
 
-
+Linkek:
 
 Iskolánk
-Pedagógusok /Munkatársaink
+Pedagógusok/Munkatársaink
 Tanév rendje
 Csengetési rend
 Alapítvány
@@ -72,4 +94,4 @@ Iskola egészségügy, védőnő
 Gyógytestnevelés
 Iskola pszihológus
 Hittan
-Erkölcstan - szerintem ehhez nincs semmi
+Erkölcstan

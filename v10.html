@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:        #f7f4ef;
+            --surface:   #fdfbf8;
+            --border:    #e8e0d4;
+            --text:      #2e2820;
+            --text-mid:  #5c5040;
+            --text-soft: #9a8e7e;
+
+            --c1: #c07a4a;  --c1-bg: #f5e8dc;
+            --c2: #5a9e5a;  --c2-bg: #dff0df;
+            --c3: #4a82b8;  --c3-bg: #daeaf7;
+            --c4: #8254c8;  --c4-bg: #ede0fa;
+            --c5: #c84a4a;  --c5-bg: #fae0e0;
+            --c6: #c8a030;  --c6-bg: #faf0d0;
+            --c7: #38a8a0;  --c7-bg: #d8f0ee;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* BANNER */
+        .banner {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 72px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 2px 14px rgba(0,0,0,.06);
+        }
+        .banner-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+        }
+        .banner-logo {
+            width: 44px; height: 44px; flex-shrink: 0;
+            background: linear-gradient(145deg, #d4904a, #a85e28);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px;
+        }
+        .banner-name {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: clamp(12.5px, 1.55vw, 17px);
+            line-height: 1.25;
+            color: var(--text);
+        }
+        .banner-btns {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 18px;
+            border-radius: 10px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: filter .18s, transform .18s;
+            border: none;
+            white-space: nowrap;
+        }
+        .btn:hover { filter: brightness(.92); transform: translateY(-1px); }
+        .btn-kreta { background: #3d7fcf; color: #fff; }
+        .btn-fb    { background: #1877F2; color: #fff; }
+
+        /* HERO */
+        .hero {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 36px 32px 0;
+        }
+        .hero img {
+            width: 100%;
+            max-width: 1200px;
+            height: clamp(220px, 38vw, 500px);
+            object-fit: cover;
+            border-radius: 18px;
+            display: block;
+            box-shadow: 0 6px 32px rgba(0,0,0,.10);
+        }
+
+        /* CATEGORIES */
+        .categories-section {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 0 32px;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .cat-card {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,.06);
+            display: flex;
+            flex-direction: column;
+        }
+        .cat-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 18px 12px;
+        }
+        .cat-icon {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            background: rgba(255,255,255,.28);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .cat-header h3 {
+            font-family: 'Lora', serif;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.3;
+        }
+        .cat-body { padding: 10px 0 12px; flex: 1; }
+        .cat-body a {
+            display: block;
+            padding: 5px 18px;
+            font-size: 13.5px;
+            color: var(--text-mid);
+            text-decoration: none;
+            transition: color .14s, background .14s;
+            line-height: 1.5;
+        }
+        .cat-body a:hover { color: var(--text); background: rgba(0,0,0,.04); }
+
+        .cat-1 { background: var(--c1-bg); } .cat-1 .cat-header { background: var(--c1); }
+        .cat-2 { background: var(--c2-bg); } .cat-2 .cat-header { background: var(--c2); }
+        .cat-3 { background: var(--c3-bg); } .cat-3 .cat-header { background: var(--c3); }
+        .cat-4 { background: var(--c4-bg); } .cat-4 .cat-header { background: var(--c4); }
+        .cat-5 { background: var(--c5-bg); } .cat-5 .cat-header { background: var(--c5); }
+        .cat-6 { background: var(--c6-bg); } .cat-6 .cat-header { background: var(--c6); }
+        .cat-7 { background: var(--c7-bg); } .cat-7 .cat-header { background: var(--c7); }
+
+        /* QUICK LINKS */
+        .quick-bar {
+            max-width: 1200px;
+            margin: 32px auto 0;
+            padding: 0 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .quick-bar a {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-mid);
+            text-decoration: none;
+            transition: background .15s, color .15s;
+        }
+        .quick-bar a:hover { background: var(--border); color: var(--text); }
+
+        /* FOOTER */
+        footer {
+            margin-top: 52px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 28px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .footer-info { display: flex; flex-wrap: wrap; gap: 24px; }
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-mid);
+        }
+        .footer-item .fi-icon { font-size: 16px; opacity: .7; }
+        .footer-brand {
+            font-family: 'Lora', serif;
+            font-size: 13px;
+            color: var(--text-soft);
+            font-style: italic;
+        }
+
+        @media (max-width: 680px) {
+            .banner { padding: 10px 16px; flex-wrap: wrap; min-height: unset; gap: 10px; }
+            .banner-btns { width: 100%; justify-content: flex-end; }
+            .hero { padding: 20px 16px 0; }
+            .categories-section { padding: 0 16px; margin-top: 28px; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .quick-bar { padding: 0 16px; }
+            footer { padding: 22px 16px; flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="banner">
+    <div class="banner-left">
+        <div class="banner-logo">🏫</div>
+        <div class="banner-name">Újpesti Csokonai Vitéz Mihály<br>Általános Iskola és Gimnázium</div>
+    </div>
+    <div class="banner-btns">
+        <a href="#" class="btn btn-kreta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Kréta belépés
+        </a>
+        <a href="#" class="btn btn-fb">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook események
+        </a>
+    </div>
+</header>
+
+<section class="hero">
+    <img src="images/background-sample1.png" alt="Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium">
+</section>
+
+<section class="categories-section">
+    <div class="categories-grid">
+
+        <div class="cat-card cat-1">
+            <div class="cat-header"><div class="cat-icon">🏛️</div><h3>Iskolánk</h3></div>
+            <div class="cat-body">
+                <a href="#">Iskolánk</a>
+                <a href="#">Pedagógusok / Munkatársaink</a>
+                <a href="#">Tanév rendje</a>
+                <a href="#">Csengetési rend</a>
+                <a href="#">Alapítvány</a>
+                <a href="#">Szülői munkaközösség</a>
+                <a href="#">Álláspályázat</a>
+                <a href="#">Névadónkról</a>
+                <a href="#">Általános Dokumentumok</a>
+            </div>
+        </div>
+
+        <div class="cat-card cat-2">
+            <div class="cat-header"><div class="cat-icon">🌿</div><h3>Örökös ÖKOiskola</h3></div>
+            <div class="cat-body">
+                <a href="#">Környezeti nevelés</a>
+                <a href="#">Kert</a>
+                <a href="#">Használt olaj</a>
+                <a href="#">Papírgyűjtés</a>
+                <a href="#">Energiatakarékosság</a>
+            </div>
+        </div>
+
+        <div class="cat-card cat-3">
+            <div class="cat-header"><div class="cat-icon">📚</div><h3>Általános iskola</h3></div>
+            <div class="cat-body">
+                <a href="#">Körzethatárok</a>
+                <a href="#">Körzeten kívüliek jelentkezése</a>
+                <a href="#">Felvett tanulók névsora</a>
+                <a href="#">Felvételi információk</a>
+                <a href="#">Nyílt nap / Csalogató</a>
+            </div>
+        </div>
+
+        <div class="cat-card cat-4">
+            <div class="cat-header"><div class="cat-icon">🎓</div><h3>Gimnázium</h3></div>
+            <div class="cat-body">
+                <a href="#">Információk (induló szakok)</a>
+                <a href="#">Felvételi tudnivalók</a>
+                <a href="#">Felvett tanulók névsora</a>
+                <a href="#">Felvételi követelmények</a>
+                <a href="#">Szóbeli</a>
+                <a href="#">Tájékoztató a központi felvételi menetéről</a>
+                <a href="#">FELVÉTELI TÁJÉKOZTATÓ 2026–2027</a>
+                <a href="#">Felvételi előkészítő jelentkezési lap</a>
+                <a href="#">Érettségi anyagok</a>
+                <a href="#">Közösségi szolgálat</a>
+                <a href="#">Gólyatábor jelentkezési lapja</a>
+            </div>
+        </div>
+
+        <div class="cat-card cat-5">
+            <div class="cat-header"><div class="cat-icon">📋</div><h3>Ügyintézés</h3></div>
+            <div class="cat-body">
+                <a href="#">Elérhetőségek</a>
+                <a href="#">Ebédbefizetés</a>
+                <a href="#">Diákigazolvány</a>
+                <a href="#">Bizonyítvány másolat kérése</a>
+                <a href="#">Kréta bejelentkezési problémák</a>
+                <a href="#">Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól</a>
+                <a href="#">Kérelem két testnevelés óra alóli felmentéshez</a>
+                <a href="#">Egyéni tanrend igénylése</a>
+                <a href="#">Felvételi előkészítő jelentkezési lapja</a>
+                <a href="#">Informatikai, Teams problémák esetén</a>
+            </div>
+        </div>
+
+        <div class="cat-card cat-6">
+            <div class="cat-header"><div class="cat-icon">🌟</div><h3>Iskolai élet</h3></div>
+            <div class="cat-body">
+                <a href="#">Témahetek</a>
+                <a href="#">Könyvtár</a>
+                <a href="#">Tanulmányi versenyek</a>
+                <a href="#">Zeneiskola</a>
+                <a href="#">Pályázatok</a>
+                <a href="#">Iskola újság</a>
+                <a href="#">Határtalanul</a>
+                <a href="#">Erasmus</a>
+                <a href="#">Tanórán kívüli sportolás</a>
+            </div>
+        </div>
+
+        <div class="cat-card cat-7">
+            <div class="cat-header"><div class="cat-icon">🤝</div><h3>Támogató Szolgáltatások / Egyéb foglalkozások</h3></div>
+            <div class="cat-body">
+                <a href="#">Iskola egészségügy, védőnő</a>
+                <a href="#">Gyógytestnevelés</a>
+                <a href="#">Iskola pszichológus</a>
+                <a href="#">Hittan</a>
+                <a href="#">Erkölcstan</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="quick-bar">
+    <a href="#">Csengetési rend</a>
+    <a href="#">Tanév rendje</a>
+    <a href="#">Elérhetőségek</a>
+    <a href="#">Ebédbefizetés</a>
+    <a href="#">Diákigazolvány</a>
+    <a href="#">Kréta</a>
+    <a href="#">Felvételi tájékoztató 2026–2027</a>
+    <a href="#">Közösségi szolgálat</a>
+</div>
+
+<footer>
+    <div class="footer-info">
+        <div class="footer-item"><span class="fi-icon">📍</span> 1048 Budapest, Bőrfestő utca 5–9.</div>
+        <div class="footer-item"><span class="fi-icon">📞</span> +36 38 07 170</div>
+        <div class="footer-item"><span class="fi-icon">🆔</span> OM-azonosító: 034877</div>
+    </div>
+    <div class="footer-brand">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
+</footer>
+
+</body>
+</html>
