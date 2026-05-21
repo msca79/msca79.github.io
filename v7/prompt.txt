@@ -1,0 +1,75 @@
+Készíts egy iskola honlapot.
+A háttérben egy kép lesz: bg.png néven
+Az előtérben a lentebbi csoportok mint dobozok jelennek meg linkekkel az adott oldalra.
+Legyen világos, pasztel színű
+Egy html oldalban adj css, js -t is.
+
+
+
+
+Iskolánk
+Pedagógusok /Munkatársaink
+Tanév rendje
+Csengetési rend
+Alapítvány
+Szülői munkaközösség
+Álláspályázat
+Névadónkról
+Általános Dokumentumok
+
+Örökös ÖKOiskola
+Környezeti nevelés
+Kert
+Használt olaj
+Papírgyűjtés
+Energiatakarékosság
+
+Általános iskola
+körzethatárok
+körzeten kívüliek jelentkezése
+felvett tanulók névsora
+Felvételi információk
+nyílt nap / csalogató
+
+Gimnázium
+információk (induló szakok)
+felvételi tudnivalók
+felvett tanulók névsora
+felvételi követelmények
+szóbeli
+tájékoztató a központi felvételi menetéről
+FELVÉTELI TÁJÉKOZTATÓ 2026-2027
+Felvételi előkészítő jelentkezési lap
+Érettségi anyagok
+Közösségi szolgálat
+Gólyatábor jelentkezési lapja
+
+Ügyintézés
+Elérhetőségek
+Ebédbefizetés
+Diákigazolvány
+Bizonyítvány másolat kérése
+Kréta bejelentkezési problémák
+Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól
+Kérelem két testnevelés óra alóli felmentéshez
+Egyéni tanrend igénylése
+Felvételi előkészítő jelentkezési lapja
+Informatikai, Teams problémák esetén
+
+Iskolai élet
+Témahetek
+Könyvtár
+Tanulmányi versenyek
+Zeneiskola
+Pályázatok
+Iskola újság
+Határtalanul
+Erasmus
+Tanórán kívüli sportolás
+
+Támogató Szolgáltatások/Egyéb foglalkozások
+Iskola egészségügy, védőnő
+Gyógytestnevelés
+Iskola pszihológus
+Hittan
+Erkölcstan - szerintem ehhez nincs semmi

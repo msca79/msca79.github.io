@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iskolánk</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: transparent;
+    color: #333;
+  }
+
+  .page {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 248, 245, 0.83);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 2.5rem 0 2.8rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #3C3489;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    color: #6b64c0;
+    opacity: 0.85;
+  }
+
+  /* Search bar */
+  .search-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  #search {
+    width: 100%;
+    max-width: 420px;
+    padding: 0.55rem 1rem;
+    border: 1px solid #bbb8e8;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    outline: none;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  #search:focus {
+    border-color: #7F77DD;
+    box-shadow: 0 0 0 3px rgba(127,119,221,0.15);
+  }
+
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  /* Cards */
+  .section-card {
+    background: rgba(255, 255, 255, 0.90);
+    border: 1px solid #d0cdf0;
+    border-radius: 14px;
+    padding: 1.1rem 1.2rem 1.2rem;
+    transition: box-shadow 0.18s, transform 0.15s;
+  }
+
+  .section-card:hover {
+    box-shadow: 0 4px 18px rgba(83, 74, 183, 0.13);
+    transform: translateY(-2px);
+  }
+
+  .section-card h2 {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #3C3489;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-bottom: 1px solid #e8e6f8;
+    padding-bottom: 0.55rem;
+  }
+
+  .section-card h2 .icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #EEEDFE;
+    border-radius: 6px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .section-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .section-card ul li {
+    margin-bottom: 1px;
+  }
+
+  .section-card ul li a {
+    display: block;
+    font-size: 0.84rem;
+    color: #444;
+    padding: 4px 6px;
+    border-radius: 6px;
+    text-decoration: none;
+    line-height: 1.45;
+    transition: background 0.12s, color 0.12s;
+  }
+
+  .section-card ul li a:hover {
+    background: #EEEDFE;
+    color: #3C3489;
+  }
+
+  .section-card ul li.sub a {
+    padding-left: 18px;
+    color: #666;
+    font-size: 0.79rem;
+  }
+
+  .section-card ul li.sub a:hover {
+    color: #534AB7;
+  }
+
+  /* No results */
+  #no-results {
+    display: none;
+    text-align: center;
+    color: #888;
+    padding: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    font-size: 0.78rem;
+    color: #999;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.5rem; }
+    .grid { grid-template-columns: 1fr; }
+    .content { padding: 1.2rem 1rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="overlay"></div>
+  <div class="content">
+
+    <header class="hero">
+      <h1>🏫 Iskolánk</h1>
+      <p>Üdvözöljük iskolánk honlapján</p>
+    </header>
+
+    <div class="search-wrap">
+      <input type="text" id="search" placeholder="Keresés a menüpontok között…" aria-label="Keresés">
+    </div>
+
+    <main>
+      <div class="grid" id="grid">
+
+        <!-- Iskolánkról -->
+        <div class="section-card" data-section="iskolankrol">
+          <h2><span class="icon">🏫</span>Iskolánkról</h2>
+          <ul>
+            <li><a href="/pedagogusok">Pedagógusok / Munkatársaink</a></li>
+            <li><a href="/tanev-rendje">Tanév rendje</a></li>
+            <li><a href="/csengetesi-rend">Csengetési rend</a></li>
+            <li><a href="/alapitvany">Alapítvány</a></li>
+            <li><a href="/szuloi-munkakozseg">Szülői munkaközösség</a></li>
+            <li><a href="/allaspalyazat">Álláspályázat</a></li>
+            <li><a href="/nevadonkrol">Névadónkról</a></li>
+            <li><a href="/dokumentumok">Általános Dokumentumok</a></li>
+          </ul>
+        </div>
+
+        <!-- Ökoiskola -->
+        <div class="section-card" data-section="okoiskola">
+          <h2><span class="icon">🌿</span>Ökoiskola</h2>
+          <ul>
+            <li><a href="/okoisola">Örökös ÖKOiskola</a></li>
+            <li><a href="/kornyezeti-neveles">Környezeti nevelés</a></li>
+            <li><a href="/kert">Kert</a></li>
+            <li><a href="/hasznalt-olaj">Használt olaj</a></li>
+            <li><a href="/papirgyujtes">Papírgyűjtés</a></li>
+            <li><a href="/energiatakarekossag">Energiatakarékosság</a></li>
+          </ul>
+        </div>
+
+        <!-- Általános iskola -->
+        <div class="section-card" data-section="alt-iskola">
+          <h2><span class="icon">🏢</span>Általános iskola</h2>
+          <ul>
+            <li><a href="/korzehatarak">Körzethatárok</a></li>
+            <li><a href="/korzeten-kivuliek">Körzeten kívüliek jelentkezése</a></li>
+            <li><a href="/felvett-tanulok-alt">Felvett tanulók névsora</a></li>
+            <li><a href="/felveteli-informaciok">Felvételi információk</a></li>
+            <li><a href="/nyilt-nap">Nyílt nap / csalogató</a></li>
+          </ul>
+        </div>
+
+        <!-- Gimnázium -->
+        <div class="section-card" data-section="gimnazium">
+          <h2><span class="icon">🎓</span>Gimnázium</h2>
+          <ul>
+            <li><a href="/gimn-informaciok">Információk (induló szakok)</a></li>
+            <li><a href="/felveteli-tudnivalok">Felvételi tudnivalók</a></li>
+            <li><a href="/felvett-tanulok-gimn">Felvett tanulók névsora</a></li>
+            <li><a href="/felveteli-kovetelmenyek">Felvételi követelmények</a></li>
+            <li><a href="/szobeli">Szóbeli</a></li>
+            <li><a href="/kozponti-felveteli">Tájékoztató a központi felvételi menetéről</a></li>
+            <li><a href="/felveteli-tajekoztato-2026">Felvételi tájékoztató 2026–2027</a></li>
+            <li><a href="/felveteli-elokeszito-lap">Felvételi előkészítő jelentkezési lap</a></li>
+            <li><a href="/erettsegi-anyagok">Érettségi anyagok</a></li>
+            <li><a href="/kozossegi-szolgalat">Közösségi szolgálat</a></li>
+            <li><a href="/golytabor">Gólyatábor jelentkezési lapja</a></li>
+          </ul>
+        </div>
+
+        <!-- Ügyintézés -->
+        <div class="section-card" data-section="ugyintezés">
+          <h2><span class="icon">📋</span>Ügyintézés</h2>
+          <ul>
+            <li><a href="/elerhetosegek">Elérhetőségek</a></li>
+            <li><a href="/ebedbefizetés">Ebédbefizetés</a></li>
+            <li><a href="/diakigazolvany">Diákigazolvány</a></li>
+            <li><a href="/bizonyitvany-masolas">Bizonyítvány másolat kérése</a></li>
+            <li><a href="/kreta-problema">Kréta bejelentkezési problémák</a></li>
+            <li><a href="/felmentesi-kerelem-16">Felmentési kérelem 16 óra előtti foglalkozás alól</a></li>
+            <li><a href="/testnev-felment">Kérelem két testnevelés óra alóli felmentéshez</a></li>
+            <li><a href="/egyeni-tanrend">Egyéni tanrend igénylése</a></li>
+            <li><a href="/felveteli-elokeszito-ugyint">Felvételi előkészítő jelentkezési lap</a></li>
+            <li><a href="/informatikai-problema">Informatikai, Teams problémák esetén</a></li>
+          </ul>
+        </div>
+
+        <!-- Iskolai élet -->
+        <div class="section-card" data-section="iskolai-elet">
+          <h2><span class="icon">🎉</span>Iskolai élet</h2>
+          <ul>
+            <li><a href="/temahetek">Témahetek</a></li>
+            <li><a href="/konyvtar">Könyvtár</a></li>
+            <li><a href="/tanulmanyi-versenyek">Tanulmányi versenyek</a></li>
+            <li><a href="/zeneiskola">Zeneiskola</a></li>
+            <li><a href="/palyazatok">Pályázatok</a></li>
+            <li><a href="/iskola-ujsag">Iskola újság</a></li>
+            <li><a href="/hataratlanul">Határtalanul</a></li>
+            <li><a href="/erasmus">Erasmus</a></li>
+            <li><a href="/tanoran-kivuli-sport">Tanórán kívüli sportolás</a></li>
+          </ul>
+        </div>
+
+        <!-- Támogató szolgáltatások -->
+        <div class="section-card" data-section="tamogato">
+          <h2><span class="icon">💛</span>Támogató szolgáltatások</h2>
+          <ul>
+            <li><a href="/iskola-egeszsegugy">Iskola egészségügy, védőnő</a></li>
+            <li><a href="/gyogytest">Gyógytestnevelés</a></li>
+            <li><a href="/pszichologus">Iskola pszichológus</a></li>
+            <li><a href="/hittan">Hittan</a></li>
+            <li><a href="/erkolcstan">Erkölcstan</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /grid -->
+      <p id="no-results">Nincs találat a keresési feltételre.</p>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Iskolánk &mdash; Minden jog fenntartva.
+    </footer>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const searchInput = document.getElementById('search');
+  const cards = document.querySelectorAll('.section-card');
+  const noResults = document.getElementById('no-results');
+
+  searchInput.addEventListener('input', function () {
+    const q = this.value.trim().toLowerCase();
+    let anyVisible = false;
+
+    cards.forEach(function (card) {
+      const text = card.textContent.toLowerCase();
+      const links = card.querySelectorAll('li');
+      let cardMatch = false;
+
+      if (!q) {
+        card.style.display = '';
+        links.forEach(function (li) { li.style.display = ''; });
+        anyVisible = true;
+        return;
+      }
+
+      // Check individual links
+      links.forEach(function (li) {
+        if (li.textContent.toLowerCase().includes(q)) {
+          li.style.display = '';
+          cardMatch = true;
+        } else {
+          li.style.display = 'none';
+        }
+      });
+
+      // Also match on card title
+      const title = card.querySelector('h2');
+      if (title && title.textContent.toLowerCase().includes(q)) {
+        cardMatch = true;
+        links.forEach(function (li) { li.style.display = ''; });
+      }
+
+      card.style.display = cardMatch ? '' : 'none';
+      if (cardMatch) anyVisible = true;
+    });
+
+    noResults.style.display = anyVisible ? 'none' : 'block';
+  });
+</script>
+
+</body>
+</html>
