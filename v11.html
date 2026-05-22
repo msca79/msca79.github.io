@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap"
+          rel="stylesheet">
     <style>
         :root {
             --bg: #f5f0eb;
-            --banner1-bg: #e0d8d0;
+            --banner1-bg: #568fc3;
+            --banner4-bg: #e0d8d0;
             --banner2-bg: #ede8e2;
             --text: #3a3228;
             --text-light: #6b5f54;
             --accent-red: #d94f3d;
-            --accent-blue: #4a7fb5;
+            --accent-blue: #3eaf24;
             --accent-yellow: #e8b84b;
             --accent-green: #5a9e6f;
             --accent-purple: #8b6fae;
             --accent-teal: #4a9ea8;
             --accent-orange: #e07840;
-            --cat1: #fde8e4; --cat1-head: #d94f3d;
-            --cat2: #e4f4e8; --cat2-head: #5a9e6f;
-            --cat3: #e4eef8; --cat3-head: #4a7fb5;
-            --cat4: #f0ebf8; --cat4-head: #8b6fae;
-            --cat5: #fef4e4; --cat5-head: #e8a030;
-            --cat6: #e4f8f6; --cat6-head: #4a9ea8;
-            --cat7: #fde8de; --cat7-head: #e07840;
-            --shadow: 0 2px 12px rgba(58,50,40,0.08);
+            --cat1: #fde8e4;
+            --cat1-head: #d94f3d;
+            --cat2: #e4f4e8;
+            --cat2-head: #5a9e6f;
+            --cat3: #e4eef8;
+            --cat3-head: #4a7fb5;
+            --cat4: #f0ebf8;
+            --cat4-head: #8b6fae;
+            --cat5: #fef4e4;
+            --cat5-head: #e8a030;
+            --cat6: #e4f8f6;
+            --cat6-head: #4a9ea8;
+            --cat7: #fde8de;
+            --cat7-head: #e07840;
+            --shadow: 0 2px 12px rgba(58, 50, 40, 0.08);
             --radius: 16px;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Nunito', sans-serif;
@@ -39,7 +52,10 @@
             min-height: 100vh;
         }
 
-        a { text-decoration: none; color: inherit; }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
         /* ─── BANNER 1 ─────────────────────────────────────────── */
         #banner1 {
@@ -51,16 +67,17 @@
             gap: 12px;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 8px rgba(58,50,40,0.12);
+            z-index: 1000;color:white;
+            box-shadow: 0 1px 8px rgba(58, 50, 40, 0.12);
             border-bottom: 2px solid #cfc8be;
         }
 
         #banner1 .school-name {
             font-family: 'Fraunces', serif;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text);
+            font-size: 16px;
+            font-weight: 200;
+            /*color: var(--text);*/
+
             flex: 1;
             white-space: nowrap;
             overflow: hidden;
@@ -81,12 +98,17 @@
             white-space: nowrap;
             border: none;
         }
-        .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(58,50,40,0.18); }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(58, 50, 40, 0.18);
+        }
 
         .btn-kreta {
             background: var(--accent-blue);
             color: #fff;
         }
+
         .btn-facebook {
             background: #4267B2;
             color: #fff;
@@ -103,6 +125,7 @@
             gap: 4px;
             z-index: 1100;
         }
+
         .hamburger span {
             display: block;
             width: 22px;
@@ -111,35 +134,54 @@
             border-radius: 2px;
             transition: all 0.3s;
         }
-        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
+        }
 
         /* Drawer menu */
         .menu-overlay {
             display: none;
-            position: fixed; inset: 0;
-            background: rgba(58,50,40,0.3);
+            position: fixed;
+            inset: 0;
+            background: rgba(58, 50, 40, 0.3);
             z-index: 900;
         }
-        .menu-overlay.open { display: block; }
+
+        .menu-overlay.open {
+            display: block;
+        }
 
         .menu-drawer {
             position: fixed;
-            top: 0; right: -340px;
-            width: 320px; height: 100vh;
+            top: 0;
+            right: -340px;
+            width: 320px;
+            height: 100vh;
             background: #faf7f3;
             z-index: 1050;
             overflow-y: auto;
-            transition: right 0.3s cubic-bezier(.4,0,.2,1);
-            box-shadow: -4px 0 24px rgba(58,50,40,0.15);
+            transition: right 0.3s cubic-bezier(.4, 0, .2, 1);
+            box-shadow: -4px 0 24px rgba(58, 50, 40, 0.15);
             padding-top: 60px;
         }
-        .menu-drawer.open { right: 0; }
+
+        .menu-drawer.open {
+            left: 0;
+        }
 
         .menu-category {
             border-bottom: 1px solid #e8e2db;
         }
+
         .menu-category-header {
             display: flex;
             align-items: center;
@@ -152,19 +194,27 @@
             letter-spacing: 0.03em;
             text-transform: uppercase;
         }
+
         .menu-category-header .chevron {
             margin-left: auto;
             font-size: 10px;
             transition: transform 0.2s;
         }
-        .menu-category-header.active .chevron { transform: rotate(90deg); }
+
+        .menu-category-header.active .chevron {
+            transform: rotate(90deg);
+        }
 
         .menu-links {
             display: none;
             padding: 4px 0 8px 0;
-            background: rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.5);
         }
-        .menu-links.open { display: block; }
+
+        .menu-links.open {
+            display: block;
+        }
+
         .menu-links a {
             display: block;
             padding: 8px 20px 8px 36px;
@@ -172,7 +222,11 @@
             color: var(--text-light);
             transition: color 0.15s, background 0.15s;
         }
-        .menu-links a:hover { color: var(--text); background: rgba(58,50,40,0.05); }
+
+        .menu-links a:hover {
+            color: var(--text);
+            background: rgba(58, 50, 40, 0.05);
+        }
 
         /* ─── BANNER 2 ─────────────────────────────────────────── */
         #banner2 {
@@ -195,25 +249,40 @@
             border-radius: 6px;
             overflow: hidden;
         }
+
         .logo-q {
             width: 100%;
             height: 100%;
         }
-        .logo-q.red   { background: #c83232; }
-        .logo-q.yellow{ background: #e8b832; }
-        .logo-q.blue  { background: #3264c8; }
-        .logo-q.white { background: #f0ecf8; }
+
+        .logo-q.red {
+            background: #c83232;
+        }
+
+        .logo-q.yellow {
+            background: #e8b832;
+        }
+
+        .logo-q.blue {
+            background: #3264c8;
+        }
+
+        .logo-q.white {
+            background: #f0ecf8;
+        }
 
         .school-info {
             display: flex;
             flex-direction: column;
             gap: 3px;
         }
+
         .school-info .address {
             font-size: 14px;
             font-weight: 600;
             color: var(--text);
         }
+
         .school-info .details {
             font-size: 12.5px;
             color: var(--text-light);
@@ -221,6 +290,7 @@
             gap: 18px;
             flex-wrap: wrap;
         }
+
         .school-info .details span {
             display: flex;
             align-items: center;
@@ -234,6 +304,7 @@
             margin: 28px auto 0;
             padding: 0 20px;
         }
+
         .hero-img {
             width: 100%;
             height: 500px;
@@ -245,6 +316,7 @@
             position: relative;
             overflow: hidden;
         }
+
         /* Placeholder when bg.png is missing */
         .hero-img-placeholder {
             width: 100%;
@@ -258,18 +330,23 @@
             position: relative;
             overflow: hidden;
         }
+
         .hero-img-placeholder::before {
             content: '';
             position: absolute;
-            width: 500px; height: 500px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            top: -150px; right: -100px;
+            background: rgba(255, 255, 255, 0.15);
+            top: -150px;
+            right: -100px;
         }
+
         .hero-img-placeholder .hero-text {
             text-align: center;
             z-index: 1;
         }
+
         .hero-img-placeholder .hero-text h2 {
             font-family: 'Fraunces', serif;
             font-size: 32px;
@@ -294,9 +371,10 @@
             box-shadow: var(--shadow);
             transition: box-shadow 0.2s, transform 0.2s;
         }
+
         .cat-card:hover {
-            box-shadow: 0 6px 24px rgba(58,50,40,0.13);
-            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(58, 50, 40, 0.13);
+            /*transform: translateY(-20px) ;*/
         }
 
         .cat-header {
@@ -309,7 +387,10 @@
             font-size: 15px;
             letter-spacing: 0.01em;
         }
-        .cat-icon { font-size: 20px; }
+
+        .cat-icon {
+            font-size: 20px;
+        }
 
         .cat-body {
             padding: 10px 0 14px;
@@ -318,35 +399,73 @@
         .cat-body a {
             display: block;
             padding: 9px 20px;
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 600;
             color: var(--text);
             transition: color 0.15s;
             line-height: 1.3;
         }
-        .cat-body a:hover { color: var(--accent-blue); }
+
+        .cat-body a:hover {
+            color: var(--accent-blue);
+        }
 
         /* Category color themes */
-        .cat1 { background: var(--cat1); }
-        .cat1 .cat-header { background: var(--cat1-head); }
+        .cat1 {
+            background: var(--cat1);
+        }
 
-        .cat2 { background: var(--cat2); }
-        .cat2 .cat-header { background: var(--cat2-head); }
+        .cat1 .cat-header {
+            background: var(--cat1-head);
+        }
 
-        .cat3 { background: var(--cat3); }
-        .cat3 .cat-header { background: var(--cat3-head); }
+        .cat2 {
+            background: var(--cat2);
+        }
 
-        .cat4 { background: var(--cat4); }
-        .cat4 .cat-header { background: var(--cat4-head); }
+        .cat2 .cat-header {
+            background: var(--cat2-head);
+        }
 
-        .cat5 { background: var(--cat5); }
-        .cat5 .cat-header { background: var(--cat5-head); }
+        .cat3 {
+            background: var(--cat3);
+        }
 
-        .cat6 { background: var(--cat6); }
-        .cat6 .cat-header { background: var(--cat6-head); }
+        .cat3 .cat-header {
+            background: var(--cat3-head);
+        }
 
-        .cat7 { background: var(--cat7); }
-        .cat7 .cat-header { background: var(--cat7-head); }
+        .cat4 {
+            background: var(--cat4);
+        }
+
+        .cat4 .cat-header {
+            background: var(--cat4-head);
+        }
+
+        .cat5 {
+            background: var(--cat5);
+        }
+
+        .cat5 .cat-header {
+            background: var(--cat5-head);
+        }
+
+        .cat6 {
+            background: var(--cat6);
+        }
+
+        .cat6 .cat-header {
+            background: var(--cat6-head);
+        }
+
+        .cat7 {
+            background: var(--cat7);
+        }
+
+        .cat7 .cat-header {
+            background: var(--cat7-head);
+        }
 
         /* ─── FOOTER LINKS ──────────────────────────────────────── */
         .footer-links {
@@ -358,6 +477,7 @@
             gap: 10px;
             border-top: 1px solid #ddd5ca;
         }
+
         .footer-links a {
             background: var(--banner1-bg);
             padding: 7px 16px;
@@ -367,7 +487,11 @@
             color: var(--text-light);
             transition: background 0.15s, color 0.15s;
         }
-        .footer-links a:hover { background: var(--accent-blue); color: #fff; }
+
+        .footer-links a:hover {
+            background: var(--accent-blue);
+            color: #fff;
+        }
 
         /* ─── FOOTER SPACER ─────────────────────────────────────── */
         .footer-spacer {
@@ -379,30 +503,122 @@
 
         /* ─── RESPONSIVE ────────────────────────────────────────── */
         @media (max-width: 640px) {
-            #banner1 .school-name { font-size: 12px; }
-            .btn { font-size: 11px; padding: 5px 10px; }
-            .categories { grid-template-columns: 1fr; }
-            .hero-img-placeholder { height: 200px; }
+            #banner1 .school-name {
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 11px;
+                padding: 5px 10px;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-img-placeholder {
+                height: 200px;
+            }
         }
+
+        /* FOOTER */
+        footer {
+            margin-top: 52px;
+            background-color: rgba(202, 128, 129, 0.21);
+            border-top: 1px solid var(--border);
+            padding: 28px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .footer-info { display: flex; flex-wrap: wrap; gap: 24px; }
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-mid);
+        }
+        .footer-item .fi-icon { font-size: 16px; opacity: .7; }
+        .footer-brand {
+            font-family: 'Lora', serif;
+            font-size: 13px;
+            color: var(--text-soft);
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body>
 
 <!-- ═══════════════════════════════════ BANNER 1 -->
 <header id="banner1">
-    <span class="school-name">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</span>
-    <a href="https://kreta.hu" target="_blank" class="btn btn-kreta">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Kréta belépés
-    </a>
-    <a href="https://facebook.com" target="_blank" class="btn btn-facebook">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        Facebook események
-    </a>
     <button class="hamburger" id="hamburgerBtn" aria-label="Menü">
         <span></span><span></span><span></span>
     </button>
-</header>
+
+    <span style="flex: 1;">
+            <span class="school-name">
+        Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium<br>
+    </span>
+<span style="font-size: 12px; ">
+        1048 Budapest, Bőrfestő utca 5-9.
+    &nbsp;   &nbsp;
+     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        &nbsp;  +36 38 07 170
+
+    &nbsp;   &nbsp;
+     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          &nbsp;     OM-azonosító: 034877
+        </span>
+            </span>
+
+
+            <a href="https://kreta.hu" target="_blank" class="btn btn-kreta">
+             KRÉTA
+
+
+<!--                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">-->
+<!--                    <rect x="3" y="11" width="18" height="11" rx="2"/>-->
+<!--                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>-->
+<!--                </svg>-->
+<!--                Kréta belépés-->
+            </a>
+            <a href="https://facebook.com" target="_blank" class="btn btn-facebook">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                Facebook
+            </a>
+
+        </header>
+
+
+        <!-- ═══════════════════════════════════ BANNER 2 -->
+<!--<div id="banner2">-->
+<!--    <div class="school-logo" aria-label="Iskola logója">-->
+<!--        <div class="logo-q red"></div>-->
+<!--        <div class="logo-q yellow"></div>-->
+<!--        <div class="logo-q blue"></div>-->
+<!--        <div class="logo-q white"></div>-->
+<!--    </div>-->
+<!--    <div class="school-info">-->
+<!--        <div class="address">1048 Budapest, Bőrfestő utca 5-9.</div>-->
+<!--        <div class="details">-->
+<!--      <span>-->
+<!--        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>-->
+<!--        +36 38 07 170-->
+<!--      </span>-->
+<!--            <span>-->
+<!--        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>-->
+<!--        OM-azonosító: 034877-->
+<!--      </span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
 
 <!-- Drawer overlay -->
 <div class="menu-overlay" id="menuOverlay"></div>
@@ -513,33 +729,12 @@
     </div>
 </nav>
 
-<!-- ═══════════════════════════════════ BANNER 2 -->
-<div id="banner2">
-    <div class="school-logo" aria-label="Iskola logója">
-        <div class="logo-q red"></div>
-        <div class="logo-q yellow"></div>
-        <div class="logo-q blue"></div>
-        <div class="logo-q white"></div>
-    </div>
-    <div class="school-info">
-        <div class="address">1048 Budapest, Bőrfestő utca 5-9.</div>
-        <div class="details">
-      <span>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        +36 38 07 170
-      </span>
-            <span>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-        OM-azonosító: 034877
-      </span>
-        </div>
-    </div>
-</div>
-
 <!-- ═══════════════════════════════════ HERO -->
 <div class="hero">
     <div class="hero-img-placeholder" id="heroWrapper">
-        <img src="bg.png" alt="Iskola" style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;" onerror="this.style.display='none'" id="heroBg">
+        <img src="images/background-sample3.png" alt="Iskola"
+             style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;"
+             onerror="this.style.display='none'" id="heroBg">
         <div class="hero-text" id="heroFallback" style="display:none;">
             <h2>Újpesti Csokonai Vitéz Mihály<br>Általános Iskola és Gimnázium</h2>
         </div>
@@ -668,19 +863,34 @@
 </section>
 
 <!-- ═══════════════════════════════════ FOOTER LINKS -->
-<div class="footer-links">
-    <a href="#">Kréta belépés</a>
-    <a href="#">Elérhetőségek</a>
-    <a href="#">Tanév rendje</a>
-    <a href="#">Csengetési rend</a>
-    <a href="#">Ebédbefizetés</a>
-    <a href="#">Diákigazolvány</a>
-    <a href="#">Facebook</a>
-</div>
+<!--<div class="footer-links">-->
+<!--    <a href="#">Kréta belépés</a>-->
+<!--    <a href="#">Elérhetőségek</a>-->
+<!--    <a href="#">Tanév rendje</a>-->
+<!--    <a href="#">Csengetési rend</a>-->
+<!--    <a href="#">Ebédbefizetés</a>-->
+<!--    <a href="#">Diákigazolvány</a>-->
+<!--    <a href="#">Facebook</a>-->
+<!--</div>-->
 
 <!-- ═══════════════════════════════════ FOOTER SPACER -->
-<div class="footer-spacer"></div>
-
+<!--<div class="footer-spacer">-->
+<!--    <div class="footer-info">-->
+<!--        <div class="footer-item"><span class="fi-icon">📍</span> 1048 Budapest, Bőrfestő utca 5–9.</div>-->
+<!--        <div class="footer-item"><span class="fi-icon">📞</span> +36 38 07 170</div>-->
+<!--        <div class="footer-item"><span class="fi-icon">🆔</span> OM-azonosító: 034877</div>-->
+<!--    </div>-->
+<!--    <div class="footer-brand">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>-->
+<!--        -->
+<!--</div>-->
+<footer>
+    <div class="footer-info">
+        <div class="footer-item"><span class="fi-icon">📍</span> 1048 Budapest, Bőrfestő utca 5–9.</div>
+        <div class="footer-item"><span class="fi-icon">📞</span> +36 38 07 170</div>
+        <div class="footer-item"><span class="fi-icon">🆔</span> OM-azonosító: 034877</div>
+    </div>
+    <div class="footer-brand">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
+</footer>
 <script>
     // Hamburger / drawer
     const btn = document.getElementById('hamburgerBtn');

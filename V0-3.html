@@ -1,0 +1,230 @@
+
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { padding: 1rem 0; font-size: 13px; }
+.top-bar {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  background: var(--color-background-secondary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  padding: 10px 12px;
+  margin-bottom: 20px;
+}
+.top-item {
+  padding: 6px 14px; border-radius: 6px; cursor: pointer;
+  font-size: 13px; font-weight: 500;
+  color: var(--color-text-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+  transition: background .15s, border-color .15s;
+  white-space: nowrap;
+}
+.top-item:hover, .top-item.active {
+  background: #EEEDFE; color: #3C3489;
+  border-color: #AFA9EC;
+}
+.top-item.highlight {
+  background: #E1F5EE; color: #0F6E56;
+  border-color: #5DCAA5;
+}
+.top-item.lone {
+  background: var(--color-background-primary);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+}
+.col-card {
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+.col-head {
+  padding: 8px 12px;
+  font-weight: 500; font-size: 13px;
+  background: #EEEDFE; color: #3C3489;
+  border-bottom: 0.5px solid #AFA9EC;
+}
+.col-head.green { background: #E1F5EE; color: #0F6E56; border-color: #5DCAA5; }
+.col-head.amber { background: #FAEEDA; color: #633806; border-color: #EF9F27; }
+.col-head.coral { background: #FAECE7; color: #712B13; border-color: #F0997B; }
+.col-head.gray  { background: var(--color-background-secondary); color: var(--color-text-secondary); border-color: var(--color-border-tertiary); }
+.col-items { padding: 6px 0; }
+.col-item {
+  padding: 4px 12px; font-size: 12px;
+  color: var(--color-text-secondary);
+  display: flex; align-items: center; gap: 6px;
+  cursor: pointer;
+  transition: background .1s;
+}
+.col-item:hover { background: var(--color-background-secondary); color: var(--color-text-primary); }
+.col-item i { font-size: 12px; color: var(--color-text-tertiary); flex-shrink: 0; }
+.note {
+  font-size: 11px; color: var(--color-text-tertiary);
+  padding: 4px 12px 6px; border-top: 0.5px dashed var(--color-border-tertiary);
+  margin-top: 4px;
+}
+.panel-label {
+  font-size: 11px; font-weight: 500; letter-spacing: .04em;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  margin: 8px 0 6px;
+}
+.tag {
+  display: inline-block;
+  font-size: 10px; padding: 1px 6px; border-radius: 4px;
+  background: #FAEEDA; color: #854F0B;
+  border: 0.5px solid #EF9F27;
+  margin-left: 4px;
+}
+.sep { height: 1px; background: var(--color-border-tertiary); margin: 14px 0; }
+</style>
+<div class="wrap">
+  <h2 class="sr-only">Iskola weboldal menüstruktúra javaslat</h2>
+
+  <div class="panel-label">Főmenü (navigációs sáv)</div>
+  <div class="top-bar">
+    <div class="top-item highlight">🏠 Főoldal</div>
+    <div class="top-item active">Iskolánk</div>
+    <div class="top-item active">Hírek</div>
+    <div class="top-item active">Beiskolázás</div>
+    <div class="top-item active">Ügyintézés</div>
+    <div class="top-item active">Programok</div>
+    <div class="top-item active">Szolgáltatások</div>
+    <div class="top-item active">Környezet</div>
+    <div class="top-item highlight" style="margin-left:auto">🔐 Kréta</div>
+  </div>
+
+  <div class="panel-label">Almenük</div>
+  <div class="section-grid">
+
+    <!-- ISKOLÁNK -->
+    <div class="col-card">
+      <div class="col-head">Iskolánk</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-file-text" aria-hidden="true"></i>Bemutatkozás</div>
+        <div class="col-item"><i class="ti ti-users" aria-hidden="true"></i>Pedagógusok</div>
+        <div class="col-item"><i class="ti ti-calendar" aria-hidden="true"></i>Tanév rendje</div>
+        <div class="col-item"><i class="ti ti-clock" aria-hidden="true"></i>Csengetési rend</div>
+        <div class="col-item"><i class="ti ti-map" aria-hidden="true"></i>Alaprajz</div>
+        <div class="col-item"><i class="ti ti-book" aria-hidden="true"></i>Ped. program</div>
+        <div class="col-item"><i class="ti ti-file-check" aria-hidden="true"></i>Házirend</div>
+        <div class="col-item"><i class="ti ti-alert-circle" aria-hidden="true"></i>Fontos tudnivalók</div>
+        <div class="col-item"><i class="ti ti-link" aria-hidden="true"></i>Elérhetőség</div>
+        <div class="col-item"><i class="ti ti-briefcase" aria-hidden="true"></i>Álláspályázat</div>
+      </div>
+    </div>
+
+    <!-- HÍREK -->
+    <div class="col-card">
+      <div class="col-head green">Hírek</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-news" aria-hidden="true"></i>Legújabb hírek</div>
+        <div class="col-item"><i class="ti ti-archive" aria-hidden="true"></i>Hírarchívum</div>
+        <div class="note">Minden hír egyedi bejegyzés, opcionális külső linkkel. Nincs külön almenü szükséges.</div>
+      </div>
+    </div>
+
+    <!-- BEISKOLÁZÁS -->
+    <div class="col-card">
+      <div class="col-head amber">Beiskolázás</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-map-pin" aria-hidden="true"></i>Körzethatárok</div>
+        <div class="col-item"><i class="ti ti-user-plus" aria-hidden="true"></i>Körzeten kívüliek</div>
+        <div class="col-item" style="display:flex;align-items:center;gap:4px"><i class="ti ti-school" aria-hidden="true"></i>Általános iskola <span class="tag">új</span></div>
+        <div class="col-item"><i class="ti ti-building" aria-hidden="true"></i>Gimnázium</div>
+        <div class="note">Ha van gimnáziumi felvételi, itt kerülhet be a részletes leírás és feltételek is.</div>
+      </div>
+    </div>
+
+    <!-- ÜGYINTÉZÉS -->
+    <div class="col-card">
+      <div class="col-head coral">Ügyintézés</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-file-invoice" aria-hidden="true"></i>Ebédbefizetés</div>
+        <div class="col-item"><i class="ti ti-id" aria-hidden="true"></i>Diákigazolvány</div>
+        <div class="col-item"><i class="ti ti-certificate" aria-hidden="true"></i>Bizonyítvány másolat</div>
+        <div class="col-item"><i class="ti ti-heart-handshake" aria-hidden="true"></i>Közösségi szolgálat</div>
+        <div class="col-item"><i class="ti ti-database" aria-hidden="true"></i>Közérdekű adatok</div>
+        <div class="col-item"><i class="ti ti-shield" aria-hidden="true"></i>Adatkezelés</div>
+        <div class="col-item"><i class="ti ti-building-community" aria-hidden="true"></i>Szülői munkaközösség</div>
+        <div class="col-item"><i class="ti ti-files" aria-hidden="true"></i>Dokumentumok</div>
+      </div>
+    </div>
+
+    <!-- PROGRAMOK -->
+    <div class="col-card">
+      <div class="col-head" style="background:#E6F1FB;color:#185FA5;border-color:#85B7EB">Programok</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-trophy" aria-hidden="true"></i>Versenyek</div>
+        <div class="col-item"><i class="ti ti-calendar-event" aria-hidden="true"></i>Témahetek</div>
+        <div class="col-item"><i class="ti ti-plane" aria-hidden="true"></i>Határtalanul</div>
+        <div class="col-item"><i class="ti ti-world" aria-hidden="true"></i>Erasmus</div>
+        <div class="col-item"><i class="ti ti-certificate" aria-hidden="true"></i>Pályázatok</div>
+        <div class="col-item"><i class="ti ti-photo" aria-hidden="true"></i>Médiatár</div>
+        <div class="note">Korábbi TÁMOP pályázatok is ide kerülhetnek archívumként.</div>
+      </div>
+    </div>
+
+    <!-- SZOLGÁLTATÁSOK -->
+    <div class="col-card">
+      <div class="col-head" style="background:#FBEAF0;color:#72243E;border-color:#ED93B1">Szolgáltatások</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-run" aria-hidden="true"></i>Gyógytestnevelés</div>
+        <div class="col-item"><i class="ti ti-ball-football" aria-hidden="true"></i>Tanórán kívüli sport</div>
+        <div class="col-item"><i class="ti ti-brain" aria-hidden="true"></i>Iskolapszichológus</div>
+        <div class="col-item"><i class="ti ti-stethoscope" aria-hidden="true"></i>Egészségügy / védőnő</div>
+        <div class="col-item"><i class="ti ti-music" aria-hidden="true"></i>Zeneiskola</div>
+        <div class="col-item"><i class="ti ti-books" aria-hidden="true"></i>Könyvtár</div>
+        <div class="col-item"><i class="ti ti-pray" aria-hidden="true"></i>Hittan / erkölcstan</div>
+        <div class="col-item"><i class="ti ti-martial-arts" aria-hidden="true"></i>Dzsúdó, hiphop stb.</div>
+      </div>
+    </div>
+
+    <!-- KÖRNYEZET -->
+    <div class="col-card">
+      <div class="col-head green">Környezet</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-leaf" aria-hidden="true"></i>Környezeti nevelés</div>
+        <div class="col-item"><i class="ti ti-garden-cart" aria-hidden="true"></i>Iskolakert</div>
+        <div class="col-item"><i class="ti ti-droplet" aria-hidden="true"></i>Használt olaj gyűjtés</div>
+        <div class="col-item"><i class="ti ti-recycle" aria-hidden="true"></i>Papírgyűjtés</div>
+        <div class="col-item"><i class="ti ti-bolt" aria-hidden="true"></i>Energiatakarékosság</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sep"></div>
+  <div class="panel-label">Különálló elemek — nem a főmenüben</div>
+  <div class="section-grid">
+    <div class="col-card">
+      <div class="col-head gray">Alapítvány</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-info-circle" aria-hidden="true"></i>Rólunk</div>
+        <div class="col-item"><i class="ti ti-heart" aria-hidden="true"></i>Támogatás / 1%</div>
+        <div class="note">Lábléc vagy Iskolánk almenü → "Alapítvány" link. Saját aloldal, de nem főmenüpont.</div>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-head gray">Tagozatok / évfolyamok</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-school" aria-hidden="true"></i>Alsó tagozat (1–4.)</div>
+        <div class="col-item"><i class="ti ti-school" aria-hidden="true"></i>Felső tagozat (5–8.)</div>
+        <div class="col-item"><i class="ti ti-building" aria-hidden="true"></i>Gimnázium</div>
+        <div class="note">Iskolánk almenüjébe illeszthető, vagy a Beiskolázásnál érhető el szűrőként.</div>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-head gray">Facebook / közösségi</div>
+      <div class="col-items">
+        <div class="col-item"><i class="ti ti-brand-facebook" aria-hidden="true"></i>Facebook oldal →</div>
+        <div class="note">Lábléc ikonként javasolt, nem főmenüpont.</div>
+      </div>
+    </div>
+  </div>
+</div>

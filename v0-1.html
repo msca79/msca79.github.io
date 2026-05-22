@@ -6,8 +6,8 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{  --navy:#1b3a5c;
-  --navy2:#aec5de;--navy3:#8ba0b7;--blue:#2a6db5;--accent:#e07b28;
+:root{
+  --navy:#1b3a5c;--blue:#2a6db5;--accent:#e07b28;
   --bg:#f5f7fa;--white:#fff;--border:#e2e8f0;
   --text:#1a2533;--muted:#64748b;
   --right-w:260px;--t:160ms ease;
@@ -33,21 +33,14 @@ ul{list-style:none}
 }
 .topbar-row1::before{
   content:'';position:absolute;left:0;top:0;right:0;bottom:0;
-
+  background:
+    radial-gradient(ellipse 320px 80px at -60px 50%,rgba(42,109,181,.18) 0%,transparent 70%),
+    radial-gradient(ellipse 200px 60px at 102% 50%,rgba(42,109,181,.12) 0%,transparent 70%);
   pointer-events:none;
-
-
-background-color: #183C7F;
-  background-image: url("banner2.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
-
-  
 }
 .topbar-school{display:flex;flex-direction:column;line-height:1.2;margin-right:auto;position:relative}
-.topbar-school .ts-name{font-family:'DM Serif Display',serif;font-size:17px;color:var(--navy2)}
-.topbar-school .ts-sub{font-size:11.5px;color:#4a6e94;letter-spacing:.01em;color:var(--navy3)}
+.topbar-school .ts-name{font-family:'DM Serif Display',serif;font-size:17px;color:var(--navy)}
+.topbar-school .ts-sub{font-size:11.5px;color:#4a6e94;letter-spacing:.01em}
 .topbar-waves{position:absolute;right:200px;top:0;bottom:0;display:flex;align-items:center;opacity:.22;pointer-events:none}
 .search-wrap{position:relative;flex-shrink:0}
 .search-wrap input{
@@ -74,7 +67,6 @@ background-color: #183C7F;
   display:flex;align-items:stretch;
   padding:0 16px;
   gap:2px;
-justify-content: center;
 }
 
 .nav-item{position:relative}
@@ -207,7 +199,14 @@ justify-content: center;
       <span class="ts-name">Újpesti Csokonai Vitéz Mihály</span>
       <span class="ts-sub">Általános Iskola és Gimnázium</span>
     </div>
-
+    <svg class="topbar-waves" width="200" height="56" viewBox="0 0 200 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 28 Q25 10 50 28 Q75 46 100 28 Q125 10 150 28 Q175 46 200 28" stroke="#1b3a5c" stroke-width="2" fill="none"/>
+      <path d="M0 36 Q25 18 50 36 Q75 54 100 36 Q125 18 150 36 Q175 54 200 36" stroke="#2a6db5" stroke-width="1.5" fill="none" opacity=".6"/>
+      <path d="M0 44 Q25 26 50 44 Q75 62 100 44 Q125 26 150 44 Q175 62 200 44" stroke="#2a6db5" stroke-width="1" fill="none" opacity=".3"/>
+      <circle cx="100" cy="28" r="3" fill="#2a6db5" opacity=".5"/>
+      <circle cx="50" cy="28" r="2" fill="#1b3a5c" opacity=".4"/>
+      <circle cx="150" cy="28" r="2" fill="#1b3a5c" opacity=".4"/>
+    </svg>
     <div class="search-wrap">
       <input type="search" placeholder="Keresés…" aria-label="Keresés">
       <span class="si">🔍</span>
@@ -219,92 +218,53 @@ justify-content: center;
     <div class="nav-item">
       <a href="#" class="nav-link-btn active"><span class="ni">🏠</span> Főoldal</a>
     </div>
+    <div class="nav-item">
+      <a href="#" class="nav-link-btn"><span class="ni">📰</span> Hírek</a>
+    </div>
     <div class="nav-item" id="dd-iskola">
-      <button class="nav-btn" onclick="toggleDD('dd-iskola')">Iskolánk <span class="arr">▾</span></button>
+      <button class="nav-btn" onclick="toggleDD('dd-iskola')"><span class="ni">📖</span> Iskolánk <span class="arr">▾</span></button>
       <div class="dropdown">
-        <a href="#">Pedagógusok / Munkatársaink</a>
-        <a href="#">Tanév rendje</a>
-        <a href="#">Csengetési rend</a>
-        <a href="#">Alapítvány</a>
-        <a href="#">Szülői munkaközösség</a>
-        <a href="#">Álláspályázat</a>
-        <a href="#">Névadónkról</a>
-        <a href="#">Általános Dokumentumok</a>
+        <a href="#">Bemutatkozás</a><a href="#">Pedagógusok</a><a href="#">Tanév rendje</a>
+        <a href="#">Csengetési rend</a><a href="#">Alaprajz</a><a href="#">Pedagógiai program</a>
+        <a href="#">Házirend</a><a href="#">Fontos tudnivalók</a><a href="#">Elérhetőség</a><a href="#">Álláspályázat</a>
       </div>
     </div>
-    <div class="nav-item" id="dd-oko">
-      <button class="nav-btn" onclick="toggleDD('dd-oko')">Örökös ÖKOiskola <span class="arr">▾</span></button>
+    <div class="nav-item" id="dd-beis">
+      <button class="nav-btn" onclick="toggleDD('dd-beis')"><span class="ni">🎒</span> Beiskolázás <span class="arr">▾</span></button>
       <div class="dropdown">
-        <a href="#">Környezeti nevelés</a>
-        <a href="#">Kert</a>
-        <a href="#">Használt olaj</a>
-        <a href="#">Papírgyűjtés</a>
-        <a href="#">Energiatakarékosság</a>
-      </div>
-    </div>
-    <div class="nav-item" id="dd-alt">
-      <button class="nav-btn" onclick="toggleDD('dd-alt')">Általános iskola <span class="arr">▾</span></button>
-      <div class="dropdown">
-        <a href="#">körzethatárok</a>
-        <a href="#">körzeten kívüliek jelentkezése</a>
-        <a href="#">felvett tanulók névsora</a>
-        <a href="#">Felvételi információk</a>
-        <a href="#">nyílt nap / csalogató</a>
-      </div>
-    </div>
-    <div class="nav-item" id="dd-gimn">
-      <button class="nav-btn" onclick="toggleDD('dd-gimn')">Gimnázium <span class="arr">▾</span></button>
-      <div class="dropdown">
-        <a href="#">információk (induló szakok)</a>
-        <a href="#">felvételi tudnivalók</a>
-        <a href="#">felvett tanulók névsora</a>
-        <a href="#">felvételi követelmények</a>
-        <a href="#">szóbeli</a>
-        <a href="#">tájékoztató a központi felvételi menetéről</a>
-        <a href="#">FELVÉTELI TÁJÉKOZTATÓ 2026-2027</a>
-        <a href="#">Felvételi előkészítő jelentkezési lap</a>
-        <a href="#">Érettségi anyagok</a>
-        <a href="#">Közösségi szolgálat</a>
-        <a href="#">Gólyatábor jelentkezési lapja</a>
+        <a href="#">Körzethatárok</a><a href="#">Körzeten kívüliek</a>
+        <a href="#">Általános iskola</a><a href="#">Gimnázium</a>
       </div>
     </div>
     <div class="nav-item" id="dd-ugy">
-      <button class="nav-btn" onclick="toggleDD('dd-ugy')">Ügyintézés <span class="arr">▾</span></button>
+      <button class="nav-btn" onclick="toggleDD('dd-ugy')"><span class="ni">📋</span> Ügyintézés <span class="arr">▾</span></button>
       <div class="dropdown">
-        <a href="#">Elérhetőségek</a>
-        <a href="#">Ebédbefizetés</a>
-        <a href="#">Diákigazolvány</a>
-        <a href="#">Bizonyítvány másolat kérése</a>
-        <a href="#">Kréta bejelentkezési problémák</a>
-        <a href="#">Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól</a>
-        <a href="#">Kérelem két testnevelés óra alóli felmentéshez</a>
-        <a href="#">Egyéni tanrend igénylése</a>
-        <a href="#">Felvételi előkészítő jelentkezési lapja</a>
-        <a href="#">Informatikai, Teams problémák esetén</a>
+        <a href="#">Ebédbefizetés</a><a href="#">Diákigazolvány</a><a href="#">Bizonyítvány másolat</a>
+        <a href="#">Közösségi szolgálat</a><a href="#">Közérdekű adatok</a>
+        <a href="#">Adatkezelés</a><a href="#">Szülői munkaközösség</a><a href="#">Dokumentumok</a>
       </div>
     </div>
-    <div class="nav-item" id="dd-elet">
-      <button class="nav-btn" onclick="toggleDD('dd-elet')">Iskolai élet <span class="arr">▾</span></button>
+    <div class="nav-item" id="dd-prog">
+      <button class="nav-btn" onclick="toggleDD('dd-prog')"><span class="ni">🎯</span> Programok <span class="arr">▾</span></button>
       <div class="dropdown">
-        <a href="#">Témahetek</a>
-        <a href="#">Könyvtár</a>
-        <a href="#">Tanulmányi versenyek</a>
-        <a href="#">Zeneiskola</a>
-        <a href="#">Pályázatok</a>
-        <a href="#">Iskola újság</a>
-        <a href="#">Határtalanul</a>
-        <a href="#">Erasmus</a>
-        <a href="#">Tanórán kívüli sportolás</a>
+        <a href="#">Versenyek</a><a href="#">Témahetek</a><a href="#">Határtalanul</a>
+        <a href="#">Erasmus</a><a href="#">Pályázatok</a><a href="#">Médiatár</a>
       </div>
     </div>
-    <div class="nav-item" id="dd-tam">
-      <button class="nav-btn" onclick="toggleDD('dd-tam')">Támogató Szolgáltatások <span class="arr">▾</span></button>
+    <div class="nav-item" id="dd-szolg">
+      <button class="nav-btn" onclick="toggleDD('dd-szolg')"><span class="ni">⭐</span> Szolgáltatások <span class="arr">▾</span></button>
       <div class="dropdown">
-        <a href="#">Iskola egészségügy, védőnő</a>
-        <a href="#">Gyógytestnevelés</a>
-        <a href="#">Iskola pszihológus</a>
-        <a href="#">Hittan</a>
-        <a href="#">Erkölcstan</a>
+        <a href="#">Gyógytestnevelés</a><a href="#">Tanórán kívüli sport</a>
+        <a href="#">Iskolapszichológus</a><a href="#">Egészségügy / védőnő</a>
+        <a href="#">Zeneiskola</a><a href="#">Könyvtár</a>
+        <a href="#">Hittan / erkölcstan</a><a href="#">Szakkörök</a>
+      </div>
+    </div>
+    <div class="nav-item" id="dd-korny">
+      <button class="nav-btn" onclick="toggleDD('dd-korny')"><span class="ni">🌿</span> Környezet <span class="arr">▾</span></button>
+      <div class="dropdown">
+        <a href="#">Környezeti nevelés</a><a href="#">Iskolakert</a>
+        <a href="#">Használt olaj gyűjtés</a><a href="#">Papírgyűjtés</a><a href="#">Energiatakarékosság</a>
       </div>
     </div>
   </nav>
@@ -314,38 +274,93 @@ justify-content: center;
   <div class="content-right">
     <div style="flex:1;min-width:0;display:flex;flex-direction:column">
       <main class="main-wrap">
-        <img src="images/background-sample3.png" alt="Háttérkép" style="width:100%; height:auto; border-radius:10px;">
+        <div class="welcome">
+          <h2>Üdvözöljük iskolánk oldalán!</h2>
+          <p>Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium – Budapest IV. kerület</p>
+        </div>
+        <div class="sec-head">
+          <h3>Legújabb hírek</h3>
+          <a href="#">Összes hír →</a>
+        </div>
+        <div class="news-list">
+          <article class="news-card">
+            <div class="news-thumb" style="background:#e8f4fd">🏅</div>
+            <div class="news-body">
+              <div class="news-meta"><span class="tag tag-sport">Sport</span><span class="news-date">2026. május 10.</span></div>
+              <h4>Területi bajnokság: négy aranyérem kosárlabdában</h4>
+              <p>Iskolánk kosárlabdacsapata kiemelkedő eredményt ért el a Budapest IV. kerületi területi bajnokságon – a fiú és lány csapat egyaránt aranyérmet szerzett.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-thumb" style="background:#fff4e0">🎭</div>
+            <div class="news-body">
+              <div class="news-meta"><span class="tag tag-culture">Kultúra</span><span class="news-date">2026. május 8.</span></div>
+              <h4>Tavaszi színházi előadás: „Légy jó mindhalálig"</h4>
+              <p>A 8. évfolyam drámaköre május 14-én mutatja be évi nagyelőadását az iskola aulájában. A belépés ingyenes, helyek foglalhatók a titkárságon.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-thumb" style="background:#eef3ff">🔬</div>
+            <div class="news-body">
+              <div class="news-meta"><span class="tag tag-event">Verseny</span><span class="news-date">2026. május 5.</span></div>
+              <h4>Kémia Olimpia – tanulóink a döntőben</h4>
+              <p>Három diákunk jutott az Országos Kémia Olimpia döntőjébe. Munkájukat és felkészítő tanáraikat ezúton is gratulálunk!</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-thumb" style="background:#f0fdf4">🌱</div>
+            <div class="news-body">
+              <div class="news-meta"><span class="tag tag-school">Iskolai élet</span><span class="news-date">2026. április 30.</span></div>
+              <h4>Iskolakerti vetési nap – csatlakozz te is!</h4>
+              <p>Idén is megrendezzük hagyományos tavaszi vetési napunkat az iskolakertben. A részvétel minden évfolyam számára nyitott, előzetes regisztrációt nem igényel.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-thumb" style="background:#fdf0ff">🎨</div>
+            <div class="news-body">
+              <div class="news-meta"><span class="tag tag-culture">Kultúra</span><span class="news-date">2026. április 25.</span></div>
+              <h4>Képzőművészeti kiállítás a folyosón</h4>
+              <p>A rajz szakköri tanulók alkotásaiból nyílt időszaki kiállítás az iskola első emeleti folyosóján. Látható minden héten, tanítási napokon 7–17 óra között.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-thumb" style="background:#fff0f0">📢</div>
+            <div class="news-body">
+              <div class="news-meta"><span class="tag tag-info">Közlemény</span><span class="news-date">2026. április 22.</span></div>
+              <h4>Szülői értekezlet időpontjai – május</h4>
+              <p>A május havi szülői értekezletek időpontjai megjelentek a Kréta rendszerben. Kérjük a szülőket, hogy a meghívóban jelzett időpontot jegyezzék fel.</p>
+            </div>
+          </article>
+        </div>
       </main>
       <footer class="site-footer">
         <div class="footer-inner">
           <div class="footer-col"><h5>Iskolánk</h5><ul>
-            <li><a href="#">Pedagógusok / Munkatársaink</a></li>
+            <li><a href="#">Bemutatkozás</a></li><li><a href="#">Pedagógusok</a></li>
             <li><a href="#">Tanév rendje</a></li><li><a href="#">Csengetési rend</a></li>
-            <li><a href="#">Alapítvány</a></li><li><a href="#">Szülői munkaközösség</a></li>
-            <li><a href="#">Álláspályázat</a></li><li><a href="#">Névadónkról</a></li>
-            <li><a href="#">Általános Dokumentumok</a></li>
+            <li><a href="#">Házirend</a></li><li><a href="#">Elérhetőség</a></li><li><a href="#">Álláspályázat</a></li>
           </ul></div>
-          <div class="footer-col"><h5>ÖKOiskola</h5><ul>
-            <li><a href="#">Környezeti nevelés</a></li><li><a href="#">Kert</a></li>
-            <li><a href="#">Használt olaj</a></li><li><a href="#">Papírgyűjtés</a></li>
-            <li><a href="#">Energiatakarékosság</a></li>
-          </ul></div>
-          <div class="footer-col"><h5>Általános iskola</h5><ul>
+          <div class="footer-col"><h5>Beiskolázás</h5><ul>
             <li><a href="#">Körzethatárok</a></li><li><a href="#">Körzeten kívüliek</a></li>
-            <li><a href="#">Felvett tanulók</a></li><li><a href="#">Felvételi információk</a></li>
-            <li><a href="#">Nyílt nap</a></li>
-          </ul></div>
-          <div class="footer-col"><h5>Gimnázium</h5><ul>
-            <li><a href="#">Információk</a></li><li><a href="#">Felvételi tudnivalók</a></li>
-            <li><a href="#">Érettségi anyagok</a></li><li><a href="#">Közösségi szolgálat</a></li>
+            <li><a href="#">Általános iskola</a></li><li><a href="#">Gimnázium</a></li>
           </ul></div>
           <div class="footer-col"><h5>Ügyintézés</h5><ul>
-            <li><a href="#">Elérhetőségek</a></li><li><a href="#">Ebédbefizetés</a></li>
-            <li><a href="#">Diákigazolvány</a></li><li><a href="#">Kréta problémák</a></li>
+            <li><a href="#">Ebédbefizetés</a></li><li><a href="#">Diákigazolvány</a></li>
+            <li><a href="#">Közösségi szolgálat</a></li><li><a href="#">Közérdekű adatok</a></li>
+            <li><a href="#">Adatkezelés</a></li><li><a href="#">Dokumentumok</a></li>
           </ul></div>
-          <div class="footer-col"><h5>Iskolai élet</h5><ul>
-            <li><a href="#">Témahetek</a></li><li><a href="#">Könyvtár</a></li>
-            <li><a href="#">Versenyek</a></li><li><a href="#">Pályázatok</a></li>
+          <div class="footer-col"><h5>Programok</h5><ul>
+            <li><a href="#">Versenyek</a></li><li><a href="#">Témahetek</a></li>
+            <li><a href="#">Erasmus</a></li><li><a href="#">Pályázatok</a></li><li><a href="#">Médiatár</a></li>
+          </ul></div>
+          <div class="footer-col"><h5>Szolgáltatások</h5><ul>
+            <li><a href="#">Iskolapszichológus</a></li><li><a href="#">Zeneiskola</a></li>
+            <li><a href="#">Könyvtár</a></li><li><a href="#">Szakkörök</a></li>
+            <li><a href="#">Hittan / erkölcstan</a></li>
+          </ul></div>
+          <div class="footer-col"><h5>Környezet</h5><ul>
+            <li><a href="#">Környezeti nevelés</a></li><li><a href="#">Iskolakert</a></li>
+            <li><a href="#">Papírgyűjtés</a></li><li><a href="#">Energiatakarékosság</a></li>
           </ul></div>
         </div>
         <div class="footer-bottom">
