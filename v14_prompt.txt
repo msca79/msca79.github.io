@@ -1,0 +1,143 @@
+
+Készíts egy iskola honlapot. Az oldal kék árnyalatú legyen.
+
+Kategória és tételei:
+ - lentebb egy listában
+ - ez egy json tartalom legyen, mivel több helyen is fel kell használni. Ebből a jsonból állítsd össze mindig.
+
+A nyitólap felépítése:
+ - 1., egy banner a tetején ami mindig látható
+ - 2., egy menü, kb 60px magas.
+ - 3., egy kép az iskoláról, egy grafika, nem túl fókuszos, kb 1000x400 -as méretű
+ - 4., kategóriák dobozokba rendezve
+ - 5., menütérkép
+ - 6., footer
+
+1., Banner:
+ - háttere valamivel sötétebb mint az oldal
+ - baloldalon egy hamburger menü ugyanazokkal a linkkekkel ami a kategóriákban van. A menü kétszintű.
+ - utána név: Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium
+ - név alatt egysorban: Cím: 1048 Budapest, Bőrfestő utca 5-9. Telefonszám: +363807170 OM-azonosító: 034877
+ - jobb oldalon: Kereső mező, "Kréta" gomb, "Facebook" gomb
+
+2., menü
+ - A felsőbb szintű elemek felsorolva ikonnal, rákattintva nyílik az almenü
+
+3., Kép az iskoláról
+ - images/background-sample3.png
+ - a szélei legyenek elblurozve, ne legyen határozott vonalú
+
+4., Kategóriák:
+ - Egy dekoratív téglalap alak
+ - Fejlécben egy ikon és a neve
+ - Felsorolva a nevek, kattintható linkekkel
+ - Ráállva valamilyen módon kiemeli a szöveget (sávot tesz mögé, vagy nagyobb betűméret)
+ - a téglalapok nem mozognak
+ - a linkek legyenek nagyobb betűmérettel (ez a hasznos tartalom)
+
+5., menütérkép
+ - menütérkép szerűen legyenek itt a kategória-tételek
+ - oszlopok egymás mellett (de nincs border)
+
+6., footer
+ - legalul a név cím telefon újra legyen megismételve
+
+
+Készíts továbbá egy minta aloldalt. Ezzel a tartalommal:
+    Tisztelt Szülők!
+    A 2026/2027. tanévre történő általános iskolai beiratkozás időpontja: 2026. április 23-24. (csütörtök, péntek). A szülőnek a beiratkozás napján személyesen meg kell jelenni az intézményben és a beiratkozáshoz szükséges dokumentumok, nyilatkozatok eredeti példányát be kell mutatni. A beiratkozáshoz szükséges adatok azonban előzetesen, a KRÉTA rendszeren keresztül is megküldhetők az intézmény számára, gyorsítva ezzel az általános iskolai beiratkozás folyamatát. A szülőknek az előzetes elektronikus jelentkezés beküldésére 2026. április 13. 0:00 óra és 2026. április 24. 18:00 óra között van lehetőségük.
+
+    A részletes tájékoztatót/útmutatót ITT találják.
+
+    A kitöltendő dokumentumokat INNEN tudják kinyomtatni.
+    Életvitelszerű ottlakás
+    Törvényes képviselő
+    Etika oktatás
+    Kréta hozzáférés
+
+    Kérjük, hogy a személyes megjelenéskor a csokonais nyakkendőre és a fogászati kiskönyvre 4.000.- Ft-ot hozzanak magukkal!
+
+Induláskor a Nyitóoldal látszik, ezzel a tartalommal:
+ - 1., banner (mindig látszik)
+ - 3., egy kép az iskoláról  id=hero
+ - 4., kategóriák dobozokba rendezve  id=categories
+ - 6., footer
+
+
+Bármelyik linkre kattint ugorjon be a minta oldalba, ahol ez a tartalom látszik:
+ - 1., banner  (mindig látszik)
+ - 2., menü id=menubar
+ - Maga az oldal tartalma  id=sample-page
+ - 5., menütérkép id="sitemap"
+ - 6., footer
+
+
+
+Kategóriák:
+
+Iskolánk  <-- ezek a kategóriák
+-Pedagógusok/Munkatársaink  <-- ezek a tételei
+-Tanév rendje
+-Csengetési rend
+-Alapítvány
+-Szülői munkaközösség
+-Álláspályázat
+-Névadónkról
+-Általános Dokumentumok
+
+Örökös ÖKOiskola
+-Környezeti nevelés
+-Kert
+-Használt olaj
+-Papírgyűjtés
+-Energiatakarékosság
+
+Általános iskola
+-körzethatárok
+-körzeten kívüliek jelentkezése
+-felvett tanulók névsora
+-Felvételi információk
+-nyílt nap / csalogató
+
+Gimnázium
+-információk (induló szakok)
+-felvételi tudnivalók
+-felvett tanulók névsora
+-felvételi követelmények
+-szóbeli
+-tájékoztató a központi felvételi menetéről
+-FELVÉTELI TÁJÉKOZTATÓ 2026-2027
+-Felvételi előkészítő jelentkezési lap
+-Érettségi anyagok
+-Közösségi szolgálat
+-Gólyatábor jelentkezési lapja
+
+Ügyintézés
+-Elérhetőségek
+-Ebédbefizetés
+-Diákigazolvány
+-Bizonyítvány másolat kérése
+-Kréta bejelentkezési problémák
+-Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól
+-Kérelem két testnevelés óra alóli felmentéshez
+-Egyéni tanrend igénylése
+-Felvételi előkészítő jelentkezési lapja
+-Informatikai, Teams problémák esetén
+
+Iskolai élet
+-Témahetek
+-Könyvtár
+-Tanulmányi versenyek
+-Zeneiskola
+-Pályázatok
+-Iskola újság
+-Határtalanul
+-Erasmus
+-Tanórán kívüli sportolás
+
+Támogató Szolgáltatások/Egyéb foglalkozások
+-Iskola egészségügy, védőnő
+-Gyógytestnevelés
+-Iskola pszihológus
+-Hittan
+-Erkölcstan

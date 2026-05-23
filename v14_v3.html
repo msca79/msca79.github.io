@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-50: #E6F1FB;
+            --blue-100: #B5D4F4;
+            --blue-200: #85B7EB;
+            --blue-300: #5B9EE0;
+            --blue-400: #378ADD;
+            --blue-500: #2373C2;
+            --blue-600: #185FA5;
+            --blue-700: #104D8A;
+            --blue-800: #0C447C;
+            --blue-900: #042C53;
+            --banner-bg: #f0f7ff;
+            --menu-bg: #378ADD;
+            --page-bg: #ffffff;
+            --card-bg: #ffffff;
+            --text-primary: #042C53;
+            --text-light: #ffffff;
+            --accent: #2373C2;
+            --hover-bg: #D0E8F8;
+            --footer-bg: #f0f7ff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        /* ─── BANNER ─── */
+        #banner {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--banner-bg);
+            color: var(--text-primary);
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--blue-100);
+        }
+
+        #banner .school-info { flex: 1; }
+        #banner .school-name {
+            font-family: 'Merriweather', serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: var(--blue-800);
+        }
+        #banner .school-meta {
+            font-size: 11.5px;
+            color: var(--blue-600);
+            margin-top: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #banner .right-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        #banner .search-wrap {
+            position: relative;
+        }
+        #banner .search-wrap input {
+            background: white;
+            border: 1px solid var(--blue-200);
+            border-radius: 20px;
+            color: var(--text-primary);
+            padding: 5px 14px 5px 34px;
+            font-size: 13px;
+            width: 180px;
+            outline: none;
+            transition: border 0.2s;
+        }
+        #banner .search-wrap input::placeholder { color: var(--blue-300); }
+        #banner .search-wrap input:focus {
+            border-color: var(--blue-500);
+        }
+        #banner .search-wrap .si {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: var(--blue-400);
+            pointer-events: none;
+        }
+
+        .btn-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.18s;
+            border: none;
+        }
+        .btn-kreta {
+            background: #2373C2;
+            color: white;
+        }
+        .btn-kreta:hover { background: #185FA5; }
+        .btn-fb {
+            background: #1877F2;
+            color: white;
+        }
+        .btn-fb:hover { background: #145DB2; }
+
+        /* hamburger */
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--blue-700);
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: all 0.25s;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+        /* ─── SLIDE-OUT NAV ─── */
+        #side-nav {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 300px;
+            height: 100vh;
+            background: #ffffff;
+            z-index: 2000;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+            padding-top: 60px;
+            border-right: 1px solid var(--blue-100);
+        }
+        #side-nav.open { left: 0; }
+        #side-nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 44, 83, 0.4);
+            z-index: 1999;
+            display: none;
+        }
+        #side-nav-overlay.open { display: block; }
+
+        .nav-cat {
+            border-bottom: 1px solid var(--blue-50);
+        }
+        .nav-cat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            cursor: pointer;
+            color: var(--blue-800);
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.15s;
+            gap: 8px;
+        }
+        .nav-cat-header:hover { background: var(--blue-50); }
+        .nav-cat-header .nc-left { display: flex; align-items: center; gap: 10px; }
+        .nav-cat-header .nc-arrow {
+            font-size: 12px;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+            color: var(--blue-400);
+        }
+        .nav-cat.expanded .nc-arrow { transform: rotate(180deg); }
+
+        .nav-items {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #fcfdfe;
+        }
+        .nav-cat.expanded .nav-items { max-height: 600px; }
+        .nav-items a {
+            display: block;
+            padding: 8px 20px 8px 46px;
+            color: var(--blue-600);
+            font-size: 13px;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+        }
+        .nav-items a:hover { background: var(--blue-50); color: var(--blue-800); }
+
+        #side-nav-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: none;
+            border: none;
+            color: var(--blue-400);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* ─── NAME BAR ─── */
+        #namebar {
+            background: var(--menu-bg);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 0 16px;
+            position: sticky;
+            top: 62px;
+            z-index: 900;
+            box-shadow: 0 2px 8px rgba(4,44,83,0.2);
+        }
+
+        /* ─── MENU BAR ─── */
+        #menubar {
+            background: var(--menu-bg);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 0 16px;
+            position: sticky;
+            top: 62px;
+            z-index: 900;
+            box-shadow: 0 2px 8px rgba(4,44,83,0.2);
+        }
+
+        .menu-item {
+            position: relative;
+        }
+        .menu-item > button {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 14px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.18s;
+            white-space: nowrap;
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        .menu-item > button:hover { background: rgba(255,255,255,0.18); }
+        .menu-item > button i { font-size: 16px; }
+        .menu-item > button .arrow {
+            font-size: 11px;
+            margin-left: 2px;
+            transition: transform 0.2s;
+        }
+        .menu-item.open > button { background: rgba(255,255,255,0.22); }
+        .menu-item.open > button .arrow { transform: rotate(180deg); }
+
+        .dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(4,44,83,0.2);
+            min-width: 220px;
+            padding: 8px 0;
+            display: none;
+            z-index: 999;
+            border: 1px solid var(--blue-100);
+        }
+        .menu-item.open .dropdown { display: block; }
+        .dropdown a {
+            display: block;
+            padding: 9px 18px;
+            color: var(--text-primary);
+            font-size: 13.5px;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        .dropdown a:hover { background: var(--blue-50); color: var(--blue-700); }
+
+        /* ─── HERO IMAGE ─── */
+        #hero {
+            width: 100%;
+            height: auto;
+            min-height: 300px;
+            max-height: 500px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a5fa3 0%, #0d3d6e 40%, #378ADD 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hero img {
+            width: 100%;
+            height: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        #hero .hero-edge {
+            position: absolute;
+            inset: 0;
+            /*background:*/
+            /*        radial-gradient(ellipse at 0% 50%, rgba(10,54,96,0.82) 0%, transparent 50%),*/
+            /*        radial-gradient(ellipse at 100% 50%, rgba(10,54,96,0.82) 0%, transparent 50%),*/
+            /*        radial-gradient(ellipse at 50% 0%, rgba(10,54,96,0.55) 0%, transparent 40%),*/
+            /*        radial-gradient(ellipse at 50% 100%, rgba(10,54,96,0.55) 0%, transparent 40%);*/
+            pointer-events: none;
+        }
+
+        #hero .hero-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.55);
+            font-size: 15px;
+        }
+        #hero .hero-placeholder i { font-size: 48px; margin-bottom: 12px; opacity: 0.4; }
+
+        /* ─── CATEGORIES SECTION ─── */
+        #categories {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 52px 28px 60px;
+        }
+
+        #categories h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 22px;
+            color: var(--blue-800);
+            margin-bottom: 32px;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 22px;
+        }
+
+        .cat-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1.5px solid var(--blue-100);
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .cat-card:hover {
+            box-shadow: 0 6px 28px rgba(23,95,165,0.14);
+        }
+
+        .cat-myschool { background: linear-gradient(135deg, #1a6fa8  0%, #1a6fa8  100%);
+        }
+
+            .cat-oko { background: linear-gradient(135deg, #2a7a5a  0%, #2a7a5a  100%);
+            }
+
+            .cat-midschool { background: linear-gradient(135deg, #1e5fa3  0%,  #1e5fa3  100%);
+            }
+
+            .cat-highschool { background: linear-gradient(135deg, #3a4fa8  0%,#3a4fa8  100%);
+            }
+
+            .cat-tasks { background: linear-gradient(135deg, #4a6a8a  0%, #4a6a8a  100%);
+            }
+
+            .cat-friends { background: linear-gradient(135deg,#1e80a8  0%, #1e80a8  100%);
+            }
+            .cat-mental { background: linear-gradient(135deg, #5a4a8a  0%, #5a4a8a  100%);
+            }
+
+
+        .cat-header {
+            /*background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-800) 100%);*/
+            /*background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-800) 100%);*/
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+        .cat-header i {
+            font-size: 22px;
+            opacity: 0.9;
+            flex-shrink: 0;
+        }
+        .cat-header span {
+            font-size: 15px;
+            font-weight: 700;
+            font-family: 'Merriweather', serif;
+            line-height: 1.3;
+        }
+
+        .cat-links {
+            padding: 10px 0 14px;
+            list-style: none;
+        }
+        .cat-links li a {
+            display: block;
+            padding: 7px 20px;
+            font-size: 14.5px;
+            color: var(--blue-700);
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s, font-size 0.15s, padding-left 0.15s;
+            border-left: 3px solid transparent;
+            line-height: 1.4;
+        }
+        .cat-links li a:hover {
+            background: var(--blue-50);
+            color: var(--blue-800);
+            font-size: 15px;
+            padding-left: 26px;
+            border-left-color: var(--blue-400);
+        }
+
+        /* ─── SITEMAP ─── */
+        #sitemap {
+            background: #d4e9f7;
+            padding: 52px 28px;
+            border-top: 2px solid var(--blue-100);
+            border-bottom: 2px solid var(--blue-100);
+        }
+        #sitemap .inner {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        #sitemap h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 20px;
+            color: var(--blue-800);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #sitemap h2 i { font-size: 22px; }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .sitemap-col h3 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue-600);
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--blue-300);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .sitemap-col h3 i { font-size: 15px; }
+
+        .sitemap-col ul {
+            list-style: none;
+        }
+        .sitemap-col ul li a {
+            font-size: 13px;
+            color: var(--blue-700);
+            text-decoration: none;
+            display: block;
+            padding: 3px 0;
+            transition: color 0.15s, padding-left 0.15s;
+        }
+        .sitemap-col ul li a:before {
+            content: '›';
+            margin-right: 5px;
+            color: var(--blue-300);
+        }
+        .sitemap-col ul li a:hover {
+            color: var(--blue-900);
+            padding-left: 4px;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--footer-bg);
+            color: var(--blue-700);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            border-top: 1px solid var(--blue-100);
+        }
+        footer .inner {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        footer .f-name {
+            font-family: 'Merriweather', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--blue-800);
+            white-space: nowrap;
+        }
+        footer .f-details {
+            font-size: 12px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        footer .f-details div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        footer .f-details i { font-size: 14px; color: var(--blue-500); }
+
+        #hero, #categories, #menubar, #sample-page, #sitemap {
+            display: none;
+        }
+
+        /* ─── SAMPLE PAGE ─── */
+        #sample-page {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+        #sample-page h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 28px;
+            color: var(--blue-800);
+            margin-bottom: 24px;
+            border-bottom: 3px solid var(--blue-300);
+            padding-bottom: 12px;
+        }
+        #sample-page p {
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+        #sample-page .highlight-box {
+            background: var(--blue-50);
+            border-left: 4px solid var(--blue-500);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        #sample-page ul {
+            margin: 15px 0 25px 25px;
+        }
+        #sample-page li {
+            margin-bottom: 8px;
+        }
+        #sample-page a {
+            color: var(--blue-600);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        #sample-page a:hover {
+            color: var(--blue-800);
+        }
+        #sample-page .important-note {
+            font-weight: 700;
+            color: #d32f2f;
+            background: #fff5f5;
+            padding: 15px;
+            border: 1px dashed #d32f2f;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        /* ─── icon font ─── */
+        @import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css');
+    </style>
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+</head>
+<body class="home" onload="showHome()">
+
+<!-- ═══════════════════════ SIDE NAV ═══════════════════════ -->
+<div id="side-nav-overlay" onclick="closeSideNav()"></div>
+<nav id="side-nav" aria-label="Oldalsó navigáció">
+    <button id="side-nav-close" onclick="closeSideNav()" aria-label="Bezárás"><i class="ti ti-x"></i></button>
+</nav>
+
+<!-- ═══════════════════════ BANNER ═══════════════════════ -->
+<header id="banner">
+    <button class="hamburger" id="hamburger-btn" onclick="toggleSideNav()" aria-label="Menü megnyitása">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="school-info" onclick="showHome()" style="cursor:pointer">
+        <div class="school-name">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
+        <div class="school-meta">
+            Cím: 1048 Budapest, Bőrfestő utca 5-9. &nbsp;|&nbsp; Tel: +363807170 &nbsp;|&nbsp; OM-azonosító: 034877
+        </div>
+    </div>
+    <div class="right-actions">
+        <div class="search-wrap">
+            <i class="ti ti-search si"></i>
+            <input type="text" placeholder="Keresés…" aria-label="Keresés">
+        </div>
+        <a href="#" class="btn-banner btn-kreta"><i class="ti ti-school"></i> Kréta</a>
+        <a href="#" class="btn-banner btn-fb"><i class="ti ti-brand-facebook"></i> Facebook</a>
+    </div>
+</header>
+
+<!-- ═══════════════════════ MENU BAR ═══════════════════════ -->
+<nav id="menubar" aria-label="Főmenü"></nav>
+
+<!-- ═══════════════════════ NAME BAR ═══════════════════════ -->
+<nav id="namebar" aria-label="Name">
+Üdözöljük 
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="hero">
+    <img src="images/background-sample4.png" alt="Iskolánk" onerror="this.style.display='none'">
+    <div class="hero-edge"></div>
+    <div class="hero-placeholder" id="hero-placeholder" style="display:none">
+        <i class="ti ti-building-school"></i>
+        Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium
+    </div>
+</section>
+
+<!-- ═══════════════════════ CATEGORIES ═══════════════════════ -->
+<section id="categories">
+<!--    <h2>Menü</h2>-->
+    <div class="cat-grid" id="cat-grid"></div>
+</section>
+
+<section id="sample-page">
+    <h1>Beiratkozási tájékoztató – 2026/2027. tanév</h1>
+    
+    <p><strong>Tisztelt Szülők!</strong></p>
+    
+    <p>
+        A 2026/2027. tanévre történő általános iskolai beiratkozás időpontja: 
+        <strong>2026. április 23-24. (csütörtök, péntek)</strong>. 
+        A szülőnek a beiratkozás napján személyesen meg kell jelenni az intézményben és a beiratkozáshoz szükséges dokumentumok, nyilatkozatok eredeti példányát be kell mutatni.
+    </p>
+
+    <div class="highlight-box">
+        <p>
+            A beiratkozáshoz szükséges adatok azonban előzetesen, a KRÉTA rendszeren keresztül is megküldhetők az intézmény számára, gyorsítva ezzel az általános iskolai beiratkozás folyamatát. 
+            A szülőknek az előzetes elektronikus jelentkezés beküldésére <strong>2026. április 13. 0:00 óra és 2026. április 24. 18:00 óra</strong> között van lehetőségük.
+        </p>
+    </div>
+
+    <p>A részletes tájékoztatót/útmutatót <a href="#">ITT</a> találják.</p>
+
+    <p>A kitöltendő dokumentumokat <a href="#">INNEN</a> tudják kinyomtatni:</p>
+    <ul>
+        <li>Életvitelszerű ottlakás</li>
+        <li>Törvényes képviselő</li>
+        <li>Etika oktatás</li>
+        <li>Kréta hozzáférés</li>
+    </ul>
+
+    <div class="important-note">
+        <i class="ti ti-alert-circle"></i>
+        Kérjük, hogy a személyes megjelenéskor a csokonais nyakkendőre és a fogászati kiskönyvre 4.000.- Ft-ot hozzanak magukkal!
+    </div>
+</section>
+
+<!-- ═══════════════════════ SITEMAP ═══════════════════════ -->
+<section id="sitemap">
+    <div class="inner">
+        <h2><i class="ti ti-sitemap"></i> Menütérkép</h2>
+        <div class="sitemap-grid" id="sitemap-grid"></div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+    <div class="inner">
+        <div class="f-name">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
+        <div class="f-details">
+            <div><i class="ti ti-map-pin"></i>1048 Budapest, Bőrfestő utca 5-9.</div>
+            <div><i class="ti ti-phone"></i>+363807170</div>
+            <div><i class="ti ti-id-badge"></i>OM-azonosító: 034877</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ═══ DATA ═══
+    const MENU = [
+        {
+            name: "Iskolánk",
+            class: 'cat-myschool',
+            icon: "ti-building-school",
+            items: [
+                "Pedagógusok/Munkatársaink","Tanév rendje","Csengetési rend","Alapítvány",
+                "Szülői munkaközösség","Álláspályázat","Névadónkról","Általános Dokumentumok", 'ökoiskola'
+            ]
+        },
+
+        {
+            name: "Általános iskola",
+            class: 'cat-midschool',
+            icon: "ti-school",
+            items: [
+                "Körzethatárok","Körzeten kívüliek jelentkezése","Felvett tanulók névsora",
+                "Felvételi információk","Nyílt nap / Csalogató"
+            ]
+        },
+        {
+            name: "Gimnázium",
+            class: 'cat-highschool',
+            icon: "ti-certificate",
+            items: [
+                "Információk (induló szakok)","Felvételi tudnivalók","Felvett tanulók névsora",
+                "Felvételi követelmények","Szóbeli",
+                "Tájékoztató a központi felvételi menetéről",
+                "Felvételi tájékoztató 2026-2027",
+                "Felvételi előkészítő jelentkezési lap",
+                "Érettségi anyagok","Közösségi szolgálat","Gólyatábor jelentkezési lapja"
+            ]
+        },
+        {
+            name: "Ügyintézés",
+            class: 'cat-tasks',
+            icon: "ti-clipboard-list",
+            items: [
+                "Elérhetőségek","Ebédbefizetés","Diákigazolvány","Bizonyítvány másolat kérése",
+                "Kréta bejelentkezési problémák",
+                "Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól",
+                "Kérelem két testnevelés óra alóli felmentéshez",
+                "Egyéni tanrend igénylése",
+                "Felvételi előkészítő jelentkezési lapja",
+                "Informatikai, Teams problémák esetén"
+            ]
+        },
+        {
+            name: "Iskolai élet",
+            class: 'cat-friends',
+            icon: "ti-friends",
+            items: [
+                "Témahetek","Könyvtár","Tanulmányi versenyek","Zeneiskola",
+                "Pályázatok","Iskola újság","Határtalanul","Erasmus","Tanórán kívüli sportolás"
+            ]
+        },
+        {
+            name: "Támogató Szolgáltatások",
+            icon: "ti-heart-handshake",
+            class: 'cat-mental',
+            items: [
+                "Iskola egészségügy, védőnő","Gyógytestnevelés",
+                "Iskola pszichológus","Hittan","Erkölcstan"
+            ]
+        }
+    ];
+
+    // ═══ NAVIGATION LOGIC ═══
+    function showHome() {
+        document.getElementById('hero').style.display = 'block';
+        document.getElementById('categories').style.display = 'block';
+        document.getElementById('namebar').style.display = 'block';
+        document.getElementById('menubar').style.display = 'none';
+        document.getElementById('sample-page').style.display = 'none';
+        document.getElementById('sitemap').style.display = 'none';
+        window.scrollTo(0,0);
+    }
+
+    function showPage() {
+        document.getElementById('hero').style.display = 'none';
+        document.getElementById('categories').style.display = 'none';
+        document.getElementById('namebar').style.display = 'none';
+        document.getElementById('menubar').style.display = 'flex';
+        document.getElementById('sample-page').style.display = 'block';
+        document.getElementById('sitemap').style.display = 'block';
+        window.scrollTo(0,0);
+    }
+
+    // Modify link generation to use showPage()
+    function slug(s){ return s.toLowerCase().replace(/[^a-z0-9áéíóöőúüű]+/g,'-'); }
+
+    // ═══ BUILD CATEGORY CARDS ═══
+    const catGrid = document.getElementById('cat-grid');
+    MENU.forEach(cat => {
+        const card = document.createElement('div');
+        card.className = 'cat-card';
+        const linksHtml = cat.items.map(item =>
+            `<li><a href="#${slug(item)}" onclick="showPage(); return false;">${item}</a></li>`
+        ).join('');
+        card.innerHTML = `
+    <div class="cat-header  ${cat.class}">
+      <i class="ti ${cat.icon}" aria-hidden="true"></i>
+      <span>${cat.name}</span>
+    </div>
+    <ul class="cat-links">${linksHtml}</ul>
+  `;
+        catGrid.appendChild(card);
+    });
+
+    // ═══ BUILD SITEMAP ═══
+    const smGrid = document.getElementById('sitemap-grid');
+    MENU.forEach(cat => {
+        const col = document.createElement('div');
+        col.className = 'sitemap-col';
+        const linksHtml = cat.items.map(item =>
+            `<li><a href="#${slug(item)}" onclick="showPage(); return false;">${item}</a></li>`
+        ).join('');
+        col.innerHTML = `
+    <h3><i class="ti ${cat.icon}" aria-hidden="true"></i>${cat.name}</h3>
+    <ul>${linksHtml}</ul>
+  `;
+        smGrid.appendChild(col);
+    });
+
+    // ═══ BUILD MENUBAR ═══
+    const menubar = document.getElementById('menubar');
+    MENU.forEach(cat => {
+        const item = document.createElement('div');
+        item.className = 'menu-item';
+        const linksHtml = cat.items.map(item =>
+            `<a href="#${slug(item)}" onclick="showPage(); return false;">${item}</a>`
+        ).join('');
+        item.innerHTML = `
+    <button>
+      <i class="ti ${cat.icon}" aria-hidden="true"></i>
+      ${cat.name}
+      <i class="ti ti-chevron-down arrow" aria-hidden="true"></i>
+    </button>
+    <div class="dropdown">${linksHtml}</div>
+  `;
+        item.querySelector('button').addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.querySelectorAll('.menu-item.open').forEach(el => { if(el!==item) el.classList.remove('open'); });
+            item.classList.toggle('open');
+        });
+        menubar.appendChild(item);
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.menu-item.open').forEach(el => el.classList.remove('open'));
+    });
+
+    // ═══ BUILD SIDE NAV ═══
+    const sideNav = document.getElementById('side-nav');
+    MENU.forEach((cat, i) => {
+        const div = document.createElement('div');
+        div.className = 'nav-cat';
+        const linksHtml = cat.items.map(item =>
+            `<a href="#${slug(item)}" onclick="showPage(); closeSideNav(); return false;">${item}</a>`
+        ).join('');
+        div.innerHTML = `
+    <div class="nav-cat-header" onclick="toggleNavCat(this)">
+      <span class="nc-left">
+        <i class="ti ${cat.icon}" aria-hidden="true"></i>
+        ${cat.name}
+      </span>
+      <i class="ti ti-chevron-down nc-arrow" aria-hidden="true"></i>
+    </div>
+    <div class="nav-items">${linksHtml}</div>
+  `;
+        sideNav.appendChild(div);
+    });
+
+    function toggleNavCat(header){
+        const cat = header.parentElement;
+        cat.classList.toggle('expanded');
+    }
+
+    // ═══ BUILD FOOTER LINKS ═══
+    // const fl = document.getElementById('footer-links');
+    // const topItems = MENU.flatMap(c => c.items.slice(0,3));
+    // fl.innerHTML = topItems.map(item =>
+    //     `<div><a href="#${slug(item)}" style="color:#7bafd4;text-decoration:none;transition:color 0.15s" onmouseover="this.style.color='#cde4f7'" onmouseout="this.style.color='#7bafd4'">${item}</a></div>`
+    // ).join('');
+
+    // ═══ SIDE NAV TOGGLE ═══
+    function toggleSideNav(){
+        const nav = document.getElementById('side-nav');
+        const overlay = document.getElementById('side-nav-overlay');
+        const btn = document.getElementById('hamburger-btn');
+        nav.classList.toggle('open');
+        overlay.classList.toggle('open');
+        btn.classList.toggle('open');
+    }
+    function closeSideNav(){
+        document.getElementById('side-nav').classList.remove('open');
+        document.getElementById('side-nav-overlay').classList.remove('open');
+        document.getElementById('hamburger-btn').classList.remove('open');
+    }
+
+    // ═══ HERO IMAGE FALLBACK ═══
+    const heroImg = document.querySelector('#hero img');
+    heroImg.onerror = function(){
+        this.style.display = 'none';
+        document.getElementById('hero-placeholder').style.display = 'flex';
+    };
+    heroImg.onload = function(){
+        document.getElementById('hero-placeholder').style.display = 'none';
+    };
+    if(!heroImg.src || heroImg.complete && heroImg.naturalWidth === 0){
+        heroImg.dispatchEvent(new Event('error'));
+    }
+</script>
+</body>
+</html>
