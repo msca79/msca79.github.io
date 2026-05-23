@@ -54,7 +54,9 @@
             height: 50px;
         }
 
-        #banner .school-info { flex: 1; }
+        #banner .banner-logo { flex: 1; width:100px; padding-left:10px;}
+        #banner .banner-logo img { width:70px;}
+        #banner .school-info { flex: 10; }
         #banner .school-name {
             font-family: 'Merriweather', serif;
             font-size: 16px;
@@ -353,7 +355,7 @@
             justify-content: center;
         }
 
-        #hero img {
+        #hero .hero-image {
             width: 100%;
             height: 100%;
             max-height: 500px;
@@ -383,6 +385,24 @@
             font-size: 15px;
         }
         #hero .hero-placeholder i { font-size: 48px; margin-bottom: 12px; opacity: 0.4; }
+
+        /* ─── HERO STAMP ─── */
+        .hero-stamp {
+            position: absolute;
+            top: 1px;
+            left: 50px;
+            width: 120px;
+            height:120px;
+            z-index: 100;
+            opacity: 0.7;
+            /*transform: rotate(-15deg);*/
+            /*filter: grayscale(0.2) contrast(1.2) brightness(0.9);*/
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 5px;
+            /*border-radius: 4px;*/
+        }
 
         /* ─── CATEGORIES SECTION ─── */
         #categories {
@@ -675,12 +695,15 @@
     <button class="hamburger" id="hamburger-btn" onclick="toggleSideNav()" aria-label="Menü megnyitása">
         <span></span><span></span><span></span>
     </button>
-    <div class="school-info" onclick="showHome()" style="cursor:pointer">
-        <div class="school-name">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
+    <div class="banner-logo" onclick="showHome()" style="cursor:pointer">
+        <img src="images/logo2.png" alt="logo">
+    </div>  <div class="school-info" onclick="showHome()" style="cursor:pointer">
+        <div class="school-name" >Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
         <div class="school-meta">
             Cím: 1048 Budapest, Bőrfestő utca 5-9. &nbsp;|&nbsp; Tel: +363807170 &nbsp;|&nbsp; OM-azonosító: 034877
         </div>
     </div>
+
     <div class="right-actions">
         <div class="search-wrap">
             <i class="ti ti-search si"></i>
@@ -694,17 +717,18 @@
 <!-- ═══════════════════════ MENU BAR ═══════════════════════ -->
 <nav id="menubar" aria-label="Főmenü"></nav>
 
-<!-- ═══════════════════════ NAME BAR ═══════════════════════ -->
-<nav id="namebar" aria-label="Name">
-    <div class="welcome-text">
-        <span></span>
-        <h2>Jó, hogy itt vagy</h2>
-    </div>
-</nav>
+<!--&lt;!&ndash; ═══════════════════════ NAME BAR ═══════════════════════ &ndash;&gt;-->
+<!--<nav id="namebar" aria-label="Name">-->
+<!--    <div class="welcome-text">-->
+<!--        <span></span>-->
+<!--        <h2>Jó, hogy itt vagy</h2>-->
+<!--    </div>-->
+<!--</nav>-->
 
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section id="hero">
-    <img src="images/background-sample5.png" alt="Iskolánk" onerror="this.style.display='none'">
+    <img src="images/background-sample5.png" class="hero-image" alt="Iskolánk" onerror="this.style.display='none'">
+    <img src="images/logo2.png" alt="logo" class="hero-stamp">
     <div class="hero-edge"></div>
     <div class="hero-placeholder" id="hero-placeholder" style="display:none">
         <i class="ti ti-building-school"></i>
@@ -845,7 +869,7 @@
     function showHome() {
         document.getElementById('hero').style.display = 'block';
         document.getElementById('categories').style.display = 'block';
-        document.getElementById('namebar').style.display = 'none';
+        // document.getElementById('namebar').style.display = 'none';
         document.getElementById('menubar').style.display = 'flex';
         document.getElementById('sample-page').style.display = 'none';
         document.getElementById('sitemap').style.display = 'none';
@@ -855,7 +879,7 @@
     function showPage() {
         document.getElementById('hero').style.display = 'none';
         document.getElementById('categories').style.display = 'none';
-        document.getElementById('namebar').style.display = 'none';
+        // document.getElementById('namebar').style.display = 'none';
         document.getElementById('menubar').style.display = 'flex';
         document.getElementById('sample-page').style.display = 'block';
         document.getElementById('sitemap').style.display = 'block';
