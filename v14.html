@@ -555,7 +555,7 @@
         }
 
         /* Category Color Schemes */
-        .cat-calendar    {
+        .cat-calendar {
             --cat-color: #09b19c;
             --cat-bg: #f0f7ff;
         }
@@ -654,7 +654,9 @@
         }
 
         .cat-links li a {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             padding: 8px 20px;
             font-size: 14.5px;
             color: var(--cat-color);
@@ -664,12 +666,34 @@
             line-height: 1.4;
         }
 
+        .cat-links li a .item-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .cat-links li a .item-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
         .cat-links li a:hover {
             background: rgba(255, 255, 255, 0.6);
-            padding-left: 26px;
+            padding-left: 24px;
             border-left-color: var(--cat-color);
             font-weight: 600;
         }
+
+        /* Dropdown and Sidenav items with icons/dots */
+        .dropdown a, .nav-items a, .sitemap-col ul li a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .item-icon { font-size: 1.1em; }
+        .item-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
         /* ─── SITEMAP ─── */
         #sitemap {
@@ -860,6 +884,31 @@
             margin-top: 30px;
         }
 
+        .ev-badge {
+            flex-shrink: 0;
+            width: 34px;
+            text-align: center;
+            background: #f5f7fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 3px 0
+        }
+
+        .ev-badge .ebd {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1b3a5c;
+            line-height: 1
+        }
+
+        .ev-badge .ebm {
+            font-size: 9px;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: .04em
+        }
+
+
         /* ─── icon font ─── */
         @import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css');
     </style>
@@ -879,9 +928,9 @@
     <button class="hamburger" id="hamburger-btn" onclick="toggleSideNav()" aria-label="Menü megnyitása">
         <span></span><span></span><span></span>
     </button>
-    <div class="banner-logo" onclick="showHome()" style="cursor:pointer">
-        <img src="images/logo2.png" alt="logo">
-    </div>
+    <!--    <div class="banner-logo" onclick="showHome()" style="cursor:pointer">-->
+    <!--        <img src="images/logo2.png" alt="logo">-->
+    <!--    </div>-->
     <div class="school-info" onclick="showHome()" style="cursor:pointer">
         <div class="school-name">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
         <div class="school-meta">
@@ -913,9 +962,9 @@
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section id="hero">
     <div class="hero-slides">
-        <img src="images/banners/banner-iskola.png" class="hero-slide active" alt="Iskolánk 1">
-<!--        <img src="images/banners/banner-jelentkezes.png" class="hero-slide" alt="Iskolánk 2">-->
-<!--        <img src="images/banners/banner-terem.png" class="hero-slide " alt="Iskolánk 3">-->
+        <img src="images/background-sample10.png" class="hero-slide active" alt="Iskolánk 1">
+        <!--        <img src="images/banners/banner-jelentkezes.png" class="hero-slide" alt="Iskolánk 2">-->
+        <!--        <img src="images/banners/banner-terem.png" class="hero-slide " alt="Iskolánk 3">-->
     </div>
     <img src="images/logo2.png" alt="logo" class="hero-stamp">
     <div class="hero-edge"></div>
@@ -928,7 +977,8 @@
 <!-- ═══════════════════════ CATEGORIES ═══════════════════════ -->
 <section id="categories">
     <!--    <h2>Menü</h2>-->
-    <div class="cat-grid" id="cat-grid"></div>
+    <div class="cat-grid" id="cat-grid">
+    </div>
 </section>
 
 <section id="sample-page">
@@ -993,13 +1043,25 @@
     // ═══ DATA ═══
     const MENU = [
         {
-            name: "Naptár",
+            name: "Események",
             class: 'cat-calendar',
             icon: "ti-calendar",
             items: [
-                "2026. június 19. <i>(30 nap múlva)</i><br><b>Ballagás 8. osztályból</b> ",
-                "2026. június 22. <i>(41 nap múlva)</i><br><b>Nyári szünet első nap</b>",
-                "2026. szeptember 1. <i>(100 nap múlva)</i><br><b>Első iskola nap 2026/2027</b>"
+                {
+                    text: "2026. június 19. <i>(30 nap múlva)</i><br><b>Ballagás 8. osztályból</b>",
+                    icon: "ti-school",
+                    color: "#c62828"
+                },
+                {
+                    text: "2026. június 22. <i>(41 nap múlva)</i><br><b>Nyári szünet első nap</b>",
+                    icon: "ti-sun",
+                    color: "#ef6c00"
+                },
+                {
+                    text: "2026. szeptember 1. <i>(100 nap múlva)</i><br><b>Első iskola nap 2026/2027</b>",
+                    icon: "ti-calendar-event",
+                    color: "#1a5fa5"
+                }
             ]
         }, {
             name: "Iskolánk",
@@ -1093,14 +1155,28 @@
         return s.toLowerCase().replace(/[^a-z0-9áéíóöőúüű]+/g, '-');
     }
 
+    function getItemHtml(item) {
+        let text = typeof item === 'string' ? item : item.text;
+        let iconHtml = '';
+        if (typeof item === 'object') {
+            if (item.icon) {
+                iconHtml = `<i class="ti ${item.icon} item-icon" style="${item.color ? 'color:' + item.color : ''}"></i>`;
+            } else if (item.color) {
+                iconHtml = `<span class="item-dot" style="background-color:${item.color}"></span>`;
+            }
+        }
+        return `${iconHtml}<span  style="${item.color ? 'color:' + item.color : ''}">${text}</span>`;
+    }
+
     // ═══ BUILD CATEGORY CARDS ═══
     const catGrid = document.getElementById('cat-grid');
     MENU.forEach(cat => {
         const card = document.createElement('div');
         card.className = `cat-card ${cat.class || ''}`;
-        const linksHtml = cat.items.map(item =>
-            `<li><a href="#${slug(item)}" onclick="showPage(); return false;">${item}</a></li>`
-        ).join('');
+        const linksHtml = cat.items.map(item => {
+            const itemText = typeof item === 'string' ? item : item.text;
+            return `<li><a href="#${slug(itemText)}" onclick="showPage(); return false;">${getItemHtml(item)}</a></li>`;
+        }).join('');
         card.innerHTML = `
     <div class="cat-header">
       <i class="ti ${cat.icon}" aria-hidden="true"></i>
@@ -1116,9 +1192,10 @@
     MENU.forEach(cat => {
         const col = document.createElement('div');
         col.className = 'sitemap-col';
-        const linksHtml = cat.items.map(item =>
-            `<li><a href="#${slug(item)}" onclick="showPage(); return false;">${item}</a></li>`
-        ).join('');
+        const linksHtml = cat.items.map(item => {
+            const itemText = typeof item === 'string' ? item : item.text;
+            return `<li><a href="#${slug(itemText)}" onclick="showPage(); return false;">${getItemHtml(item)}</a></li>`;
+        }).join('');
         col.innerHTML = `
     <h3><i class="ti ${cat.icon}" aria-hidden="true"></i>${cat.name}</h3>
     <ul>${linksHtml}</ul>
@@ -1131,9 +1208,10 @@
     MENU.forEach(cat => {
         const item = document.createElement('div');
         item.className = 'menu-item';
-        const linksHtml = cat.items.map(item =>
-            `<a href="#${slug(item)}" onclick="showPage(); return false;">${item}</a>`
-        ).join('');
+        const linksHtml = cat.items.map(subItem => {
+            const itemText = typeof subItem === 'string' ? subItem : subItem.text;
+            return `<a href="#${slug(itemText)}" onclick="showPage(); return false;">${getItemHtml(subItem)}</a>`;
+        }).join('');
         item.innerHTML = `
     <button>
       <i class="ti ${cat.icon}" aria-hidden="true"></i>
@@ -1160,9 +1238,10 @@
     MENU.forEach((cat, i) => {
         const div = document.createElement('div');
         div.className = 'nav-cat';
-        const linksHtml = cat.items.map(item =>
-            `<a href="#${slug(item)}" onclick="showPage(); closeSideNav(); return false;">${item}</a>`
-        ).join('');
+        const linksHtml = cat.items.map(subItem => {
+            const itemText = typeof subItem === 'string' ? subItem : subItem.text;
+            return `<a href="#${slug(itemText)}" onclick="showPage(); closeSideNav(); return false;">${getItemHtml(subItem)}</a>`;
+        }).join('');
         div.innerHTML = `
     <div class="nav-cat-header" onclick="toggleNavCat(this)">
       <span class="nc-left">
@@ -1218,10 +1297,10 @@
 
     if (slides.length > 0) {
         setInterval(nextSlide, 10000);
-        
+
         // Error handling for slides
         slides.forEach(img => {
-            img.onerror = function() {
+            img.onerror = function () {
                 this.classList.remove('hero-slide');
                 this.style.display = 'none';
                 // If all slides fail, show placeholder
