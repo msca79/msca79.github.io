@@ -1,0 +1,9 @@
+services:
+  apache-php:
+    image: php:8.2-apache
+    container_name: csokonai-www
+    ports:
+      - "81:80"
+    volumes:
+      - ./www:/var/www/html
+    restart: unless-stopped
