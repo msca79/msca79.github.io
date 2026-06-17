@@ -1,0 +1,11 @@
+# .htaccess
+Options -Indexes
+
+RewriteEngine On
+
+# Ha a fájl vagy mappa ténylegesen létezik, ne bántsa
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# .php kiterjesztés hozzáadása automatikusan
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
