@@ -177,11 +177,37 @@ function searchInRows(array $rows, array $originalWords, array $allSearchWords):
             'matched_words'    => array_values(array_unique($matchedWords)),
             'match_count'      => count(array_unique($matchedWords)),
             'orig_match_count' => $origMatchCount,
-            'snippet'          => implode(' … ', array_filter(array_unique($snippets))),
+            'snippet'          => highlightWords(implode(' … ', array_filter(array_unique($snippets))), $matchedWords),
         ];
     }
 
     return $results;
+}
+
+/**
+ * Kiemeli a szavakat a szövegben <b> tagekkel.
+ */
+function highlightWords(string $text, array $words): string
+{
+    if (empty($words)) return $text;
+
+    // Rendezés hossz szerint csökkenőbe, hogy a hosszabb szavak ne rontsák el a rövidebbeket (pl. "alma" vs "al")
+    usort($words, fn($a, $b) => mb_strlen($b) - mb_strlen($a));
+
+    foreach ($words as $word) {
+        $quoted = preg_quote($word, '/');
+        // Keresés ékezet-érzéketlen módon nem egyszerű PHP-ban regex-el, 
+        // de mivel a $words-ban benne vannak a szövegben TÉNYLEGESEN megtalált alakok is (hála a searchInRows-nak),
+        // ezért egy egyszerű kis/nagybetű érzéketlen csere is elég lehet.
+        // Viszont vigyázni kell, hogy ne cseréljük le a már behelyezett <b> tageket.
+        
+        $text = preg_replace_callback(
+            '/(?<!<b>)' . $quoted . '(?!(?:<\/b>))/iu',
+            fn($m) => '<b>' . $m[0] . '</b>',
+            $text
+        );
+    }
+    return $text;
 }
 
 /**

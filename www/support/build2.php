@@ -162,16 +162,22 @@ function extractHtml(string $path): array
 
     $raw = toUtf8($raw);
 
+    // Title
+    $title = '';
+
+    // Megpróbáljuk kinyerni a $pageTitle változót a PHP-ból (pl. $pageTitle = 'Névadónkról' . $pageTitlePostfix;)
+    if (preg_match('/\$pageTitle\s*=\s*[\'"](.*?)[\'"](?:\s*\.\s*\$pageTitlePostfix)?\s*;/i', $raw, $pm)) {
+        $title = trim($pm[1]);
+    }
+
+    if (!$title && preg_match('/<title[^>]*>(.*?)<\/title>/is', $raw, $m)) {
+        $title = trim(html_entity_decode(strip_tags($m[1]), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+    }
+
     // PHP tagek és tartalmuk eltávolítása
     $raw = preg_replace('/<\?php.*?\?>/is', ' ', $raw);
     $raw = preg_replace('/<\?.*?\?>/is',    ' ', $raw);
     $raw = preg_replace('/<%.*?%>/is',     ' ', $raw);
-
-    // Title
-    $title = '';
-    if (preg_match('/<title[^>]*>(.*?)<\/title>/is', $raw, $m)) {
-        $title = trim(html_entity_decode(strip_tags($m[1]), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
-    }
 
     // Technikai blokkok eltávolítása
     $raw = preg_replace('/<script[^>]*>.*?<\/script>/is',   ' ', $raw);

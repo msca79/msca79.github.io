@@ -71,7 +71,7 @@
                         pathDiv.style.marginBottom = '8px';
 
                         const snippetDiv = document.createElement('p');
-                        snippetDiv.textContent = result.snippet;
+                        snippetDiv.innerHTML = result.snippet;
                         snippetDiv.style.margin = '0';
                         snippetDiv.style.fontSize = '15px';
 
