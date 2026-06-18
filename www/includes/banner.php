@@ -12,8 +12,8 @@
     <div class="right-actions">
         <form action="<?= $basePath ?? '' ?>search.php" method="GET" class="search-wrap">
             <input type="text" name="kereses" placeholder="Keresés…" aria-label="Keresés" value="<?= htmlspecialchars($_GET['kereses'] ?? '') ?>">
-            <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
-                <i class="ti ti-search si"></i>
+            <button type="submit" class="btn-banner btn-search">
+                <i class="ti ti-search"></i>
             </button>
         </form>
         <a href="#" class="btn-banner btn-kreta"><i class="ti ti-school"></i> Kréta</a>
