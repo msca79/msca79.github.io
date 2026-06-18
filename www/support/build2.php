@@ -10,8 +10,17 @@
  */
 
 define('DB_PATH',              __DIR__ . '/search_index.sqlite');
-define('BASE_DIR',             __DIR__);
-define('SUPPORTED_EXTENSIONS', ['html', 'htm', 'txt', 'pdf']);
+define('WWW_DIR',             realpath(__DIR__ . '/..'));
+define('SUPPORTED_EXTENSIONS', ['html', 'htm', 'txt', 'pdf', 'php']);
+define('INDEX_PATHS', [
+    WWW_DIR . DIRECTORY_SEPARATOR . 'altalanos',
+    WWW_DIR . DIRECTORY_SEPARATOR . 'elet',
+    WWW_DIR . DIRECTORY_SEPARATOR . 'files',
+    WWW_DIR . DIRECTORY_SEPARATOR . 'gimnazium',
+    WWW_DIR . DIRECTORY_SEPARATOR . 'iskolankrol',
+    WWW_DIR . DIRECTORY_SEPARATOR . 'tamogato',
+    WWW_DIR . DIRECTORY_SEPARATOR . 'ugyintezes',
+]);
 
 // ---------------------------------------------------------------------------
 // Paraméter kezelés (CLI + HTTP)
@@ -59,68 +68,75 @@ $pdo->exec("
 // ---------------------------------------------------------------------------
 // Fájlok bejárása
 // ---------------------------------------------------------------------------
-$iterator = new RecursiveIteratorIterator(
-    new RecursiveDirectoryIterator(BASE_DIR, RecursiveDirectoryIterator::SKIP_DOTS)
-);
-
 $indexed = 0;
 $skipped = 0;
 
-foreach ($iterator as $file) {
-    if (!$file->isFile()) continue;
+foreach (INDEX_PATHS as $basePath) {
+    if (!is_dir($basePath)) {
+        echo "Kihagyva (nem létező mappa): $basePath\n";
+        continue;
+    }
 
-    $ext = strtolower($file->getExtension());
-    if (!in_array($ext, SUPPORTED_EXTENSIONS, true)) continue;
-
-    $realPath = $file->getRealPath();
-
-    // Saját szkriptek és az adatbázis kihagyása
-    if ($realPath === realpath(__FILE__))   continue;
-    if ($realPath === realpath(DB_PATH))    continue;
-    if (basename($realPath) === 'search.php') continue;
-
-    $relativePath = ltrim(
-        str_replace(['\\', BASE_DIR], ['/', ''], $realPath),
-        '/'
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($basePath, RecursiveDirectoryIterator::SKIP_DOTS)
     );
 
-    echo "Indexelés: $relativePath ... ";
+    foreach ($iterator as $file) {
+        if (!$file->isFile()) continue;
 
-    try {
-        [$title, $text] = extractContent($realPath, $ext);
-    } catch (Exception $e) {
-        echo "HIBA: " . $e->getMessage() . "\n";
-        $skipped++;
-        continue;
+        $ext = strtolower($file->getExtension());
+        if (!in_array($ext, SUPPORTED_EXTENSIONS, true)) continue;
+
+        $realPath = $file->getRealPath();
+
+        // Saját szkriptek és az adatbázis kihagyása
+        if ($realPath === realpath(__FILE__))   continue;
+        if ($realPath === realpath(DB_PATH))    continue;
+        if (basename($realPath) === 'search.php') continue;
+
+        $relativePath = ltrim(
+            str_replace(['\\', WWW_DIR], ['/', ''], $realPath),
+            '/'
+        );
+
+        echo "Indexelés: $relativePath ... ";
+
+        try {
+            [$title, $text] = extractContent($realPath, $ext);
+        } catch (Exception $e) {
+            echo "HIBA: " . $e->getMessage() . "\n";
+            $skipped++;
+            continue;
+        }
+
+        if (trim($text) === '') {
+            echo "üres, kihagyva.\n";
+            $skipped++;
+            continue;
+        }
+
+        $normalized = normalizeText($text . ' ' . $title);
+
+        $stmt = $pdo->prepare("
+            INSERT INTO pages (path, title, content, normalized, indexed_at)
+            VALUES (:path, :title, :content, :normalized, :indexed_at)
+            ON CONFLICT(path) DO UPDATE SET
+                title      = excluded.title,
+                content    = excluded.content,
+                normalized = excluded.normalized,
+                indexed_at = excluded.indexed_at
+        ");
+        $stmt->execute([
+            ':path'       => $relativePath,
+            ':title'      => $title,
+            ':content'    => $text,
+            ':normalized' => $normalized,
+            ':indexed_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        echo "OK\n";
+        $indexed++;
     }
-
-    if (trim($text) === '') {
-        echo "üres, kihagyva.\n";
-        $skipped++;
-        continue;
-    }
-
-    $normalized = normalizeText($text . ' ' . $title);
-
-    $stmt = $pdo->prepare("
-        INSERT INTO pages (path, title, content, normalized, indexed_at)
-        VALUES (:path, :title, :content, :normalized, :indexed_at)
-        ON CONFLICT(path) DO UPDATE SET
-            title      = excluded.title,
-            content    = excluded.content,
-            normalized = excluded.normalized,
-            indexed_at = excluded.indexed_at
-    ");
-    $stmt->execute([
-        ':path'       => $relativePath,
-        ':title'      => $title,
-        ':content'    => $text,
-        ':normalized' => $normalized,
-        ':indexed_at' => date('Y-m-d H:i:s'),
-    ]);
-
-    echo "OK\n";
-    $indexed++;
 }
 
 echo "\nKész. Indexelve: $indexed | Kihagyva: $skipped\n";
@@ -132,10 +148,10 @@ echo "\nKész. Indexelve: $indexed | Kihagyva: $skipped\n";
 function extractContent(string $path, string $ext): array
 {
     return match($ext) {
-        'html', 'htm' => extractHtml($path),
-        'txt'         => extractTxt($path),
-        'pdf'         => extractPdf($path),
-        default       => ['', ''],
+        'html', 'htm', 'php' => extractHtml($path),
+        'txt'                => extractTxt($path),
+        'pdf'                => extractPdf($path),
+        default              => ['', ''],
     };
 }
 
@@ -145,6 +161,11 @@ function extractHtml(string $path): array
     if ($raw === false) throw new Exception("Nem olvasható");
 
     $raw = toUtf8($raw);
+
+    // PHP tagek és tartalmuk eltávolítása
+    $raw = preg_replace('/<\?php.*?\?>/is', ' ', $raw);
+    $raw = preg_replace('/<\?.*?\?>/is',    ' ', $raw);
+    $raw = preg_replace('/<%.*?%>/is',     ' ', $raw);
 
     // Title
     $title = '';

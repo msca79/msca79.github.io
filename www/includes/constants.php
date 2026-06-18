@@ -1,0 +1,1 @@
+<?php $pageTitlePostfix = ' - Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium'; ?>

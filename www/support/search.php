@@ -9,15 +9,31 @@ $query = trim($_GET['q'] ?? '');
 $results = [];
 
 if ($query !== '') {
-    // Rekurzív bejárás az almappákban is
-    $iterator = new RecursiveIteratorIterator(
-        new RecursiveDirectoryIterator(__DIR__, RecursiveDirectoryIterator::SKIP_DOTS)
-    );
+    $projectRoot = dirname(__DIR__); // www mappa
+    $searchDirs = [
+        $projectRoot . DIRECTORY_SEPARATOR . 'altalanos',
+        $projectRoot . DIRECTORY_SEPARATOR . 'elet',
+        $projectRoot . DIRECTORY_SEPARATOR . 'files',
+        $projectRoot . DIRECTORY_SEPARATOR . 'gimnazium',
+        $projectRoot . DIRECTORY_SEPARATOR . 'iskolankrol',
+        $projectRoot . DIRECTORY_SEPARATOR . 'tamogato',
+        $projectRoot . DIRECTORY_SEPARATOR . 'ugyintezes',
+    ];
 
     $files = [];
-    foreach ($iterator as $fileInfo) {
-        if ($fileInfo->isFile() && strtolower($fileInfo->getExtension()) === 'html') {
-            $files[] = $fileInfo->getPathname();
+    foreach ($searchDirs as $dir) {
+        if (!is_dir($dir)) continue;
+
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS)
+        );
+
+        foreach ($iterator as $fileInfo) {
+            $ext = strtolower($fileInfo->getExtension());
+            if ($fileInfo->isFile() && ($ext === 'html' || $ext === 'php')) {
+                // Ne keressük önmagunkat vagy a support mappát, ha benne lenne (bár nincs a listában)
+                $files[] = $fileInfo->getPathname();
+            }
         }
     }
 
@@ -36,8 +52,8 @@ if ($query !== '') {
             $snippet = mb_substr($text, $start, 150);
             $snippet = preg_replace('/\s+/', ' ', $snippet); // whitespace tisztítás
 
-            // Projekt gyökeréhez képesti relatív útvonal a kattintható linkhez
-            $relativePath = ltrim(str_replace('\\', '/', substr($file, strlen(__DIR__))), '/');
+            // Projekt gyökeréhez (www) képesti relatív útvonal a kattintható linkhez
+            $relativePath = ltrim(str_replace('\\', '/', substr($file, strlen($projectRoot))), '/');
 
             $results[] = [
                 'file'    => $relativePath,
