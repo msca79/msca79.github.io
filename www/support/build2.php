@@ -11,7 +11,7 @@
 
 define('DB_PATH',              __DIR__ . '/search_index.sqlite');
 define('WWW_DIR',             realpath(__DIR__ . '/..'));
-define('SUPPORTED_EXTENSIONS', ['html', 'htm', 'txt', 'pdf', 'php']);
+define('SUPPORTED_EXTENSIONS', ['html', 'htm', 'txt', 'pdf', 'php', 'docx', 'xlsx']);
 define('INDEX_PATHS', [
     WWW_DIR . DIRECTORY_SEPARATOR . 'altalanos',
     WWW_DIR . DIRECTORY_SEPARATOR . 'elet',
@@ -151,8 +151,49 @@ function extractContent(string $path, string $ext): array
         'html', 'htm', 'php' => extractHtml($path),
         'txt'                => extractTxt($path),
         'pdf'                => extractPdf($path),
+        'docx'               => extractDocx($path),
+        'xlsx'               => extractXlsx($path),
         default              => ['', ''],
     };
+}
+
+function extractDocx(string $path): array
+{
+    if (!class_exists('ZipArchive')) {
+        echo "FIGYELEM: ZipArchive nem elérhető, .docx fájl kihagyva: " . basename($path) . "\n";
+        return ['', ''];
+    }
+    
+    $zip = new ZipArchive();
+    if ($zip->open($path) === true) {
+        $xml = $zip->getFromName('word/document.xml');
+        $zip->close();
+        if ($xml) {
+            // XML tagek eltávolítása, a tartalom megtartása
+            $text = strip_tags(str_replace(['<w:p>', '</w:p>', '<w:br/>'], ["\n", "\n", "\n"], $xml));
+            return ['', normalizeWhitespace($text)];
+        }
+    }
+    return ['', ''];
+}
+
+function extractXlsx(string $path): array
+{
+    if (!class_exists('ZipArchive')) {
+        echo "FIGYELEM: ZipArchive nem elérhető, .xlsx fájl kihagyva: " . basename($path) . "\n";
+        return ['', ''];
+    }
+    
+    $zip = new ZipArchive();
+    if ($zip->open($path) === true) {
+        $xml = $zip->getFromName('xl/sharedStrings.xml');
+        $zip->close();
+        if ($xml) {
+            $text = strip_tags($xml);
+            return ['', normalizeWhitespace($text)];
+        }
+    }
+    return ['', ''];
 }
 
 function extractHtml(string $path): array
@@ -205,15 +246,31 @@ function extractTxt(string $path): array
 function extractPdf(string $path): array
 {
     // pdftotext (poppler) ha elérhető
-    $which = shell_exec('which pdftotext 2>/dev/null');
-    if (trim((string)$which) !== '') {
-        $text = shell_exec("pdftotext -enc UTF-8 " . escapeshellarg($path) . " -");
-        if ($text !== null) {
-            return ['', normalizeWhitespace(toUtf8($text))];
+//     $which = shell_exec('which pdftotext 2>/dev/null');
+//     if (trim((string)$which) !== '') {
+//         $text = shell_exec("pdftotext -enc UTF-8 " . escapeshellarg($path) . " -");
+//         if ($text !== null) {
+//             return ['pdftotext', normalizeWhitespace(toUtf8($text))];
+//         }
+//     }
+
+    // Fallback 1: smalot/pdfparser ha elérhető
+    $smalotAutoload = __DIR__ . '/smalot/alt_autoload.php';
+    if (file_exists($smalotAutoload)) {
+        try {
+            require_once $smalotAutoload;
+            $parser = new \Smalot\PdfParser\Parser();
+            $pdf    = $parser->parseFile($path);
+            $text   = $pdf->getText();
+            if ($text !== '') {
+                return [ '', normalizeWhitespace(toUtf8($text))];
+            }
+        } catch (\Exception $e) {
+            // következő fallback-re
         }
     }
 
-    // Fallback: bináris stream-ekből ASCII kinyerés
+    // Fallback 2: bináris stream-ekből ASCII kinyerés
     $raw = file_get_contents($path);
     if ($raw === false) throw new Exception("Nem olvasható");
 
@@ -223,7 +280,7 @@ function extractPdf(string $path): array
         $text .= ' ' . preg_replace('/[^\x20-\x7E\n\r\t]/', ' ', $stream);
     }
 
-    return ['', normalizeWhitespace($text)];
+    return ['binary', normalizeWhitespace($text)];
 }
 
 // ===========================================================================
