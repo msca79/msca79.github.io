@@ -39,11 +39,10 @@ body {
     font-size: 1.1em;
 }
 
-.item-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* ═══════════════════════ SIDENAV ═══════════════════════ */
@@ -171,9 +170,15 @@ body {
     height: 50px;
 }
 
-#banner .school-info {
+#banner .school-info-container {
     flex: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+#banner .school-info {
     text-decoration: none;
+    width: fit-content;
 }
 
 #banner .school-name {
@@ -192,6 +197,32 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#banner .school-meta .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+#banner .school-meta a.meta-item:hover {
+    color: var(--blue-800);
+}
+
+#banner .school-meta .meta-item i {
+    font-size: 14px;
+    color: var(--blue-400);
+}
+
+#banner .school-meta .meta-separator {
+    color: var(--blue-200);
+    opacity: 0.5;
 }
 
 #banner .right-actions {
@@ -619,14 +650,40 @@ body {
     padding-left: 4px;
 }
 
+/* ═══════════════════════ LOGOK ═══════════════════════ */
+.logok-section {
+    padding: 40px 0;
+    background: #ffffff;
+}
+
+.logok-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.logok-grid img {
+    max-width: 150px;
+    max-height: 80px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.logok-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
 /* ═══════════════════════ FOOTER ═══════════════════════ */
 footer {
     background: var(--footer-bg);
     color: var(--blue-700);
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
+    padding: 30px 24px;
     border-top: 1px solid var(--blue-100);
 }
 
@@ -634,37 +691,84 @@ footer .inner {
     max-width: 1300px;
     width: 100%;
     margin: 0 auto;
+}
+
+.footer-columns {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-col-left {
+    flex: 1;
+}
+
+.footer-col-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-col-right .f-details a,
+.footer-col-right .f-details div {
+    justify-content: flex-end;
+}
+
+footer .f-fenntarto-title {
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #667e99;
+    margin-bottom: 10px;
+}
+
+footer .f-details strong {
+    color: #667e99;
+    font-size: 14px;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 2px;
+}
+
+footer .f-igazgato {
+    font-weight: 600; font-size: 14px;
 }
 
 footer .f-name {
     font-family: 'Merriweather', serif;
     font-size: 14px;
     font-weight: 700;
-    color: var(--blue-800);
+    color: #667e99;
     white-space: nowrap;
 }
 
 footer .f-details {
-    font-size: 12px;
+    font-size: 13px;
     display: flex;
-    gap: 20px;
-    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
 }
 
+footer .f-details a,
 footer .f-details div {
     display: flex;
     align-items: center;
     gap: 5px;
     white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+footer .f-details a:hover {
+    color: var(--blue-800);
 }
 
 footer .f-details i {
     font-size: 14px;
-    color: var(--blue-500);
+    color: #667e99;
 }
 
 /* ═══════════════════════ OLDAL TARTALOM ═══════════════════════ */
@@ -775,11 +879,39 @@ footer .f-details i {
 
 /* ═══════════════════════ RESZPONZÍV ═══════════════════════ */
 @media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-col-right {
+        justify-content: flex-start;
+    }
+    .footer-col-right .f-details a,
+    .footer-col-right .f-details div {
+        justify-content: flex-start;
+    }
+    #banner .school-meta {
+        display: none;
+    }
+
     .cal-iframe-wrap {
         width: 95%;
         margin: 20px auto;
     }
     .cal-iframe-wrap iframe {
         height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-col-right {
+        text-align: left;
+        padding-top: 20px;
+        border-top: 1px dashed var(--blue-200);
     }
 }

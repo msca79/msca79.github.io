@@ -52,6 +52,7 @@ window.MENU = [
         items: [
             {text: "Információk", href: "gimnazium/informaciok.php"},
             {text: "Felvételi", href: "gimnazium/felveteli.php"},
+            {text: "Felvett tanulók OM kódja", href: "gimnazium/felvettek.php"},
             {text: "Érettségi", href: "gimnazium/erettsegi.php"},
             {text: "Központi felvételi", href: "gimnazium/kozponti-felveteli.php"},
             {text: "Gólyatábor", href: "gimnazium/golyatabor.php"},

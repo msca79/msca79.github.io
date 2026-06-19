@@ -20,10 +20,10 @@
         </div>
 
         <div id="terkep" class="cal-iframe-wrap">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2691.801646698668!2d19.112185276856037!3d47.57161679042576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741db457493774f%3A0x7d60920d39e80e!2zQm9kcG9saSwgQsWRcmZlc3TFkSB1LiA1LTksIDEwNDggSHVuZ2FyeQ!5e0!3m2!1sen!2shu!4v1718638000000!5m2!1sen!2shu"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2690.982069936026!2d19.112775691015607!3d47.5875908143507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741da756b8f8a79%3A0xac10a46d1b7a9aca!2zw5pqcGVzdGkgQ3Nva29uYWkgVml0w6l6IE1paMOhbHkgw4FsdGFsw6Fub3MgSXNrb2xhIMOpcyBHaW1uw6F6aXVt!5e0!3m2!1shu!2shu!4v1781892315026!5m2!1shu!2shu"
+            width="100%" height="450" style="border:0;"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
         </div>
     </section>
 </main>

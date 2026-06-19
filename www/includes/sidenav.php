@@ -25,6 +25,27 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         sideNav.appendChild(div);
     });
+
+    // Statikus Admin menü hozzáadása
+    const adminDiv = document.createElement('div');
+    adminDiv.className = 'nav-cat';
+    const basePath = window.BASE_PATH || '';
+    adminDiv.innerHTML = `
+        <div class="nav-cat-header" onclick="toggleNavCat(this)">
+            <span class="nc-left">
+                <i class="ti ti-settings" aria-hidden="true"></i>
+                Admin
+            </span>
+            <i class="ti ti-chevron-down nc-arrow" aria-hidden="true"></i>
+        </div>
+        <div class="nav-items">
+            <a href="${basePath}support/build2.php?delete=true" target="_blank" onclick="closeSideNav();">
+                <i class="ti ti-refresh item-icon"></i>
+                <span>Rebuild</span>
+            </a>
+        </div>
+    `;
+    sideNav.appendChild(adminDiv);
 });
 
 function toggleNavCat(header) {

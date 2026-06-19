@@ -5,4 +5,5 @@
 <?php include 'includes/menubar.php'; ?>
 <?php include 'includes/welcome.php'; ?>
 <?php include 'includes/categories.php'; ?>
+<?php include 'includes/logok.php'; ?>
 <?php include 'includes/footer.php'; ?>
