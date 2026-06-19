@@ -1,7 +1,7 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
-<?php $pageTitle = 'Körzethatárok' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Letölthető iskolai dokumentumok' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
@@ -11,11 +11,11 @@
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */  ?>
 <main id="page-content">
     <section id="sample-page">
-<pre>
-
-
-</pre>
-
+      . Szervezeti és Működési Szabályzat <br>
+      Pedagógiai Program <br>
+       Házirend <br>
+     Szakmai alapdokumentum<br>
+       Éves munkaterv <br>
     </section>
 </main>
 

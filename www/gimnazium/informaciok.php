@@ -12,6 +12,11 @@
     <section id="sample-page">
         <h1>Gimnázium információk</h1>
 
+<pre>
+
+    </pre>
+
+
     </section>
 </main>
 

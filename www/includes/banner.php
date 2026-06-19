@@ -16,7 +16,7 @@
                 <i class="ti ti-search"></i>
             </button>
         </form>
-        <a href="#" class="btn-banner btn-kreta"><i class="ti ti-school"></i> Kréta</a>
-        <a href="#" class="btn-banner btn-fb"><i class="ti ti-brand-facebook"></i> Facebook</a>
+        <a href="https://klik034877001.e-kreta.hu/" target="_blank" class="btn-banner btn-kreta"><i class="ti ti-school"></i> Kréta</a>
+        <a href="https://www.facebook.com/csvmgofficial" target="_blank" class="btn-banner btn-fb"><i class="ti ti-brand-facebook"></i> Facebook</a>
     </div>
 </header>

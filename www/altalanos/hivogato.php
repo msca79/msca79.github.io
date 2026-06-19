@@ -1,21 +1,16 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
-<?php $pageTitle = 'Körzethatárok' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Hívogató programsorozat/ Nyílt nap' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
 <?php include '../includes/menubar.php'; ?>
 
-
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */  ?>
 <main id="page-content">
     <section id="sample-page">
-<pre>
-
-
-</pre>
-
+     Hívogató
     </section>
 </main>
 

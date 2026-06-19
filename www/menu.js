@@ -3,20 +3,16 @@ window.MENU = [
         name: "Események",
         class: 'cat-calendar',
         icon: "ti-calendar",
-        link: "esemenyek.php",
         hideOnSitemap: true,
         items: [
             {
                 text: "Ballagás 8. osztályból<br><small>2026. június 19. <i>(30 nap múlva)</i></small>",
-                href: "esemenyek.php#ballagas"
             },
             {
                 text: "Nyári szünet első nap<br><small>2026. június 22. <i>(41 nap múlva)</i></small>",
-                href: "esemenyek.php#nyari-szunet"
             },
             {
                 text: "Első iskola nap 2026/2027<br><small>2026. szeptember 1. <i>(100 nap múlva)</i></small>",
-                href: "esemenyek.php#iskola-nap"
             }
         ]
     },
@@ -25,15 +21,16 @@ window.MENU = [
         class: 'cat-myschool',
         icon: "ti-building",
         items: [
-            {text: "Pedagógusok/Munkatársaink", href: "iskolankrol/tortenet.php"},
-            {text: "Tanév rendje", href: "iskolankrol/tortenet.php"},
-            {text: "Csengetési rend", href: "iskolankrol/tortenet.php"},
-            {text: "Alapítvány", href: "iskolankrol/tortenet.php"},
-            {text: "Szülői munkaközösség", href: "iskolankrol/tortenet.php"},
-            {text: "Álláspályázat", href: "iskolankrol/tortenet.php"},
-            {text: "Névadónkról", href: "iskolankrol/tortenet.php"},
-            {text: "Általános Dokumentumok", href: "iskolankrol/tortenet.php"},
-            {text: "ökoiskola", href: "iskolankrol/tortenet.php"},
+            {text: "Letölthető dokumentumok", href: "iskolankrol/dokumentumok.php"},
+            {text: "Közzétételi lista", href: "iskolankrol/kozzetetel.php"},
+            {text: "Munkatársaink", href: "iskolankrol/munkatarsaink.php"},
+            {text: "Tanév rendje", href: "iskolankrol/tanev.php"},
+            {text: "Csengetési rend", href: "iskolankrol/csengetes.php"},
+            {text: "Alapítvány", href: "iskolankrol/alapitvany.php"},
+            {text: "Szülői munkaközösség", href: "iskolankrol/szmk.php"},
+            {text: "Álláspályázat", href: "iskolankrol/allas.php"},
+            {text: "Névadónkról", href: "iskolankrol/nevadonkrol.php"},
+            {text: "Ökoiskola", href: "iskolankrol/okoiskola.php"},
         ]
     },
     {
@@ -41,11 +38,10 @@ window.MENU = [
         class: 'cat-midschool',
         icon: "ti-school",
         items: [
-            {text: "Körzethatárok", href: "altalanos/felveteli.php"},
-            {text: "Körzeten kívüliek jelentkezése", href: "altalanos/felveteli.php"},
-            {text: "Felvett tanulók névsora", href: "altalanos/felveteli.php"},
-            {text: "Felvételi információk", href: "altalanos/felveteli.php"},
-            {text: "Nyílt nap / Csalogató", href: "altalanos/felveteli.php"},
+            {text: "Körzethatárok", href: "altalanos/korzethatarok.php"},
+            {text: "Felvett tanulók OM kódja", href: "altalanos/felvettek.php"},
+            {text: "Beiratkozási tájékoztató", href: "altalanos/beiratkozas.php"},
+            {text: "Hívogató / Nyílt nap", href: "altalanos/hivogato.php"},
         ]
     },
     {
@@ -54,17 +50,13 @@ window.MENU = [
         icon: "ti-certificate",
         link: "gimnazium.php",
         items: [
-            {text: "Információk (induló szakok)", href: "gimnazium/informaciok.php"},
-            {text: "Felvételi tudnivalók", href: "gimnazium/informaciok.php"},
-            {text: "Felvett tanulók névsora", href: "gimnazium/informaciok.php"},
-            {text: "Felvételi követelmények", href: "gimnazium/informaciok.php"},
-            {text: "Szóbeli", href: "gimnazium/informaciok.php"},
-            {text: "Tájékoztató a központi felvételi menetéről", href: "gimnazium/informaciok.php"},
-            {text: "Felvételi tájékoztató 2026-2027", href: "gimnazium/informaciok.php"},
-            {text: "Felvételi előkészítő jelentkezési lap", href: "gimnazium/informaciok.php"},
-            {text: "Érettségi anyagok", href: "gimnazium/informaciok.php"},
-            {text: "Közösségi szolgálat", href: "gimnazium/informaciok.php"},
-            {text: "Gólyatábor jelentkezési lapja", href: "gimnazium/informaciok.php"},
+            {text: "Információk", href: "gimnazium/informaciok.php"},
+            {text: "Felvételi", href: "gimnazium/felveteli.php"},
+            {text: "Érettségi", href: "gimnazium/erettsegi.php"},
+            {text: "Központi felvételi", href: "gimnazium/kozponti-felveteli.php"},
+            {text: "Gólyatábor", href: "gimnazium/golyatabor.php"},
+            {text: "Közösségi szolgálat", href: "gimnazium/kozossegi-szolgalat.php"},
+            {text: "Nyílt nap", href: "gimnazium/nyilt-nap.php"}
         ]
     },
     {
@@ -73,19 +65,11 @@ window.MENU = [
         icon: "ti-clipboard-list",
         link: "ugyintezes.php",
         items: [
-            {text: "Elérhetőségek", href: "ugyintezes/kapcsolat.php"},
-            {text: "Ebédbefizetés", href: "ugyintezes/kapcsolat.php"},
-            {text: "Diákigazolvány", href: "ugyintezes/kapcsolat.php"},
-            {text: "Bizonyítvány másolat kérése", href: "ugyintezes/kapcsolat.php"},
-            {text: "Kréta bejelentkezési problémák", href: "ugyintezes/kapcsolat.php"},
-            {
-                text: "Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól",
-                href: "ugyintezes/kapcsolat.php"
-            },
-            {text: "Kérelem két testnevelés óra alóli felmentéshez", href: "ugyintezes/kapcsolat.php"},
-            {text: "Egyéni tanrend igénylése", href: "ugyintezes/kapcsolat.php"},
-            {text: "Felvételi előkészítő jelentkezési lapja", href: "ugyintezes/kapcsolat.php"},
-            {text: "Informatikai, Teams problémák esetén", href: "ugyintezes/kapcsolat.php"}
+            {text: "Elérhetőségek", href: "ugyintezes/elerhetosegek.php"},
+            {text: "Ebédbefizetés", href: "ugyintezes/ebed.php"},
+            {text: "Kréta ügyintézés", href: "ugyintezes/kreta.php"},
+            {text: "Laptop ügyintézés", href: "ugyintezes/laptop.php"},
+            {text: "További ügyek", href: "ugyintezes/ugyek.php"},
         ]
     },
     {
@@ -94,15 +78,14 @@ window.MENU = [
         icon: "ti-friends",
         link: "elet.php",
         items: [
-            {text: "Témahetek", href: "elet/konyvtar.php"},
+            {text: "Témahetek", href: "elet/temahet.php"},
             {text: "Könyvtár", href: "elet/konyvtar.php"},
-            {text: "Tanulmányi versenyek", href: "elet/konyvtar.php"},
-            {text: "Zeneiskola", href: "elet/konyvtar.php"},
-            {text: "Pályázatok", href: "elet/konyvtar.php"},
-            {text: "Iskola újság", href: "elet/konyvtar.php"},
-            {text: "Határtalanul", href: "elet/konyvtar.php"},
-            {text: "Erasmus", href: "elet/konyvtar.php"},
-            {text: "Tanórán kívüli sportolás", href: "elet/konyvtar.php"}
+            {text: "Tanulmányi versenyek", href: "elet/tanulmanyi-versenyek.php"},
+            {text: "Zeneiskola", href: "elet/zeneiskola.php"},
+            {text: "Iskola újság", href: "elet/iskolaujsag.php"},
+            {text: "Határtalanul", href: "elet/hatartalanul.php"},
+            {text: "Erasmus", href: "elet/erasmus.php"},
+            {text: "Sportolás", href: "elet/sport.php"}
         ]
     },
     {
@@ -111,11 +94,10 @@ window.MENU = [
         class: 'cat-mental',
         link: "tamogatas.php",
         items: [
-            {text: "Iskola egészségügy, védőnő", href: "tamogato/vedono.php"},
-            {text: "Gyógytestnevelés", href: "tamogato/vedono.php"},
-            {text: "Iskola pszichológus", href: "tamogato/vedono.php"},
-            {text: "Hittan", href: "tamogato/vedono.php"},
-            {text: "Erkölcstan", href: "tamogato/vedono.php"},
+            {text: "Védőnő", href: "tamogato/vedono.php"},
+            {text: "Gyógytestnevelés", href: "tamogato/gyogytestneveles.php"},
+            {text: "Iskola pszichológus", href: "tamogato/pszihologus.php"},
+            {text: "Hit- és erkölcstan", href: "tamogato/hit-erkolcstan.php"},
         ]
     }
 ];

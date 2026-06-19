@@ -1,7 +1,7 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
-<?php $pageTitle = 'Körzethatárok' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Álláspályázat' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
@@ -13,6 +13,8 @@
     <section id="sample-page">
 <pre>
 
+Itt lehetne az aktuális.
+Ha nincs aktuális akkor is lehetne egy aktuálisnak “látszó”, hogy aki idetéved ne azt lássa “nincs felvétel”
 
 </pre>
 

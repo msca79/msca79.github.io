@@ -1,7 +1,7 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
-<?php $pageTitle = 'Körzethatárok' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Munkatársaink' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
@@ -11,10 +11,14 @@
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */  ?>
 <main id="page-content">
     <section id="sample-page">
-<pre>
+        Igazgatóság <br>
+        Pedagógusok <br>
+        Munkatársak <br>
+        Portás <br>
 
 
-</pre>
+      fényképes vagy valamilyen adat legyen?<br>
+
 
     </section>
 </main>

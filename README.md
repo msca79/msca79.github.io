@@ -10,3 +10,5 @@ reszponzív, ha kicsinyt tűnjön el a header menü, a fb kréta szövege is tű
 css, egyéb cuccok előtöltése az index-ben, forgó bigyó addig
 
 a doksi alapján aktualizálni
+
+főoldal mutassa m hanyadik óra van és mi lesz ezután

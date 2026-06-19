@@ -11,6 +11,9 @@
 <main id="page-content">
     <section id="sample-page">
         <h1>Könyvtár</h1>
+szabályok tömören, mettől-meddig
+ha megvan a teljes állomány pdf-ben, akkor az is letölthető
+ha összeköthető a könyvtárkezelővel megnézhetik a saját kölcsönzéseiket (ez azért sok idő lefejleszteni)
 
     </section>
 </main>

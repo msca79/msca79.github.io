@@ -11,6 +11,9 @@
 <main id="page-content">
     <section id="sample-page">
         <h1>Védőnő</h1>
+A védőnő elérhetősége:
+Spóring Zsuzsanna
+e-mail címe: csokonai.vedono@ujpestiszakrendelo.hu
 
     </section>
 </main>

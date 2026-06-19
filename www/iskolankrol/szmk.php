@@ -1,7 +1,7 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
-<?php $pageTitle = 'Körzethatárok' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Szülői munkaközösség' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
@@ -13,6 +13,8 @@
     <section id="sample-page">
 <pre>
 
+Az SZMK Szervezeti Működési Szabályzata itt olvasható.
+Iskola: A 2012/13-as tanév SZMK Munkaterve is elérhető. (Nem kell ilyen régi)
 
 </pre>
 
