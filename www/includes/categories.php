@@ -1,5 +1,6 @@
 <!-- ═══════════════════════ CATEGORIES ═══════════════════════ -->
 <?php
+date_default_timezone_set('Europe/Budapest');
 $now = time();
 if (isset($_GET['test_time'])) {
     $testTime = strtotime($_GET['test_time']);
