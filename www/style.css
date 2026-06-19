@@ -515,6 +515,7 @@ body {
 }
 
 /* kategória színsémák */
+.cat-bell      { --cat-color: #2373C2; --cat-bg: #f0f7ff; }
 .cat-calendar  { --cat-color: #09b19c; --cat-bg: #f0f7ff; }
 .cat-myschool  { --cat-color: #1a5fa5; --cat-bg: #f0f7ff; }
 .cat-midschool { --cat-color: #2e7d32; --cat-bg: #f1f8f1; }
@@ -523,6 +524,7 @@ body {
 .cat-friends   { --cat-color: #6a1b9a; --cat-bg: #fcf4ff; }
 .cat-mental    { --cat-color: #00838f; --cat-bg: #f0fbfc; }
 
+.cat-card.cat-bell      { background-color: var(--cat-bg); border-color: #d0e3f7; }
 .cat-card.cat-calendar  { background-color: var(--cat-bg); border-color: #d0e3f7; }
 .cat-card.cat-myschool  { background-color: var(--cat-bg); border-color: #d0e3f7; }
 .cat-card.cat-midschool { background-color: var(--cat-bg); border-color: #dceddc; }
@@ -769,62 +771,6 @@ footer .f-details a:hover {
 footer .f-details i {
     font-size: 14px;
     color: #667e99;
-}
-
-/* ═══════════════════════ CSENGETÉSI REND STATUS ═══════════════════════ */
-.bell-status {
-    padding: 20px 0;
-    background: #ffffff;
-}
-
-.bell-status .status-card {
-    background: var(--blue-50);
-    border: 1px solid var(--blue-100);
-    border-radius: 12px;
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    max-width: fit-content;
-    margin: 0 auto;
-}
-
-.bell-status .status-icon {
-    width: 48px;
-    height: 48px;
-    background: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blue-500);
-    font-size: 24px;
-    box-shadow: 0 2px 6px rgba(35, 115, 194, 0.1);
-}
-
-.bell-status .status-main {
-    font-family: 'Merriweather', serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--blue-800);
-    margin-bottom: 4px;
-}
-
-.bell-status .status-sub {
-    font-size: 14px;
-    color: var(--blue-600);
-    font-weight: 400;
-}
-
-@media (max-width: 768px) {
-    .bell-status .status-card {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        max-width: none;
-        padding: 25px;
-    }
 }
 
 /* ═══════════════════════ OLDAL TARTALOM ═══════════════════════ */
