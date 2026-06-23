@@ -11,6 +11,10 @@
 <main id="page-content">
     <section id="sample-page">
         <h1>Zeneiskola</h1>
+    Iskolánk az Erkel Gyula Újpesti Zenei Alapfokú Művészeti Iskola képzési helyszíne, így tanulóink helyben, saját intézményük falain belül vehetnek részt zeneoktatásban.
+    Bővebb információkat a https://ujpestizenede.hu/ oldalon találnak. A Zeneiskolát az alábbi elérhetőségeken érhetik el:
+    Telefon: +36-1-369-4485
+    E-mail: titkarsag.erkelgy@ebtk.hu  
 
     </section>
 </main>
