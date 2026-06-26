@@ -10,7 +10,17 @@
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */  ?>
 <main id="page-content">
     <section id="sample-page">
-     Hívogató
+        <h1>Hívogató</h1>
+
+        <img style="display: block; margin: 0 auto; width: 500px;"
+             src="https://www.csvmg.hu/upload/file/202526/hivogato_2026-27_plakat.png">
+
+        <div class="todo-floating-container">
+            <div class="iskola">
+                kép mellett, helyett szöveg is jó lenne, hogy kereshető legyen
+            </div>
+        </div>
+
     </section>
 </main>
 

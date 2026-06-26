@@ -15,6 +15,9 @@ A védőnő elérhetősége:
 Spóring Zsuzsanna
 e-mail címe: csokonai.vedono@ujpestiszakrendelo.hu
 
+
+ISKOLA: kötelező védőoltásokról általános tájékoztató. Melyiket mikor hány ismétlő stb. Kiskönyv kell.
+
     </section>
 </main>
 

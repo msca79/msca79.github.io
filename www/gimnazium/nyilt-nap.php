@@ -12,10 +12,11 @@
     <section id="sample-page">
         <h1>Nyílt nap</h1>
 
-<pre>
-
-    </pre>
-
+        <div class="todo-floating-container">
+            <div class="iskola">
+                gimnáziumi nyílt nap anyag
+            </div>
+        </div>
 
     </section>
 </main>

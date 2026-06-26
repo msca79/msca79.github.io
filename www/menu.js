@@ -21,7 +21,7 @@ window.MENU = [
         class: 'cat-myschool',
         icon: "ti-building",
         items: [
-            {text: "Letölthető dokumentumok", href: "iskolankrol/dokumentumok.php"},
+            {text: "Dokumentumok", href: "iskolankrol/dokumentumok.php"},
             {text: "Közzétételi lista", href: "iskolankrol/kozzetetel.php"},
             {text: "Munkatársaink", href: "iskolankrol/munkatarsaink.php"},
             {text: "Tanév rendje", href: "iskolankrol/tanev.php"},

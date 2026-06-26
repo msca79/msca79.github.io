@@ -37,6 +37,10 @@ Minden felajánlást köszönettel fogadunk.
 A Mesterségek Iskolája Alapítvány adószáma: 19672933-1-41 Székhelye: 1048 Budapest, Bőrfestő u. 5-9. Számlaszáma: OTP BANK ZRT - 11704007-20052401
 Tarné Éder Marianna, a Kuratórium elnöke
 
+
+ISKOLA: jegyzőkönyv kell? pdf-ben? Visszamenőleg kell?
+
+
 </pre>
 
     </section>

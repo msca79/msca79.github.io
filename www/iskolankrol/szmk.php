@@ -16,6 +16,8 @@
 Az SZMK Szervezeti Működési Szabályzata itt olvasható.
 Iskola: A 2012/13-as tanév SZMK Munkaterve is elérhető. (Nem kell ilyen régi)
 
+Kérdés: mit tegyünk ide
+
 </pre>
 
     </section>

@@ -12,9 +12,12 @@
     <section id="sample-page">
         <h1>Felvett tanulók OM kódja</h1>
 
-<pre>
 
-    </pre>
+        <div class="todo-floating-container">
+            <div class="iskola">
+                nem találtunk anyagot
+            </div>
+        </div>
 
 
     </section>

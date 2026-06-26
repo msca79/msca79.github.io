@@ -16,7 +16,7 @@ TSMT és egyéb tanárok által elérhető foglalkozások
 Külsős gyógytesi javaslatok
 https://www.csvmg.hu/upload/file/A%20GY%C3%93GYTESTNEVEL%C3%89S%20T%C3%96RV%C3%89NYI%20SZAB%C3%81LYOZ%C3%81SA.docx
 
-
+        https://www.csvmg.hu/upload/file/A%20GY%C3%93GYTESTNEVEL%C3%89S%20T%C3%96RV%C3%89NYI%20SZAB%C3%81LYOZ%C3%81SA.docx
     </section>
 </main>
 

@@ -12,9 +12,12 @@
     <section id="sample-page">
         <h1>Gimnázium információk</h1>
 
-<pre>
+        <div class="todo-floating-container">
+            <div class="iskola">
+                anyag. ez? https://www.csvmg.hu/koncepcio
+            </div>
+        </div>
 
-    </pre>
 
 
     </section>

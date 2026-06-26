@@ -12,16 +12,19 @@
     <section id="sample-page">
         <h1>Központi felvételi</h1>
 
-<pre>
+        <p style="text-align: center;">
+            <a href="https://www.csvmg.hu/upload/file/Felv%C3%A9teli%20%20el%C5%91k%C3%A9sz%C3%ADt%C5%91%20jelentkez%C3%A9si%20lap%202023.pdf"
+               class="btn-large-animated" target="_blank">Felvételi előkészítő jelentkezési lap</a>
+        </p>
 
-FELVÉTELI TÁJÉKOZTATÓ 2026-2027
-https://www.csvmg.hu/upload/file/202526/Felv%C3%A9teli%20t%C3%A1j%C3%A9koztat%C3%B3%20%202026-27%20(1).pdf
-
-
-Felvételi előkészítő jelentkezési lap
-https://www.csvmg.hu/upload/file/Felv%C3%A9teli%20%20el%C5%91k%C3%A9sz%C3%ADt%C5%91%20jelentkez%C3%A9si%20lap%202023.pdf
-
-    </pre>
+        <div class="todo-floating-container">
+            <div class="iskola">
+                ez egy régi lap.
+            </div>
+            <div class="iskola">
+               egyéb anyag?
+            </div>
+        </div>
 
 
     </section>

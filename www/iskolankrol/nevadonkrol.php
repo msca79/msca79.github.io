@@ -19,6 +19,10 @@
         </div>
         <p>Iskolánk büszkén viseli a költő nevét, szellemiségét követve törekszünk a sokoldalú tudás és az emberség átadására.</p>
     </section>
+
+Ez ide: https://www.csvmg.hu/tortenet
+és átnevezni: története
+
 </main>
 
 <?php /*  ------------------ TARTALOM VÉGE ----------------------- */  ?>
