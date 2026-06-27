@@ -362,7 +362,21 @@ body {
     transition: all 0.18s;
     border: none;
     white-space: nowrap;
-    height: 32px;
+    height: 34px;
+}
+
+.btn-banner i {
+    font-size: 17px;
+}
+
+.btn-social {
+    height: 28px;
+    padding: 4px 12px;
+    opacity: 0.6;
+}
+
+.btn-social:hover {
+    opacity: 1;
 }
 
 .btn-search { 
@@ -376,6 +390,12 @@ body {
 .btn-kreta:hover { background: #185FA5; }
 .btn-fb { background: #1877F2; color: white; }
 .btn-fb:hover { background: #145DB2; }
+.btn-insta {
+    background: #1877F2;
+    color: white;
+}
+.btn-insta:hover { background: #145DB2; }
+
 
 /* hamburger */
 .hamburger {

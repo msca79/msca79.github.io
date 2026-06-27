@@ -20,13 +20,16 @@
     <div class="right-actions">
         <form action="<?= $basePath ?? '' ?>search.php" method="GET" class="search-wrap">
             <input type="text" name="kereses" placeholder="Keresés…" aria-label="Keresés" value="<?= htmlspecialchars($_GET['kereses'] ?? '') ?>">
-            <button type="submit" class="btn-banner btn-search">
+            <button type="submit" class="btn-banner btn-search" title="Keresés">
                 <i class="ti ti-search"></i>
             </button>
         </form>
-        <a href="https://klik034877001.e-kreta.hu/" target="_blank" class="btn-banner btn-kreta"><i class="ti ti-school"></i> Kréta</a>
-        <a href="https://www.facebook.com/csvmgofficial" target="_blank" class="btn-banner btn-fb"><i class="ti ti-brand-facebook"></i> Facebook</a>
+        <a href="https://klik034877001.e-kreta.hu/" target="_blank" class="btn-banner btn-social btn-kreta" title="Kréta napló">
+            <i class="ti ti-school"></i> Kréta</a>
+        <a href="https://www.facebook.com/csvmgofficial" target="_blank" class="btn-banner btn-social btn-fb" title="Facebook">
+            <i class="ti ti-brand-facebook"></i> </a>
+        <a href="https://www.instagram.com/ujpesti_csokonai_hivatalos/" target="_blank" class="btn-banner btn-social btn-insta" title="Instagram">
+            <i class="ti ti-brand-instagram"></i> </a>
 
-        INSTA
     </div>
 </header>
