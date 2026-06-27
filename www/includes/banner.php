@@ -8,27 +8,34 @@
             <div class="school-name">Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</div>
         </a>
         <div class="school-meta">
-            <a href="<?= $basePath ?? '' ?>ugyintezes/kapcsolat.php" class="meta-item"><i class="ti ti-map-pin"></i> 1048 Budapest, Bőrfestő utca 5-9.</a>
+            <a href="<?= $basePath ?? '' ?>ugyintezes/kapcsolat.php" class="meta-item"><i class="ti ti-map-pin"></i>
+                1048 Budapest, Bőrfestő utca 5-9.</a>
             <span class="meta-separator">|</span>
-            <a href="<?= $basePath ?? '' ?>ugyintezes/kapcsolat.php" class="meta-item"><i class="ti ti-phone"></i> +36 1 380 7170</a>
+            <a href="<?= $basePath ?? '' ?>ugyintezes/kapcsolat.php" class="meta-item"><i class="ti ti-phone"></i> +36 1
+                380 7170</a>
             <span class="meta-separator">|</span>
-            <a href="mailto:titkarsag.csokonaivm@ebtk.hu" class="meta-item"><i class="ti ti-mail"></i> titkarsag.csokonaivm@ebtk.hu</a>
+            <a href="mailto:titkarsag.csokonaivm@ebtk.hu" class="meta-item"><i class="ti ti-mail"></i>
+                titkarsag.csokonaivm@ebtk.hu</a>
             <span class="meta-separator">|</span>
             <span class="meta-item"><i class="ti ti-id-badge"></i> OM-azonosító: 034877</span>
         </div>
     </div>
     <div class="right-actions">
         <form action="<?= $basePath ?? '' ?>search.php" method="GET" class="search-wrap">
-            <input type="text" name="kereses" placeholder="Keresés…" aria-label="Keresés" value="<?= htmlspecialchars($_GET['kereses'] ?? '') ?>">
+            <input type="text" name="kereses" placeholder="Keresés…" aria-label="Keresés"
+                   value="<?= htmlspecialchars($_GET['kereses'] ?? '') ?>">
             <button type="submit" class="btn-banner btn-search" title="Keresés">
                 <i class="ti ti-search"></i>
             </button>
         </form>
-        <a href="https://klik034877001.e-kreta.hu/" target="_blank" class="btn-banner btn-social btn-kreta" title="Kréta napló">
+        <a href="https://klik034877001.e-kreta.hu/" target="_blank" class="btn-banner btn-social btn-kreta"
+           title="Kréta napló">
             <i class="ti ti-school"></i> Kréta</a>
-        <a href="https://www.facebook.com/csvmgofficial" target="_blank" class="btn-banner btn-social btn-fb" title="Facebook">
+        <a href="https://www.facebook.com/csvmgofficial" target="_blank" class="btn-banner btn-social btn-fb"
+           title="Facebook">
             <i class="ti ti-brand-facebook"></i> </a>
-        <a href="https://www.instagram.com/ujpesti_csokonai_hivatalos/" target="_blank" class="btn-banner btn-social btn-insta" title="Instagram">
+        <a href="https://www.instagram.com/ujpesti_csokonai_hivatalos/" target="_blank"
+           class="btn-banner btn-social btn-insta" title="Instagram">
             <i class="ti ti-brand-instagram"></i> </a>
 
     </div>

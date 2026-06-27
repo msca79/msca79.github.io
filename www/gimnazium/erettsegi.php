@@ -2,6 +2,7 @@
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Érettségi információk' . $pageTitlePostfix; ?>
+<?php $pageDescription = 'Felvételi információk, határidők és jelentkezési feltételek a Csokonai Gimnáziumba.'; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
