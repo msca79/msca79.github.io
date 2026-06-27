@@ -11,12 +11,16 @@
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */  ?>
 <main id="page-content">
     <section id="sample-page">
-<pre>
+        <h1>Álláslehetőségek</h1>
 
-Itt lehetne az aktuális.
-Ha nincs aktuális akkor is lehetne egy aktuálisnak “látszó”, hogy aki idetéved ne azt lássa “nincs felvétel”
-
-</pre>
+        <div class="todo-floating-container">
+            <div class="iskola">
+                Ha nincs aktuális akkor is lehetne egy aktuálisnak “látszó”, hogy aki idetéved ne azt lássa “nincs felvétel”
+            </div>
+            <div class="iskola">
+               Van-e, lesz-e nyitott pozíció
+            </div>
+        </div>
 
     </section>
 </main>

@@ -29,7 +29,7 @@ window.MENU = [
             {text: "Alapítvány", href: "iskolankrol/alapitvany.php"},
             {text: "Szülői munkaközösség", href: "iskolankrol/szmk.php"},
             {text: "Álláspályázat", href: "iskolankrol/allas.php"},
-            {text: "Névadónkról", href: "iskolankrol/nevadonkrol.php"},
+            {text: "Rólunk", href: "iskolankrol/rolunk.php"},
             {text: "Ökoiskola", href: "iskolankrol/okoiskola.php"},
         ]
     },
@@ -71,6 +71,7 @@ window.MENU = [
             {text: "Kréta ügyintézés", href: "ugyintezes/kreta.php"},
             {text: "Laptop ügyintézés", href: "ugyintezes/laptop.php"},
             {text: "További ügyek", href: "ugyintezes/ugyek.php"},
+            {text: "Kapcsolat", href: "ugyintezes/kapcsolat.php"},
         ]
     },
     {
@@ -97,7 +98,7 @@ window.MENU = [
         items: [
             {text: "Védőnő", href: "tamogato/vedono.php"},
             {text: "Gyógytestnevelés", href: "tamogato/gyogytestneveles.php"},
-            {text: "Iskola pszichológus", href: "tamogato/pszihologus.php"},
+            {text: "Iskola pszichológus", href: "tamogato/iskolapszihologus.php"},
             {text: "Hit- és erkölcstan", href: "tamogato/hit-erkolcstan.php"},
         ]
     }

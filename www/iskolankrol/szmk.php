@@ -11,14 +11,18 @@
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */  ?>
 <main id="page-content">
     <section id="sample-page">
-<pre>
 
-Az SZMK Szervezeti Működési Szabályzata itt olvasható.
-Iskola: A 2012/13-as tanév SZMK Munkaterve is elérhető. (Nem kell ilyen régi)
+        <h1>Szülői munkaközösség</h1>
 
-Kérdés: mit tegyünk ide
+        <div class="todo-floating-container">
+            <div class="iskola">
+                Mit tegyünk ide?
+            </div>
+            <div class="iskola">
+                A 2012/13-as tanév SZMK Munkaterve elérhető, frissebb van esetleg?
+            </div>
+        </div>
 
-</pre>
 
     </section>
 </main>

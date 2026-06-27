@@ -14,8 +14,8 @@
         <p><strong>Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium</strong></p>
         <div class="highlight-box">
             <p><strong>Cím:</strong> 1048 Budapest, Bőrfestő utca 5-9.</p>
-            <p><strong>Telefon:</strong> +36 1 380 7170</p>
-            <p><strong>Email:</strong> titkarsag@csokonai-ujpest.hu</p>
+            <p><strong><i class="ti ti-phone"></i> Telefon:</strong>+36 1 380 7170</p>
+            <p><strong><i class="ti ti-mail"></i> Email:</strong>   <a href="mailto:titkarsag.csokonaivm@ebtk.hu"> titkarsag.csokonaivm@ebtk.hu </a></p>
             <p><strong>OM-azonosító:</strong> 034877</p>
         </div>
 

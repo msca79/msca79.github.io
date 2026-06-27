@@ -12,9 +12,11 @@
     <section id="sample-page">
           <h1>Témahét</h1>
 
-       <pre>
-
-           </pre>
+        <div class="todo-floating-container">
+            <div class="iskola">
+                valami anyag kellene
+            </div>
+        </div>
 
 
     </section>

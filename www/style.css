@@ -82,12 +82,19 @@ body {
         font-family: 'Source Sans 3', sans-serif;
     }
 
+    a[href]::after {
+        content: "🔗";
+        background: #e8ecfd;
+        color: #292fa1;
+        border: 1px solid #b4baf8;
+    }
     a[href$=".pdf"]::after {
         content: "PDF";
         background: #fde8e8;
         color: #c81e1e;
         border: 1px solid #f8b4b4;
     }
+
 
     a[href$=".doc"]::after,
     a[href$=".docx"]::after {
@@ -758,6 +765,71 @@ body {
     filter: grayscale(0%);
     opacity: 1;
     transform: scale(1.05);
+}
+
+/* ═══════════════════════ FORMS ═══════════════════════ */
+.standard-form {
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--blue-200);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text-primary);
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 3px rgba(35, 115, 194, 0.1);
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.form-check input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--blue-500);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background: var(--blue-600);
 }
 
 /* ═══════════════════════ FOOTER ═══════════════════════ */

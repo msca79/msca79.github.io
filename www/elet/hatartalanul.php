@@ -12,6 +12,13 @@
     <section id="sample-page">
         <h1>Határtalanul</h1>
 
+        <div class="todo-floating-container">
+            <div class="iskola">
+                valami anyag kellene
+            </div>
+        </div>
+
+
     </section>
 </main>
 

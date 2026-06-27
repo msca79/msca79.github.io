@@ -123,11 +123,11 @@
 
         <div class="todo-floating-container">
             <div class="iskola">
-                első rész. amit kaptunk, hogy látszódnia kell. Ahol ?? van ott nem találtunk anyagot, vagy nem tudtuk
+                első rész. amit kaptunk, hogy legyen. Ahol ?? van ott nem találtunk anyagot, vagy nem tudtuk
                 melyik
             </div>
             <div class="iskola">
-                lenti rész, mi az ami még kell a mostaniból?
+                a második rész, ami a mostanin van és nem került át. Azok nem kellenek?
             </div>
         </div>
 
