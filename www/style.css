@@ -26,6 +26,7 @@ body {
     background: var(--page-bg);
     color: var(--text-primary);
     min-height: 100vh;
+    margin: 0;
 }
 
 .item-icon {
@@ -436,7 +437,7 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid var(--blue-100);
     position: sticky;
-    top: 50px;
+    top: 71px;
 }
 
 .menu-item {

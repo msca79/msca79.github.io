@@ -11,4 +11,4 @@
     <script>window.BASE_PATH = '<?= $basePath ?? '' ?>';</script>
     <script src="<?= $basePath ?? '' ?>menu.js"></script>
 </head>
-<body class="<?= $bodyClass ?? '' ?>">
+<body >
