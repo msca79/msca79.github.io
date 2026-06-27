@@ -19,7 +19,7 @@
     <section id="sample-page">
         <h1>Gyógytestnevelés</h1>
         <div class="disclosure-list">
-            <a href="https://www.csvmg.hu/upload/file/A%20GY%C3%93GYTESTNEVEL%C3%89S%20T%C3%96RV%C3%89NYI%20SZAB%C3%81LYOZ%C3%81SA.docx">
+            <a href="https://www.csvmg.hu/upload/file/A%20GY%C3%93GYTESTNEVEL%C3%89S%20T%C3%96RV%C3%89NYI%20SZAB%C3%81LYOZ%C3%81SA.docx" target="_blank">
                 Gyógytesnevelés törvényi szabályozása
             </a>
         </div>

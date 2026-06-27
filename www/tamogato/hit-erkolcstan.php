@@ -22,7 +22,7 @@
 
         <div class="disclosure-list">
 
-            <a href="https://www.csvmg.hu/upload/file/3.%20sz%C3%A1m%C3%BA%20mell%C3%A9klet%20etika%20hit-%20%C3%A9s%20erk%C3%B6lcstan%20jelentkez%C3%A9si%20lap%202026.doc">
+            <a href="https://www.csvmg.hu/upload/file/3.%20sz%C3%A1m%C3%BA%20mell%C3%A9klet%20etika%20hit-%20%C3%A9s%20erk%C3%B6lcstan%20jelentkez%C3%A9si%20lap%202026.doc" target="_blank">
                 Hit és erkölcstan jelentkezési lap
             </a>
         </div>

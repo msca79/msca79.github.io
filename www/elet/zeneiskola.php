@@ -28,7 +28,7 @@
                 <span class="item">
                     <i class="ti ti-globe"> </i>
                     Internet:
-                    <a href="https://ujpestizenede.hu/">ujpestizenede.hu</a>
+                    <a href="https://ujpestizenede.hu/" target="_blank">ujpestizenede.hu</a>
                 </span>
 
                 <span class="item">

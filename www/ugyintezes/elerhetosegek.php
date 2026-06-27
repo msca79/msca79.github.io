@@ -117,11 +117,11 @@
                         <span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 13. mellék</span>
                         <span class="contact-item">
                             <i class="ti ti-mail"></i>
-                            <a href="mailto:"> csvmg.gazdasagi.iroda@gmail.com</a>
+                            <a href="mailto:csvmg.gazdasagi.iroda@gmail.com"> csvmg.gazdasagi.iroda@gmail.com</a>
                         </span>
                         <span class="contact-item">
                             <i class="ti ti-mail"></i>
-                            <a href="mailto:"> titkarsag.csokonaivm@ebtk.hu</a>
+                            <a href="mailto:titkarsag.csokonaivm@ebtk.hu"> titkarsag.csokonaivm@ebtk.hu</a>
                         </span>
                     </td>
                 </tr>

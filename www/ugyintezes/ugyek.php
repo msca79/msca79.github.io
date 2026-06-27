@@ -21,16 +21,16 @@
                     Bizonyítvány másolat kérése
                 </a>
 
-                <a href="https://www.csvmg.hu/upload/file/felmentesi_kerelem_2025_2026.docx">
+                <a href="https://www.csvmg.hu/upload/file/felmentesi_kerelem_2025_2026.docx" target="_blank">
                     Felmentési kérelem 16 óra előtt megszervezett egyéb foglalkozás alól
                 </a>
 
-                <a href="https://www.csvmg.hu/upload/file/K%C3%A9relem%20k%C3%A9t%20testnevel%C3%A9s%20%C3%B3ra%20al%C3%B3li%20felment%C3%A9sre.docx">
+                <a href="https://www.csvmg.hu/upload/file/K%C3%A9relem%20k%C3%A9t%20testnevel%C3%A9s%20%C3%B3ra%20al%C3%B3li%20felment%C3%A9sre.docx" target="_blank">
                     Kérelem két testnevelés óra alóli felmentéshez
                 </a>
 
                 <!-- TODO: külső link -->
-                <a href="https://www.oktatas.hu/kozneveles/egyeni_tanuloi_munkarend/gyik">
+                <a href="https://www.oktatas.hu/kozneveles/egyeni_tanuloi_munkarend/gyik" target="_blank">
                     Egyéni tanrend igénylése
                 </a>
 

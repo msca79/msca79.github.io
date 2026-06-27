@@ -27,7 +27,7 @@
 
         <p style="text-align: center;">
             <a href="https://www.csvmg.hu/upload/file/202526/Felv%C3%A9teli%20t%C3%A1j%C3%A9koztat%C3%B3%20%202026-27%20(1).pdf"
-               class="btn-large-animated">Felvételi tájékoztató 2026-2027</a>
+               class="btn-large-animated" target="_blank">Felvételi tájékoztató 2026-2027</a>
         </p>
 
         <div class="todo-floating-container">
