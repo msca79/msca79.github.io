@@ -72,7 +72,7 @@
                 <span class="item">
                     <i class="ti ti-mail"> </i>
                     E-mail:
-                    <a href="lelekmelengeto100@gmail.com">lelekmelengeto100@gmail.com</a>
+                    <a href="mailto:lelekmelengeto100@gmail.com">lelekmelengeto100@gmail.com</a>
                 </span>
             </p>
         </div>
