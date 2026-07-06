@@ -1,7 +1,7 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
-<?php $pageTitle = 'Felvett tanulók' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Gimnáziumba felvett tanulók' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
@@ -69,7 +69,7 @@
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */ ?>
 <main id="page-content">
     <section id="sample-page">
-        <h1>Felvett tanulók</h1>
+        <h1>Gimnáziumba felvett tanulók</h1>
 
         <div class="highlight-box">
 

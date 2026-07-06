@@ -1,7 +1,7 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
-<?php $pageTitle = 'Felvett tanulók' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Általános iskolába felvett tanulók' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
@@ -65,7 +65,7 @@
             }
         </style>
 
-        <h1>Felvett tanulók</h1>
+        <h1>Általános iskolába felvett tanulók</h1>
 
         <p><strong>Tisztelt Szülők!</strong></p>
 
