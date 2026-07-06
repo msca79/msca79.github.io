@@ -1,0 +1,108 @@
+<?php $basePath = '../'; ?>
+<?php include '../includes/constants.php'; ?>
+<?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
+<?php $pageTitle = 'Beiratkozási tájékoztató' . $pageTitlePostfix; ?>
+<?php include '../includes/header.php'; ?>
+<?php include '../includes/sidenav.php'; ?>
+<?php include '../includes/banner.php'; ?>
+<?php include '../includes/menubar.php'; ?>
+
+<?php /*  ------------------ TARTALOM ELEJE ----------------------- */ ?>
+<main id="page-content">
+    <section id="sample-page">
+        <h1>Beiratkozási tájékoztató – 2026/2027. tanév</h1>
+
+        <p><strong>Tisztelt Szülők!</strong></p>
+
+        <p>
+            Néhány hete örömmel értesítettük Önöket a <strong>2026/2027-es</strong> tanévre vonatkozó felvételi eljárás
+            eredményéről.
+        </p>
+
+        <p>
+            A 2025/2026. tanév rendjéről szóló 27/2025. (VII. 24.) BM rendelet alapján a 2026/2027. tanévre vonatkozóan
+            az intézményünkbe történő beiratkozás időpontja:
+            <strong>2026. június 25. (csütörtök) 08.00-16.00 óra.</strong>
+        </p>
+        <p>
+            A szülőnek/más törvényes képviselőnek a beiratkozás napján személyesen meg kell jelenni a középfokú
+            intézményben.
+
+        </p>
+        <p>
+            A gyermek személyi igazolványát, az általános iskolai tanulmányok befejezését igazoló bizonyítványát,
+            valamint a beiratkozáshoz szükséges dokumentumok, nyilatkozatok eredeti példányát a beiratkozáskor be kell
+            mutatni.
+        </p>
+        <p>
+            A beiratkozáskor a személyes megjelenés kötelező, azonban a beiratkozáshoz szükséges adatok előzetesen, a
+            KRÉTA rendszer e-Ügyintézés („Beiratkozás középfokú intézménybe" – BKI) felületén keresztül is megadhatók az
+            intézmény számára, gyorsítva ezzel a középfokú intézménybe történő beiratkozás folyamatát.
+        </p>
+        <p>
+            A szülőknek az <strong>előzetes, elektronikus adatbeküldésre</strong>
+            <strong>2026. június 17. és 2026. június 25.</strong> közötti időszakban van lehetősége.
+        </p>
+        <p>
+            Felhívjuk a figyelmet arra, hogy a beiratkozással összefüggő ügyintézés a KRÉTA Szülőknek applikációból nem
+            kezdeményezhető, a beiratkozás kizárólag a KRÉTA rendszer webes felületéről indítható.
+        </p>
+
+        <div class="highlight-box">
+            <p>
+                A beiratkozás napján az alább felsorolt dokumentumokra lesz szükség:<br>
+            </p>
+            <ul>
+                <li>a) személyi igazolvány,</li>
+                <li>b) lakcímkártya,</li>
+                <li>c) TAJ-kártya,</li>
+                <li>d) törvényes képviseletet igazoló dokumentum, ha az egyik szülő egyedül gyakorolja a szülői
+                    felügyeleti jogot (szülők gyámhivatalban felvett nyilatkozata a szülői felügyeleti jog gyakorlásáról
+                    / másik szülő halotti anyakönyvi kivonata / gyámhivatal határozata / bíróság ítélete),
+                </li>
+                <li>e) általános iskolai bizonyítvány,</li>
+                <li>f) szakértői vélemény (SNI, BTMN), ha van,</li>
+                <li>g) határozat hátrányos/halmozottan hátrányos helyzetről, ha van,</li>
+                <li>h) határozat rendszeres gyermekvédelmi támogatásról, ha van,</li>
+                <li>i) a diákigazolvány elkészítéséhez NEK adatlap a lakcím megjelölésével (a NEK adatlapot a
+                    beiratkozás után is intézhetik, Kérjük, vegyék figyelembe, hogy az igazolvány legyártása miatt az
+                    átfutási idő több hét is lehet!).Kérjük, vegyék figyelembe, hogy az igazolvány legyártása miatt az
+                    átfutási idő több hét is lehet!
+                </li>
+            </ul>
+        </div>
+
+        <p>A <strong>dokumentumokat</strong> itt találják:</p>
+
+        <div class="disclosure-list">
+
+                <a href="https://csvmg.hu/upload/file/G%C3%B3lyat%C3%A1bor%20jelentkez%C3%A9si%20lap_2026.pdf"
+                   target="_blank">
+                    Gólyatábor jelentkezési lap</a>
+                <a href="https://csvmg.hu/upload/file/Eg%C3%A9szs%C3%A9g%C3%BCgyi%20inf%C3%B3k.pdf"
+                   target="_blank">
+                    Egészségügyi infók</a>
+                <a href="https://csvmg.hu/upload/file/HOZZ%C3%81J%C3%81RUL%C3%93%20NYILATKOZAT%20felv%C3%A9tel.pdf"
+                   target="_blank">
+                    Hozzájáruló nyilatkozat</a>
+                <a href="https://csvmg.hu/upload/file/2.%20sz.%20mell%C3%A9klet-%20Form_Tv.k%C3%A9pvisel%C5%91%20nyilatkozat_2024-2%20(1).pdf"
+                   target="_blank">
+                    Nyilatkozat a gyermek törvényes képviseletéről</a>
+                <a href="https://csvmg.hu/upload/file/Anafilaxia%20%C3%A9s%20allergia%20nyilatkozat.pdf"
+                   target="_blank">
+                    Anafilaxia és allergia nyilatkozat</a>
+        </div>
+
+
+        <div class="todo-floating-container">
+            <div class="iskola">
+                a szöveg és utána a felsorolás ismétli önmagát. felesleges.
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<?php /*  ------------------ TARTALOM VÉGE ----------------------- */ ?>
+<?php include '../includes/sitemap.php'; ?>
+<?php include '../includes/footer.php'; ?>

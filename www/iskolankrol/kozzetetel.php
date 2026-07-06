@@ -49,11 +49,6 @@
                 feltüntetve
             </a>
 
-            <a href="#" target="_blank" >
-                <i class="ti ti-stretching"></i> Szakkörök igénybevételének lehetőségei, mindennapos testedzés
-                lehetősége (??)
-            </a>
-
             <a href="https://www.csvmg.hu/upload/file/Hetvegi hazifeladatok dolgozatok szabalyai.pdf" target="_blank"
                >
                 <i class="ti ti-edit"></i> Hétvégi házi feladat és a dolgozatírás szabályai: Elérhetőek az iskola
@@ -114,11 +109,6 @@
             <div><a href="/upload/file/2024 tagozataink.pdf" target="_blank">Választható tagozatok</a></div>
             <div><a href="/upload/file/Orszagos nyelvi meres eredmenyei.pdf" target="_blank">Országos nyelvi mérés
                     eredményei</a></div>
-            <div><a href="/upload/file/202526/Csvmg_munkaterv_202526.pdf" target="_blank">Munkaterv</a></div>
-            <div><a href="/upload/file/202526/PEDPROGRAM_Csokonai_legitimacioval.pdf" target="_blank">2025 szeptember
-                    1-től érvényes pedagógiai program</a></div>
-            <div><a href="/upload/file/202526/igazgatoi_palyazat_ANJ.pdf" target="_blank">Igazgatói pályázat 2026</a>
-            </div>
         </div>
 
         <div class="todo-floating-container">

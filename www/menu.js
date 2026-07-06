@@ -1,36 +1,16 @@
 window.MENU = [
     {
-        name: "Események",
-        class: 'cat-calendar',
-        icon: "ti-calendar",
-        hideOnSitemap: true,
-        items: [
-            {
-                text: "Ballagás 8. osztályból<br><small>2026. június 19. <i>(30 nap múlva)</i></small>",
-            },
-            {
-                text: "Nyári szünet első nap<br><small>2026. június 22. <i>(41 nap múlva)</i></small>",
-            },
-            {
-                text: "Első iskola nap 2026/2027<br><small>2026. szeptember 1. <i>(100 nap múlva)</i></small>",
-            }
-        ]
-    },
-    {
         name: "Iskolánk",
         class: 'cat-myschool',
         icon: "ti-building",
         items: [
             {text: "Dokumentumok", href: "iskolankrol/dokumentumok.php"},
             {text: "Közzétételi lista", href: "iskolankrol/kozzetetel.php"},
-            {text: "Munkatársaink", href: "iskolankrol/munkatarsaink.php"},
+            {text: "Tanáraink", href: "iskolankrol/tanaraink.php"},
             {text: "Tanév rendje", href: "iskolankrol/tanev.php"},
             {text: "Csengetési rend", href: "iskolankrol/csengetes.php"},
             {text: "Alapítvány", href: "iskolankrol/alapitvany.php"},
-            {text: "Szülői munkaközösség", href: "iskolankrol/szmk.php"},
-            {text: "Álláspályázat", href: "iskolankrol/allas.php"},
             {text: "Rólunk", href: "iskolankrol/rolunk.php"},
-            {text: "Ökoiskola", href: "iskolankrol/okoiskola.php"},
         ]
     },
     {
@@ -38,8 +18,9 @@ window.MENU = [
         class: 'cat-midschool',
         icon: "ti-school",
         items: [
+            {text: "Információk", href: "altalanos/altalanos.php"},
             {text: "Körzethatárok", href: "altalanos/korzethatarok.php"},
-            {text: "Felvett tanulók OM kódja", href: "altalanos/felvettek.php"},
+            {text: "Felvett tanulók", href: "altalanos/felvettek.php"},
             {text: "Beiratkozási tájékoztató", href: "altalanos/beiratkozas.php"},
             {text: "Hívogató / Nyílt nap", href: "altalanos/hivogato.php"},
         ]
@@ -52,7 +33,8 @@ window.MENU = [
         items: [
             {text: "Információk", href: "gimnazium/informaciok.php"},
             {text: "Felvételi", href: "gimnazium/felveteli.php"},
-            {text: "Felvett tanulók OM kódja", href: "gimnazium/felvettek.php"},
+            {text: "Felvett tanulók", href: "gimnazium/felvettek.php"},
+            {text: "Beiratkozás", href: "gimnazium/beiratkozas.php"},
             {text: "Érettségi", href: "gimnazium/erettsegi.php"},
             {text: "Központi felvételi", href: "gimnazium/kozponti-felveteli.php"},
             {text: "Gólyatábor", href: "gimnazium/golyatabor.php"},
@@ -81,6 +63,7 @@ window.MENU = [
         link: "elet.php",
         items: [
             {text: "Témahetek", href: "elet/temahet.php"},
+            {text: "Táborok", href: "elet/taborok.php"},
             {text: "Könyvtár", href: "elet/konyvtar.php"},
             {text: "Tanulmányi versenyek", href: "elet/tanulmanyi-versenyek.php"},
             {text: "Zeneiskola", href: "elet/zeneiskola.php"},

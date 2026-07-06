@@ -13,6 +13,15 @@
     <section id="sample-page">
 
 
+        <h1>Akikre büszkék vagyunk</h1>
+        <p>
+            ...
+        </p>
+        <p>
+            ...
+        </p>
+
+
         <h1>Történetünk</h1>
 
         <p>

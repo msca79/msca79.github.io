@@ -11,8 +11,8 @@
                     : 'Az Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium hivatalos weboldala.'
     ) ?>">
 
-    <link rel="preload" href="<?= $basePath ?? '' ?>style.css" as="style">
-    <link rel="preload" href="<?= $basePath ?? '' ?>menu.js" as="script">
+    <link rel="preload" href="<?= $basePath ?? '' ?>style.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/style.css') ?>" as="style">
+    <link rel="preload" href="<?= $basePath ?? '' ?>menu.js?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/menu.js') ?>" as="script">
     <link rel="preload" href="<?= $basePath ?? '' ?>/vendor/tabler-icons.min.css" as="style">
     <link rel="preload" href="<?= $basePath ?? '' ?>/images/logo.png" as="image">
     <link rel="preload" href="<?= $basePath ?? '' ?>/vendor/tabler-icons.woff2" as="font" type="font/woff2" crossorigin>
@@ -24,7 +24,7 @@
     <link rel="preload" href="<?= $basePath ?? '' ?>/vendor/source-sans-3-700.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="preload" href="<?= $basePath ?? '' ?>/images/logo.png" as="image">
-    <link rel="preload" href="<?= $basePath ?? '' ?>/images/banner.png" as="image">
+    <link rel="preload" href="<?= $basePath ?? '' ?>/images/banner5.jpg" as="image">
     <link rel="preload" href="<?= $basePath ?? '' ?>/images/logok/bethlen-gabor-alapkezelo.jpg" as="image">
     <link rel="preload" href="<?= $basePath ?? '' ?>/images/logok/codeweek.png" as="image">
     <link rel="preload" href="<?= $basePath ?? '' ?>/images/logok/digitalis_temahet.png" as="image">
@@ -39,10 +39,10 @@
     <link rel="preload" href="<?= $basePath ?? '' ?>/images/logok/ute.jpg" as="image">
 
     <link rel="stylesheet" href="<?= $basePath ?? '' ?>/vendor/tabler-icons.min.css">
-    <link rel="stylesheet" href="<?= $basePath ?? '' ?>style.css">
+    <link rel="stylesheet" href="<?= $basePath ?? '' ?>style.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/style.css') ?>">
 
     <script>window.BASE_PATH = '<?= $basePath ?? '' ?>';</script>
-    <script src="<?= $basePath ?? '' ?>menu.js" defer></script>
+    <script src="<?= $basePath ?? '' ?>menu.js?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/menu.js') ?>" defer></script>
 
     <style>
         /*body {*/

@@ -18,36 +18,31 @@
 <main id="page-content">
     <section id="sample-page">
         <h1>Gyógytestnevelés</h1>
-        <div class="disclosure-list">
-            <a href="https://www.csvmg.hu/upload/file/A%20GY%C3%93GYTESTNEVEL%C3%89S%20T%C3%96RV%C3%89NYI%20SZAB%C3%81LYOZ%C3%81SA.docx" target="_blank">
-                Gyógytesnevelés törvényi szabályozása
-            </a>
-        </div>
+
 
         <div class="highlight-box">
             <p>
                 <span class="item">
-                   <strong>Gyógytestnevelő neve</strong>
+                   <strong>Földesi Fábián</strong>
                 </span>
 
-                <span class="item">
-                    <i class="ti ti-phone"> </i>
-                   Telefon:
-
-                </span>
                 <span class="item">
                     <i class="ti ti-mail"> </i>
                     E-mail:
-                    <a href="#">emailcíme</a>
+                    <a href="mailto:foldesi.fabian.04@fpsz.net">foldesi.fabian.04@fpsz.net</a>
                 </span>
             </p>
 
         </div>
 
+        <div class="disclosure-list">
+            <a href="https://www.csvmg.hu/upload/file/A%20GY%C3%93GYTESTNEVEL%C3%89S%20T%C3%96RV%C3%89NYI%20SZAB%C3%81LYOZ%C3%81SA.docx"
+               target="_blank">
+                Gyógytesnevelés törvényi szabályozása
+            </a>
+        </div>
+
         <div class="todo-floating-container">
-            <div class="iskola">
-                gyógytesis elérhetősége
-            </div>
             <div class="iskola">
                 egyéb elérhető foglalkozások (TSMT, stb)
             </div>

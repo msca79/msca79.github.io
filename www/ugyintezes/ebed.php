@@ -16,25 +16,21 @@
             <div class="highlight-box">
                 <p>
                     <strong>Fizil Szilvia </strong><br>
-                    telefon: 380-7170/13 m. <br>
-                    email: <a href="mailto:fizilszilvia.csvmg@gmail.com">fizilszilvia.csvmg@gmail.com</a>
+                    Telefon: +36 1 380 7170 / 13 mellék <br>
+                    Email: <a href="mailto:fizilszilvia.csvmg@gmail.com">fizilszilvia.csvmg@gmail.com</a>
                 </p>
             </div>
 
             <div class="highlight-box">
                 <p>
                     <strong> BUDAPEST FŐV. IV. KER. ÚJPEST ÖNKORMÁNYZAT GAZDASÁGI INTÉZMÉNYE </strong> <br>
-                    Telefon: 06-1-435-9042<br>
-                    E-mail: info@ebedbefizetes.ujpestgi.hu <br>
-                    email: <a href="mailto:fizilszilvia.csvmg@gmail.com">fizilszilvia.csvmg@gmail.com</a><br>
-                    <a href="https://multischool.ujpestgi.hu" target="_blank">multischool.ujpestgi.hu</a><br>
+                    Telefon: +36 1 435 9042<br>
+                    E-mail: <a href="mailto:info@ebedbefizetes.ujpestgi.hu">info@ebedbefizetes.ujpestgi.hu</a> <br>
+                    Weboldal <a href="https://multischool.ujpestgi.hu" target="_blank">multischool.ujpestgi.hu</a><br>
                 </p>
             </div>
 
             <div class="todo-floating-container">
-                <div class="iskola">
-                    aktuális az elérhetőség? van esetleg mobilszám?
-                </div>
                 <div class="iskola">
                     egyéb infó hogy kell rendszeresen fizetni, hol kell regisztrálni
                 </div>

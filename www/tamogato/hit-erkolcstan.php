@@ -104,7 +104,7 @@
                 </span>
                 <span class="item">
                     <i class="ti ti-phone"> </i>
-                    Telefon: +36 70 381 449 (NINCS ILYEN SZÁM)
+                    Telefon:
                 </span>
                 <span class="item">
                     <i class="ti ti-mail"> </i>

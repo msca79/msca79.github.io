@@ -1,44 +1,41 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
-<?php $pageTitle = 'Ökoiskola' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Közzétételi lista' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
 <?php include '../includes/menubar.php'; ?>
 
 
-
-<style>
-    #sample-page img {
-        display: block;
-        margin: 0 auto;
-    }
-</style>
-
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */ ?>
 <main id="page-content">
     <section id="sample-page">
-
-        <h1>Ökoiskola</h1>
+        <h1>Közzétételi lista</h1>
 
         <div class="disclosure-list">
-            <a href="https://csvmg.hu/upload/file/%C3%96r%C3%B6k%C3%B6s%20%C3%96koiskola.pdf" target="_blank">
-                Oklevél </a>
-            <a href="http://csvmg.hu/upload/file/%C3%96ko%20munkaterv%202021-22.pdf" target="_blank">
-                Munkaterv 2021-22 </a>
+
+
+            <a href="#" target="_blank" >
+                <i class="ti ti-gavel"></i> Helyi értékelési szabályzat (??)
+            </a>
+
+            <a href="#" target="_blank" >
+                <i class="ti ti-coin"></i> Könyvtári szabályzat (??)
+            </a>
         </div>
-        
-        <img src="<?= $basePath ?? '' ?>iskolankrol/okoiskola.png" alt="Ökoiskola Image">
+
+        <hr>
 
         <div class="todo-floating-container">
             <div class="iskola">
-                kötelező-e feltölteni munkatervet? 2022-es a legfrissebb.
+                a könyvtári szabályzat mehetne a könyvtár alá is. ?
             </div>
             <div class="iskola">
-                ezekből anyag: Környezeti nevelés,Kert,Használt olaj,Papírgyűjtés, Energiatakarékosság
+                Mik kellenek ide?
             </div>
         </div>
+
 
     </section>
 </main>

@@ -69,7 +69,7 @@
                     <td>Megbízott igazgató</td>
                     <td>Ábriné Nagy Judit</td>
                     <td>
-                        <span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 15. mellék</span>
+                        <span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 15. mellék</span>
                         <span class="contact-item">
                             <a href="mailto:igazgato.csokonaivm@ebtk.hu">
                                 <i class="ti ti-mail"></i>
@@ -81,7 +81,7 @@
                 <tr>
                     <td>Igazgatóhelyettes – alsó tagozat</td>
                     <td>Tarné Éder Marianna</td>
-                    <td><span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 16. mellék</span></td>
+                    <td><span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 16. mellék</span></td>
                 </tr>
                 <tr>
                     <td>Igazgatóhelyettes – felső tagozat</td>
@@ -102,7 +102,7 @@
                     <td>Tanulói ügyintézés</td>
                     <td>Béres Zsuzsanna</td>
                     <td>
-                        <span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 15. mellék</span>
+                        <span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 15. mellék</span>
                         <span class="contact-item">
                             <a href="mailto:titkarsag.csokonaivm@ebtk.hu">
                                 <i class="ti ti-mail"></i>
@@ -114,7 +114,7 @@
                     <td>Dolgozói ügyintézés</td>
                     <td>Landszmann Mónika</td>
                     <td>
-                        <span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 13. mellék</span>
+                        <span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 13. mellék</span>
                         <span class="contact-item">
                             <i class="ti ti-mail"></i>
                             <a href="mailto:csvmg.gazdasagi.iroda@gmail.com"> csvmg.gazdasagi.iroda@gmail.com</a>
@@ -129,29 +129,34 @@
                 <tr>
                     <td>Titkárság</td>
                     <td></td>
-                    <td><span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 15. mellék</span></td>
+                    <td><span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 15. mellék</span></td>
                 </tr>
                 <tr>
                     <td>Gazdasági iroda</td>
                     <td></td>
-                    <td><span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 13. mellék</span></td>
+                    <td><span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 13. mellék</span></td>
                 </tr>
                 <tr>
                     <td>Igazgatóhelyettesek</td>
                     <td></td>
-                    <td><span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 16. mellék</span></td>
+                    <td><span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 16. mellék</span></td>
                 </tr>
                 <tr>
                     <td>Gondnok</td>
                     <td></td>
-                    <td><span class="contact-item"><i class="ti ti-phone"></i>380-7170 / 17. mellék</span></td>
+                    <td><span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 17. mellék</span></td>
+                </tr>
+                <tr>
+                    <td>Porta</td>
+                    <td></td>
+                    <td><span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 11. mellék</span></td>
                 </tr>
 
                 <tr>
                     <td>Iskolai szociális segítő</td>
                     <td>Simon Szilvia</td>
                     <td>
-                        <span class="contact-item"><i class="ti ti-phone"></i>06 (70) 953-53-30</span>
+                        <span class="contact-item"><i class="ti ti-phone"></i>+36 70 953 5330</span>
                         <span class="contact-item">
                             <a href="mailto: simon.szilvia.csgyk@ujpestszi.hu">
                                 <i class="ti ti-mail"></i>
@@ -177,7 +182,7 @@
 
             <div class="todo-floating-container">
                 <div class="iskola">
-                    Friss aktuális adatok. vegyesek az emailcímek.
+                    Telefonszámok egységes formátuma mi legyen?
                 </div>
             </div>
 

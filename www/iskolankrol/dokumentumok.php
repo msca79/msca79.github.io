@@ -25,12 +25,15 @@
                 Pedagógiai Program</a>
             <a href="https://www.csvmg.hu/upload/file/202526/Csvmg_hazirend_legitimacioval202526.pdf" target="_blank">
                 Házirend</a>
+            <a href="https://www.csvmg.hu/upload/file/202526/Csvmg_munkaterv_202526.pdf" target="_blank">
+                Munkaterv</a>
+            <a href="https://www.csvmg.hu/upload/file/202526/PEDPROGRAM_Csokonai_legitimacioval.pdf" target="_blank">
+                2025 szeptember 1-től érvényes pedagógiai program </a>
+            <a href="https://www.csvmg.hu/upload/file/202526/igazgatoi_palyazat_ANJ.pdf" target="_blank">Igazgatói pályázat
+                </a>
             <a href="#" target="_blank">
                 Szakmai alapdokumentum  (??)</a>
-            <a href="#" target="_blank">
-                Éves munkaterv  (??) </a>
         </div>
-
 
         <div class="todo-floating-container">
             <div class="iskola">

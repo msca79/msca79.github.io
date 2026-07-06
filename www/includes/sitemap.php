@@ -9,7 +9,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const smGrid = document.getElementById('sitemap-grid');
     if (!smGrid) return;
-    MENU.filter(cat => !(cat.hideOnSitemap===true)).forEach(cat => {
+    MENU.forEach(cat => {
         const col = document.createElement('div');
         col.className = 'sitemap-col';
         const linksHtml = cat.items.map(item => {

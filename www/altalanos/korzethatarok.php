@@ -18,6 +18,10 @@
     <section id="sample-page">
 
         <h1>Körzethatárok</h1>
+        <p>
+            A jelölők jelzik az utca neveket.
+        </p>
+
         <div id="map"></div>
 
         <ul>
@@ -44,10 +48,7 @@
 
         <div class="todo-floating-container">
             <div class="iskola">
-                https://www.csvmg.hu/upload/file/korzethatarok.jpg  alapján
-            </div>
-            <div class="iskola">
-                Készíthető térképes változat is, ahol meg lesznek az utcák színezve. Csináljunk?
+                a Megyeri út tényleg benne van? nagyon kilóg...
             </div>
         </div>
 
