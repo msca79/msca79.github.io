@@ -33,6 +33,14 @@
         border-bottom: none;
     }
 
+    .event-table tr.month-header td {
+        background: #e3f2fd;
+        font-weight: bold;
+        color: #0d47a1;
+        /*padding-top: 0.75rem;*/
+        /*padding-bottom: 0.75rem;*/
+    }
+
     .event-table .date {
         white-space: nowrap;
         color: #555;
@@ -40,14 +48,18 @@
     }
 
     .event-table .cat {
-        width: 140px;
+        width: 60px;
+        text-align: center;
     }
 
     .badge {
-        display: inline-block;
-        font-size: 0.78rem;
-        padding: 0.15rem 0.5rem;
-        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        font-size: 1.2rem;
     }
 
     .badge-tanev {
@@ -60,25 +72,14 @@
         color: #2e6b3e;
     }
 
-    .badge-erettsegi {
+    .badge-vizsga {
         background: #fff3e0;
         color: #8a4e00;
     }
 
-    .badge-felveteli {
-        background: #fce4ec;
-        color: #880030;
-    }
-
-    .badge-merés {
-        background: #e0f2f1;
-        color: #1a5f5a;
-    }
-
     .badge-program {
-        background: #fafafa;
-        color: #444;
-        border: 1px solid #ddd;
+        background: #f3e5f5;
+        color: #7b1fa2;
     }
 
 </style>
@@ -87,7 +88,8 @@
 <main id="page-content">
     <section id="sample-page">
 
-        <h1>Tanév, eseményeink</h1>
+
+        <h1>Tanév, eseményeink </h1>
 
 
         <table class="event-table">
@@ -97,184 +99,44 @@
                 <th>Esemény</th>
             </tr>
 
-            <tr>
-                <td class="date">2026. szeptember 1. (kedd)</td>
-                <td class="cat"><span class="badge badge-tanev">Tanév</span></td>
-                <td>Első tanítási nap</td>
-            </tr>
-              <tr>
-                <td class="date">2026. szeptember (később derül ki)</td>
-                <td class="cat"><span class="badge badge-program">Program</span></td>
-                <td>Futónap</td>
-            </tr>
-            <tr>
-                <td class="date">2026. október 12–22.</td>
-                <td class="cat"><span class="badge badge-erettsegi">Érettségi</span></td>
-                <td>Őszi írásbeli érettségi vizsgák</td>
-            </tr>
-            <tr>
-                <td class="date"></td>
-                <td class="cat"><span class="badge badge-szunet">Szünet</span></td>
-                <td>Őszi szünet előtti utolsó tanítási nap</td>
-            </tr>
-            <tr>
-                <td class="date">2026. október 23. – november 1.</td>
-                <td class="cat"><span class="badge badge-szunet">Szünet</span></td>
-                <td>Őszi szünet. <br>
-                    Utolsó tanítási nap: 2026. október 22. (csütörtök) <br>
-                    Első tanítási nap: 2026. november 2. (hétfő) <br>
-                </td>
-            </tr>
+            <?php
+            $json_data = file_get_contents('tanev.json');
+            $events = json_decode($json_data, true);
 
-            <tr>
-                <td class="date">2026. november 5–9.</td>
-                <td class="cat"><span class="badge badge-erettsegi">Érettségi</span></td>
-                <td>Őszi emelt szintű szóbeli érettségi vizsgák</td>
-            </tr>
-            <tr>
-                <td class="date">2026. november 16–20.</td>
-                <td class="cat"><span class="badge badge-erettsegi">Érettségi</span></td>
-                <td>Őszi középszintű szóbeli érettségi vizsgák</td>
-            </tr>
-            <tr>
-                <td class="date">2026. december 1. (kedd)</td>
-                <td class="cat"><span class="badge badge-felveteli">Felvételi</span></td>
-                <td>Középiskolai felvételi írásbeli jelentkezési határidő</td>
-            </tr>
-             <tr>
-                <td class="date">2026. december 12. (szombat)</td>
-                <td class="cat"><span class="badge badge-szunet">Felvételi</span></td>
-                <td>Szombati munkanap (nincs tanítás)</td>
-            </tr>
-            <tr>
-                <td class="date">2026. december 19. – 2027. január 3.</td>
-                <td class="cat"><span class="badge badge-szunet">Szünet</span></td>
-                <td>Téli szünet<br>
-                    Utolsó tanítási nap: 2026. december 18. (péntek)<br>
-                    Első tanítási nap:2027. január 4. (hétfő)<br>
-                </td>
-            </tr>
-            <tr>
-                <td class="date">2027. január 22. (péntek)</td>
-                <td class="cat"><span class="badge badge-tanev">Tanév</span></td>
-                <td>Az első félév vége</td>
-            </tr>
-            <tr>
-                <td class="date">2027. január 23. (szombat) 10:00</td>
-                <td class="cat"><span class="badge badge-felveteli">Felvételi</span></td>
-                <td>Középiskolai központi írásbeli felvételi vizsga</td>
-            </tr>
-            <tr>
-                <td class="date">2027. január 29. (péntek)</td>
-                <td class="cat"><span class="badge badge-tanev">Tanév</span></td>
-                <td>Félévi értesítők kiadásának határideje</td>
-            </tr>
-            <tr>
-                <td class="date">2027. február 3. (szerda) 14:00</td>
-                <td class="cat"><span class="badge badge-felveteli">Felvételi</span></td>
-                <td>Pótló központi írásbeli felvételi vizsga</td>
-            </tr>
-            <tr>
-                <td class="date">2027. február 22. (hétfő)</td>
-                <td class="cat"><span class="badge badge-felveteli">Felvételi</span></td>
-                <td>Középfokú iskolai jelentkezés határideje</td>
-            </tr>
-            <tr>
-                <td class="date">2027. március 1–5.</td>
-                <td class="cat"><span class="badge badge-program">Témanap</span></td>
-                <td>PÉNZ7 témahét</td>
-            </tr>
-            <tr>
-                <td class="date">2027. március 1–19.</td>
-                <td class="cat"><span class="badge badge-felveteli">Felvételi</span></td>
-                <td>Középiskolai felvételi szóbeli vizsgák</td>
-            </tr>
-            <tr>
-                <td class="date">2027. március 22. (hétfő)</td>
-                <td class="cat"><span class="badge badge-felveteli">Felvételi</span></td>
-                <td>Felvételi jegyzékek nyilvánosságra hozatalának határideje</td>
-            </tr>
-            <tr>
-                <td class="date">2027. március 22. – május 28.</td>
-                <td class="cat"><span class="badge badge-merés">Mérés</span></td>
-                <td>Országos kompetenciamérések</td>
-            </tr>
-            <tr>
-                <td class="date">2027. március 23. – április 4.</td>
-                <td class="cat"><span class="badge badge-szunet">Szünet</span></td>
-                <td>Tavaszi szünet<br>
-                    Első tanítási nap:2027. április 5. (hétfő)
-                </td>
-            </tr>
-            <tr>
-                <td class="date">2027. április 5–9.</td>
-                <td class="cat"><span class="badge badge-program">Témanap</span></td>
-                <td>Digitális témahét</td>
-            </tr>
-            <tr>
-                <td class="date">2027. április 19–23.</td>
-                <td class="cat"><span class="badge badge-program">Témanap</span></td>
-                <td>Fenntarthatósági témahét</td>
-            </tr>
-            <tr>
-                <td class="date">2027. április 22–23.</td>
-                <td class="cat"><span class="badge badge-iskola">Beiratkozás</span></td>
-                <td>Általános iskolai beiratkozás (1. évfolyam)</td>
-            </tr>
-            <tr>
-                <td class="date">2027. április 30. (péntek)</td>
-                <td class="cat"><span class="badge badge-tanev">Tanév</span></td>
-                <td>Tanév vége – középfokú iskolák végzősei</td>
-            </tr>
-            <tr>
-                <td class="date">2027. május 3–24.</td>
-                <td class="cat"><span class="badge badge-erettsegi">Érettségi</span></td>
-                <td>Tavaszi írásbeli érettségi vizsgák</td>
-            </tr>
-            <tr>
-                <td class="date">2026. május (később derül ki)</td>
-                <td class="cat"><span class="badge badge-program">Program</span></td>
-                <td>Futónap</td>
-            </tr>
-             <tr>
-                <td class="date">2026. május (később derül ki)</td>
-                <td class="cat"><span class="badge badge-program">Program</span></td>
-                <td>Csokonai gála</td>
-            </tr>
-            <tr>
-                <td class="date">2027. május (iskola által választott nap)</td>
-                <td class="cat"><span class="badge badge-merés">Mérés</span></td>
-                <td>Elsősök szövegértés-mérése</td>
-            </tr>
-            <tr>
-                <td class="date">2027. május 28. (péntek)</td>
-                <td class="cat"><span class="badge badge-tanev">Tanév</span></td>
-                <td>Tanév vége – kétévfolyamos szakiskolák végzősei</td>
-            </tr>
-            <tr>
-                <td class="date">2027. június 2–9.</td>
-                <td class="cat"><span class="badge badge-erettsegi">Érettségi</span></td>
-                <td>Tavaszi emelt szintű szóbeli érettségi vizsgák</td>
-            </tr>
-            <tr>
-                <td class="date">2027. június 14–30.</td>
-                <td class="cat"><span class="badge badge-erettsegi">Érettségi</span></td>
-                <td>Tavaszi középszintű szóbeli érettségi vizsgák</td>
-            </tr>
-            <tr>
-                <td class="date">2027. június 18. (péntek)</td>
-                <td class="cat"><span class="badge badge-tanev">Tanév</span></td>
-                <td>Utolsó tanítási nap</td>
-            </tr>
+            if ($events) {
+                $category_labels = [
+                        'badge-tanev' => 'Tanév rendje',
+                        'badge-szunet' => 'Szünet',
+                        'badge-vizsga' => 'Vizsga / Mérés',
+                        'badge-program' => 'Program / Esemény'
+                ];
+                foreach ($events as $event) {
+                    $isMonthHeader = empty($event['category_class']) && !empty($event['date']);
+                    $rowClass = $isMonthHeader ? ' class="month-header"' : '';
+
+                    $label = $category_labels[$event['category_class']] ?? '';
+                    echo '<tr' . $rowClass . '>';
+                    echo '<td class="date">' . $event['date'] . '</td>';
+                    echo '<td class="cat">';
+                    if (!$isMonthHeader) {
+                        echo '<span class="badge ' . $event['category_class'] . '" title="' . $label . '"><i class="ti ' . $event['category_icon'] . '"></i></span>';
+                    }
+                    echo '</td>';
+                    echo '<td>';
+                    echo $event['title'];
+                    if (!empty($event['description'])) {
+                        echo ' ' . $event['description'];
+                    }
+                    echo '</td>';
+                    echo '</tr>';
+                }
+            }
+            ?>
         </table>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                Ez a tervezett 2027-es évre vonatkozik. Kiegészülne majd az iskolai eseményekkel (futónap)
-            </div>
-
-        </div>
-
+        <i> <a href="https://moderniskola.hu/2026/07/itt-a-2026-2027-es-tanev-rendje-naptarral/">
+                adatok forrása a moderniskola.hu</a>
+        </i>
 
     </section>
 </main>

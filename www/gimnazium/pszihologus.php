@@ -1,38 +1,53 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
-<?php $pageTitle = 'Közzétételi lista' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Iskola pszihológus' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
 <?php include '../includes/menubar.php'; ?>
 
+<style>
+    .item {
+        margin: 20px;
+        display: block;
+    }
+</style>
+
 
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */ ?>
 <main id="page-content">
     <section id="sample-page">
-        <h1>Közzétételi lista</h1>
-
-        <div class="disclosure-list">
+        <h1>Iskola pszihológus</h1>
 
 
-            <a href="#" target="_blank" >
-                <i class="ti ti-gavel"></i> Helyi értékelési szabályzat (??)
-            </a>
+        <p>
+            Tisztelt Szülők és diákok!
+        </p>
 
-            <a href="#" target="_blank" >
-                <i class="ti ti-coin"></i> Könyvtári szabályzat (??)
-            </a>
-        </div>
+        <p>
+            <strong>Oroszi-Vigh Ágnes Csilla</strong> iskolapszichológus vagyok.
+        </p>
 
-        <hr>
+        <p>
+         </p>
+
+
+
+        <p>
+            Forduljanak hozzám bizalommal!
+        </p>
+
+        <p>
+            Üdvözlettel, Simon Valéria
+        </p>
+
+
 
         <div class="todo-floating-container">
+
             <div class="iskola">
-                a könyvtári szabályzat mehetne a könyvtár alá is. ?
-            </div>
-            <div class="iskola">
-                Mik kellenek ide?
+                Validálni Oroszi-Vigh Ágnes Csilla
             </div>
         </div>
 

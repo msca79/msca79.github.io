@@ -1,0 +1,212 @@
+[
+  {
+    "date": "<b>2026. szeptember</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2026. szeptember 1. (kedd)",
+    "category_icon": "ti-calendar-event",
+    "category_class": "badge-tanev",
+    "title": "Első tanítási nap",
+    "description": ""
+  },
+  {
+    "date": "2026. szeptember (később derül ki)",
+    "category_icon": "ti-star",
+    "category_class": "badge-program",
+    "title": "Futónap",
+    "description": ""
+  },
+  {
+    "date": "<b>2026. október</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2026. október 12–22.",
+    "category_icon": "ti-edit",
+    "category_class": "badge-vizsga",
+    "title": "Őszi írásbeli érettségi vizsgák",
+    "description": ""
+  },
+  {
+    "date": "2026. október 23. – november 1.",
+    "category_icon": "ti-sun",
+    "category_class": "badge-szunet",
+    "title": "Őszi szünet. <br> Utolsó tanítási nap: 2026. október 22. (csütörtök) <br>\n                    Első tanítási nap: 2026. november 2. (hétfő) <br>",
+    "description": ""
+  },
+  {
+    "date": "<b>2026. november</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "<b>2026. december</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2026. december 1. (kedd)",
+    "category_icon": "ti-edit",
+    "category_class": "badge-vizsga",
+    "title": "Középiskolai felvételi írásbeli jelentkezési határidő",
+    "description": ""
+  },
+  {
+    "date": "2026. december 12. (szombat)",
+    "category_icon": "ti-sun",
+    "category_class": "badge-szunet",
+    "title": "Szombati munkanap (nincs tanítás)",
+    "description": ""
+  },
+  {
+    "date": "2026. december 19. – 2027. január 3.",
+    "category_icon": "ti-sun",
+    "category_class": "badge-szunet",
+    "title": "XX Téli szünet. <br> Utolsó tanítási nap: 2026. december 18. (péntek)<br>\n                    Első tanítási nap:2027. január 4. (hétfő)<br>",
+    "description": ""
+  },
+  {
+    "date": "<b>2027. január</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2027. január 23. (szombat) 10:00",
+    "category_icon": "ti-edit",
+    "category_class": "badge-vizsga",
+    "title": "Középiskolai központi írásbeli felvételi vizsga",
+    "description": ""
+  },
+  {
+    "date": "2027. január 29. (péntek)",
+    "category_icon": "ti-calendar-event",
+    "category_class": "badge-tanev",
+    "title": "Félévi értesítők kiadásának határideje",
+    "description": ""
+  },
+  {
+    "date": "<b>2027. február</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2027. február 3. (szerda) 14:00",
+    "category_icon": "ti-edit",
+    "category_class": "badge-vizsga",
+    "title": "Pótló központi írásbeli felvételi vizsga",
+    "description": ""
+  },
+  {
+    "date": "2027. február 22. (hétfő)",
+    "category_icon": "ti-edit",
+    "category_class": "badge-vizsga",
+    "title": "középiskolai jelentkezés határideje",
+    "description": ""
+  },
+  {
+    "date": "<b>2027. március</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2027. március 1–5.",
+    "category_icon": "ti-star",
+    "category_class": "badge-program",
+    "title": "PÉNZ7 témahét",
+    "description": ""
+  },
+  {
+    "date": "2027. március 22. (hétfő)",
+    "category_icon": "ti-edit",
+    "category_class": "badge-vizsga",
+    "title": "Felvételi jegyzékek nyilvánosságra hozatalának határideje",
+    "description": ""
+  },
+  {
+    "date": "2027. március 23. – április 4.",
+    "category_icon": "ti-sun",
+    "category_class": "badge-szunet",
+    "title": "Tavaszi szünet. <br> Első tanítási nap:2027. április 5. (hétfő)",
+    "description": ""
+  },
+  {
+    "date": "<b>2027. április</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2027. április 5–9.",
+    "category_icon": "ti-star",
+    "category_class": "badge-program",
+    "title": "Digitális témahét",
+    "description": ""
+  },
+  {
+    "date": "2027. április 19–23.",
+    "category_icon": "ti-star",
+    "category_class": "badge-program",
+    "title": "Fenntarthatósági témahét",
+    "description": ""
+  },
+  {
+    "date": "<b>2027. május</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2027. május 3–24.",
+    "category_icon": "ti-edit",
+    "category_class": "badge-vizsga",
+    "title": "Tavaszi írásbeli érettségi vizsgák",
+    "description": ""
+  },
+  {
+    "date": "2026. május (később derül ki)",
+    "category_icon": "ti-star",
+    "category_class": "badge-program",
+    "title": "Futónap",
+    "description": ""
+  },
+  {
+    "date": "2026. május (később derül ki)",
+    "category_icon": "ti-star",
+    "category_class": "badge-program",
+    "title": "Csokonai gála",
+    "description": ""
+  },
+  {
+    "date": "<b>2027. június</b>",
+    "category_icon": "",
+    "category_class": "",
+    "title": "",
+    "description": ""
+  },
+  {
+    "date": "2027. június 18. (péntek)",
+    "category_icon": "ti-calendar-event",
+    "category_class": "badge-tanev",
+    "title": "Utolsó tanítási nap",
+    "description": ""
+  }
+]

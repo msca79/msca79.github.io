@@ -72,14 +72,8 @@
         <h1>Gimnáziumba felvett tanulók</h1>
 
         <div class="highlight-box">
-
             Minden felvételt nyert diáknak szívből gratulálunk - üdvözlünk a Csokonaiban!
         </div>
-
-        <p>
-            Szeretettel várjuk a szülőket <strong> 2026. május 18-án 17 órára szülői értekezletre</strong>,
-            illetve <strong> 2026. június 25-én 8.00 és 16.00 óra</strong> között a <strong>beiratkozásra</strong>.
-        </p>
 
         <div class="class-container">
 

@@ -1,34 +1,24 @@
 <?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
-<?php $pageTitle = 'Rólunk' . $pageTitlePostfix; ?>
+<?php $pageTitle = 'Kréta ügyintézés' . $pageTitlePostfix; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/sidenav.php'; ?>
 <?php include '../includes/banner.php'; ?>
 <?php include '../includes/menubar.php'; ?>
 
-
 <?php /*  ------------------ TARTALOM ELEJE ----------------------- */ ?>
-<main id="page-content">
-    <section id="sample-page">
+    <main id="page-content">
+        <section id="sample-page">
+            <h1>Teams bejelentkezés, Microsoft-al kapcsolatok ügyek intézése</h1>
 
-
-        <h1>Akikre büszkék vagyunk</h1>
-        <p>
-            Itt majd a lenti tábla fotója lenne
-        </p>
-
-        <div class="todo-floating-container">
-            <div class="iskola">
-                a régi anekdota helyett kellene esetleg egy új
+            <div class="highlight-box">
+                Kérjük az osztályfőnökön keresztül jelezzék igényeiket.
             </div>
-        </div>
 
+        </section>
+    </main>
 
-    </section>
-
-
-</main>
 
 <?php /*  ------------------ TARTALOM VÉGE ----------------------- */ ?>
 <?php include '../includes/sitemap.php'; ?>

@@ -32,7 +32,7 @@
 
             <div class="todo-floating-container">
                 <div class="iskola">
-                    egyéb infó hogy kell rendszeresen fizetni, hol kell regisztrálni
+                    készpénzes befizetés mellett infó arról, hogy lehet bankszámláról
                 </div>
             </div>
 

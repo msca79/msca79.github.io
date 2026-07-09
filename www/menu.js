@@ -4,9 +4,8 @@ window.MENU = [
         class: 'cat-myschool',
         icon: "ti-building",
         items: [
-            {text: "Dokumentumok", href: "iskolankrol/dokumentumok.php"},
             {text: "Közzétételi lista", href: "iskolankrol/kozzetetel.php"},
-            {text: "Tanáraink", href: "iskolankrol/tanaraink.php"},
+            {text: "Tanáraink, Munkatársaink", href: "iskolankrol/munkatarsaink.php"},
             {text: "Tanév rendje", href: "iskolankrol/tanev.php"},
             {text: "Csengetési rend", href: "iskolankrol/csengetes.php"},
             {text: "Alapítvány", href: "iskolankrol/alapitvany.php"},
@@ -21,8 +20,7 @@ window.MENU = [
             {text: "Információk", href: "altalanos/altalanos.php"},
             {text: "Körzethatárok", href: "altalanos/korzethatarok.php"},
             {text: "Felvett tanulók", href: "altalanos/felvettek.php"},
-            {text: "Beiratkozási tájékoztató", href: "altalanos/beiratkozas.php"},
-            {text: "Hívogató / Nyílt nap", href: "altalanos/hivogato.php"},
+            {text: "Pszichológus", href: "altalanos/pszihologus.php"},
         ]
     },
     {
@@ -39,7 +37,8 @@ window.MENU = [
             {text: "Központi felvételi", href: "gimnazium/kozponti-felveteli.php"},
             {text: "Gólyatábor", href: "gimnazium/golyatabor.php"},
             {text: "Közösségi szolgálat", href: "gimnazium/kozossegi-szolgalat.php"},
-            {text: "Nyílt nap", href: "gimnazium/nyilt-nap.php"}
+            {text: "Nyílt nap", href: "gimnazium/nyilt-nap.php"},
+            {text: "Pszichológus", href: "gimnazium/pszihologus.php"},
         ]
     },
     {
@@ -52,6 +51,7 @@ window.MENU = [
             {text: "Ebédbefizetés", href: "ugyintezes/ebed.php"},
             {text: "Kréta ügyintézés", href: "ugyintezes/kreta.php"},
             {text: "Laptop ügyintézés", href: "ugyintezes/laptop.php"},
+            {text: "Teams ügyintézés", href: "ugyintezes/teams.php"},
             {text: "További ügyek", href: "ugyintezes/ugyek.php"},
             {text: "Kapcsolat", href: "ugyintezes/kapcsolat.php"},
         ]
@@ -69,8 +69,7 @@ window.MENU = [
             {text: "Zeneiskola", href: "elet/zeneiskola.php"},
             {text: "Iskola újság", href: "elet/iskolaujsag.php"},
             {text: "Határtalanul", href: "elet/hatartalanul.php"},
-            {text: "Erasmus", href: "elet/erasmus.php"},
-            {text: "Sportolás", href: "elet/sport.php"}
+            {text: "Erasmus", href: "elet/erasmus.php"}
         ]
     },
     {
@@ -81,7 +80,6 @@ window.MENU = [
         items: [
             {text: "Védőnő", href: "tamogato/vedono.php"},
             {text: "Gyógytestnevelés", href: "tamogato/gyogytestneveles.php"},
-            {text: "Iskola pszichológus", href: "tamogato/iskolapszihologus.php"},
             {text: "Hit- és erkölcstan", href: "tamogato/hit-erkolcstan.php"},
         ]
     }

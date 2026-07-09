@@ -67,17 +67,6 @@
 
         <h1>Általános iskolába felvett tanulók</h1>
 
-        <p><strong>Tisztelt Szülők!</strong></p>
-
-        <div class="highlight-box">
-            <p>
-                Megtörtént az általános iskola 1. osztályaiba a felvétel és az osztályba sorolás.
-                Erről itt tájékozódhatnak gyermekük oktatási azonosítója alapján.
-                A felvételi határozatokat a leendő osztályfőnököktől fogják az első szülői értekezleten megkapni.
-                Amelynek időpontja <strong> 2026.06.01.</strong>
-            </p>
-        </div>
-
         <div class="class-container">
             <!-- 1.a osztály -->
             <div class="class-column">
@@ -165,13 +154,6 @@
                     <li>73696535585</li>
                     <li>74152049177</li>
                 </ul>
-            </div>
-        </div>
-
-
-        <div class="todo-floating-container">
-            <div class="iskola">
-                ez az aktuális?
             </div>
         </div>
 

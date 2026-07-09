@@ -63,9 +63,6 @@
                 <div class="keszito">
                     Küldjön majd levelet a csvmg.info@gmail.com -ra.CC-ze a feladót
                 </div>
-                <div class="iskola">
-                    Mi legyen a levél tárgyában? Ez csak új jelszó, vagy általános kréta probléma?
-                </div>
             </div>
 
         </section>

@@ -7,6 +7,9 @@
             <a href="images/logok/codeweek.png" class="glightbox">
                 <img src="images/logok/codeweek.png" alt="CodeWeek">
             </a>
+            <a href="images/logok/showcase-school-2025-2026.jpg" class="glightbox">
+                <img src="images/logok/showcase-school-2025-2026.jpg" alt="Showcase">
+            </a>
             <a href="images/logok/digitalis_temahet.png" class="glightbox">
                 <img src="images/logok/digitalis_temahet.png" alt="Digitális Témahét">
             </a>
@@ -61,8 +64,15 @@
         backface-visibility: hidden;
         outline: none;
     }
-    .glightbox-container.inactive { display: none; }
-    .glightbox-mobile .glightbox-container { -webkit-tap-highlight-color: transparent; }
+
+    .glightbox-container.inactive {
+        display: none;
+    }
+
+    .glightbox-mobile .glightbox-container {
+        -webkit-tap-highlight-color: transparent;
+    }
+
     .glightbox-overlay {
         position: absolute;
         width: 100%;
@@ -72,7 +82,11 @@
         background: rgba(0, 0, 0, 0.7);
         will-change: opacity;
     }
-    .glightbox-clean .gslide-description { background: #fff; }
+
+    .glightbox-clean .gslide-description {
+        background: #fff;
+    }
+
     .glightbox-clean .gslide-title {
         color: #000;
         font-family: arial;
@@ -80,10 +94,15 @@
         font-size: 1.2em;
         margin-bottom: 7px;
     }
-    .glightbox-clean .gslide-content { background: #fff; }
+
+    .glightbox-clean .gslide-content {
+        background: #fff;
+    }
+
     .glightbox-clean .gslide-media {
         box-shadow: 1px 2px 9px 0 rgba(0, 0, 0, 0.65);
     }
+
     .gslide {
         width: 100%;
         height: 100%;
@@ -100,9 +119,27 @@
         justify-content: center;
         transition: opacity 0.4s ease;
     }
-    .gslide.current { opacity: 1; z-index: 999; display: flex; }
-    .gslide.prev { opacity: 1; z-index: 998; display: flex; }
-    .gslide-inner-content { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+    .gslide.current {
+        opacity: 1;
+        z-index: 999;
+        display: flex;
+    }
+
+    .gslide.prev {
+        opacity: 1;
+        z-index: 998;
+        display: flex;
+    }
+
+    .gslide-inner-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .gslide-media {
         max-width: 100%;
         max-height: 100vh;
@@ -110,6 +147,7 @@
         justify-content: center;
         align-items: center;
     }
+
     .gslide-media img {
         max-width: 60vw;
         max-height: 60vh;
@@ -117,8 +155,9 @@
         background: #fff;
         padding: 10px;
         border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
+
     .gclose, .gnext, .gprev {
         z-index: 99999;
         cursor: pointer;
@@ -133,42 +172,59 @@
         border-radius: 50%;
         position: absolute;
     }
-    .gclose { top: 10%; right: 10%; }
-    .gprev { top: 50%; left: 10%; transform: translateY(-50%); }
-    .gnext { top: 50%; right: 10%; transform: translateY(-50%); }
-    .gclose:hover, .gnext:hover, .gprev:hover { background: rgba(0,0,0,0.8); }
+
+    .gclose {
+        top: 10%;
+        right: 10%;
+    }
+
+    .gprev {
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+    }
+
+    .gnext {
+        top: 50%;
+        right: 10%;
+        transform: translateY(-50%);
+    }
+
+    .gclose:hover, .gnext:hover, .gprev:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
 </style>
 
 <!-- GLightbox Inline JS (Miniaturized simple implementation for demo) -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('.glightbox');
-    if (links.length === 0) return;
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('.glightbox');
+        if (links.length === 0) return;
 
-    // Create lightbox elements
-    const container = document.createElement('div');
-    container.className = 'glightbox-container inactive';
-    container.innerHTML = `
+        // Create lightbox elements
+        const container = document.createElement('div');
+        container.className = 'glightbox-container inactive';
+        container.innerHTML = `
         <div class="glightbox-overlay"></div>
         <button class="gclose"><i class="ti ti-x"></i></button>
         <button class="gprev"><i class="ti ti-chevron-left"></i></button>
         <button class="gnext"><i class="ti ti-chevron-right"></i></button>
         <div class="glightbox-slides"></div>
     `;
-    document.body.appendChild(container);
+        document.body.appendChild(container);
 
-    const slidesContainer = container.querySelector('.glightbox-slides');
-    const closeBtn = container.querySelector('.gclose');
-    const prevBtn = container.querySelector('.gprev');
-    const nextBtn = container.querySelector('.gnext');
-    let currentIndex = 0;
+        const slidesContainer = container.querySelector('.glightbox-slides');
+        const closeBtn = container.querySelector('.gclose');
+        const prevBtn = container.querySelector('.gprev');
+        const nextBtn = container.querySelector('.gnext');
+        let currentIndex = 0;
 
-    const showSlide = (index) => {
-        if (index < 0) index = links.length - 1;
-        if (index >= links.length) index = 0;
-        currentIndex = index;
+        const showSlide = (index) => {
+            if (index < 0) index = links.length - 1;
+            if (index >= links.length) index = 0;
+            currentIndex = index;
 
-        slidesContainer.innerHTML = `
+            slidesContainer.innerHTML = `
             <div class="gslide current">
                 <div class="gslide-inner-content">
                     <div class="gslide-media">
@@ -177,44 +233,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
-        container.classList.remove('inactive');
-        document.body.style.overflow = 'hidden';
-    };
+            container.classList.remove('inactive');
+            document.body.style.overflow = 'hidden';
+        };
 
-    links.forEach((link, index) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            showSlide(index);
+        links.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showSlide(index);
+            });
         });
-    });
 
-    closeBtn.addEventListener('click', () => {
-        container.classList.add('inactive');
-        document.body.style.overflow = '';
-    });
-
-    prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showSlide(currentIndex - 1);
-    });
-
-    nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showSlide(currentIndex + 1);
-    });
-
-    container.addEventListener('click', (e) => {
-        if (e.target === container || e.target.className === 'glightbox-overlay' || e.target.className.includes('gslide-inner-content')) {
+        closeBtn.addEventListener('click', () => {
             container.classList.add('inactive');
             document.body.style.overflow = '';
-        }
-    });
+        });
 
-    document.addEventListener('keydown', (e) => {
-        if (container.classList.contains('inactive')) return;
-        if (e.key === 'Escape') closeBtn.click();
-        if (e.key === 'ArrowLeft') prevBtn.click();
-        if (e.key === 'ArrowRight') nextBtn.click();
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showSlide(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showSlide(currentIndex + 1);
+        });
+
+        container.addEventListener('click', (e) => {
+            if (e.target === container || e.target.className === 'glightbox-overlay' || e.target.className.includes('gslide-inner-content')) {
+                container.classList.add('inactive');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (container.classList.contains('inactive')) return;
+            if (e.key === 'Escape') closeBtn.click();
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+        });
     });
-});
 </script>

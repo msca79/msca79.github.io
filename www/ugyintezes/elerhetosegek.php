@@ -142,6 +142,14 @@
                     <td><span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 16. mellék</span></td>
                 </tr>
                 <tr>
+                    <td>Ebéd, Diákigazolvány</td>
+                    <td>Fizil Szilvia</td>
+                    <td>
+                        <span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 13 mellék</span>
+                        <span class="contact-item"><a href="mailto:fizilszilvia.csvmg@gmail.com">fizilszilvia.csvmg@gmail.com</a></span>
+                    </td>
+                </tr>
+                <tr>
                     <td>Gondnok</td>
                     <td></td>
                     <td><span class="contact-item"><i class="ti ti-phone"></i>+36 1 380 7170 / 17. mellék</span></td>
