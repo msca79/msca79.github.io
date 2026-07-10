@@ -5,7 +5,7 @@
 //             strpos($_SERVER['SCRIPT_NAME'] ?? '', '/iskolankrol/') !== false ||
 //             strpos($_SERVER['SCRIPT_NAME'] ?? '', '/tamogato/') !== false ||
 //             strpos($_SERVER['SCRIPT_NAME'] ?? '', '/ugyintezes/') !== false) ? '../' : '';
-$basePath =  '/uj' ;
+$basePath =  '/uj/' ;
 
 $pageTitlePostfix = ' - Újpesti Csokonai Vitéz Mihály Általános Iskola és Gimnázium';
 $kreta_admin_email = "marton.szabolcs@gmail.com";

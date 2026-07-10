@@ -1,44 +1,44 @@
 <section class="logok-section">
     <div class="inner">
         <div class="logok-grid">
-            <a href="<?= $basePath ?? '' ?>/images/logok/bethlen-gabor-alapkezelo.jpg" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/bethlen-gabor-alapkezelo.jpg" alt="Bethlen Gábor Alapkezelő">
+            <a href="<?= $basePath ?? '' ?>images/logok/bethlen-gabor-alapkezelo.jpg" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/bethlen-gabor-alapkezelo.jpg" alt="Bethlen Gábor Alapkezelő">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/codeweek.png" class="glightbox">
+            <a href="<?= $basePath ?? '' ?>images/logok/codeweek.png" class="glightbox">
                 <img src="images/logok/codeweek.png" alt="CodeWeek">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/showcase-school-2025-2026.jpg" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/showcase-school-2025-2026.jpg" alt="Showcase">
+            <a href="<?= $basePath ?? '' ?>images/logok/showcase-school-2025-2026.jpg" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/showcase-school-2025-2026.jpg" alt="Showcase">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/digitalis_temahet.png" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/digitalis_temahet.png" alt="Digitális Témahét">
+            <a href="<?= $basePath ?? '' ?>images/logok/digitalis_temahet.png" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/digitalis_temahet.png" alt="Digitális Témahét">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/elte.jpg" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/elte.jpg" alt="ELTE">
+            <a href="<?= $basePath ?? '' ?>images/logok/elte.jpg" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/elte.jpg" alt="ELTE">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/erasmus.png" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/erasmus.png" alt="Erasmus+">
+            <a href="<?= $basePath ?? '' ?>images/logok/erasmus.png" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/erasmus.png" alt="Erasmus+">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/hatartalanul.png" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/hatartalanul.png" alt="Határtalanul">
+            <a href="<?= $basePath ?? '' ?>images/logok/hatartalanul.png" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/hatartalanul.png" alt="Határtalanul">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/magyar-kormany.png" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/magyar-kormany.png" alt="Magyar Kormány">
+            <a href="<?= $basePath ?? '' ?>images/logok/magyar-kormany.png" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/magyar-kormany.png" alt="Magyar Kormány">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/microsoft-innovativ.jpg" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/microsoft-innovativ.jpg" alt="Microsoft Innovatív Iskola">
+            <a href="<?= $basePath ?? '' ?>images/logok/microsoft-innovativ.jpg" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/microsoft-innovativ.jpg" alt="Microsoft Innovatív Iskola">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/nemzeti-orokseg.jpg" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/nemzeti-orokseg.jpg" alt="Nemzeti Örökség Intézete">
+            <a href="<?= $basePath ?? '' ?>images/logok/nemzeti-orokseg.jpg" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/nemzeti-orokseg.jpg" alt="Nemzeti Örökség Intézete">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/orokos-okoiskola.jpg" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/orokos-okoiskola.jpg" alt="Örökös Ökoiskola">
+            <a href="<?= $basePath ?? '' ?>images/logok/orokos-okoiskola.jpg" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/orokos-okoiskola.jpg" alt="Örökös Ökoiskola">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/prosuli.png" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/prosuli.png" alt="ProSuli">
+            <a href="<?= $basePath ?? '' ?>images/logok/prosuli.png" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/prosuli.png" alt="ProSuli">
             </a>
-            <a href="<?= $basePath ?? '' ?>/images/logok/ute.jpg" class="glightbox">
-                <img src="<?= $basePath ?? '' ?>/images/logok/ute.jpg" alt="UTE">
+            <a href="<?= $basePath ?? '' ?>images/logok/ute.jpg" class="glightbox">
+                <img src="<?= $basePath ?? '' ?>images/logok/ute.jpg" alt="UTE">
             </a>
         </div>
     </div>

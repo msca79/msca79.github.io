@@ -31,7 +31,7 @@
                 return;
             }
 
-            fetch('support/search-engine.php?q=' + encodeURIComponent(query))
+            fetch('<?= $basePath ?? '' ?>support/search-engine.php?q=' + encodeURIComponent(query))
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {

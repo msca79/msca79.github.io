@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <i class="ti ti-chevron-down nc-arrow" aria-hidden="true"></i>
         </div>
         <div class="nav-items">
-            <a href="${basePath}support/build2.php?delete=true" target="_blank" onclick="closeSideNav();">
+            <a href="${basePath}/support/build2.php?delete=true" target="_blank" onclick="closeSideNav();">
                 <i class="ti ti-refresh item-icon"></i>
                 <span>Rebuild</span>
             </a>

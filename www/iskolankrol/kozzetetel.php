@@ -14,7 +14,7 @@
 
         <div class="disclosure-list">
 
-            <a href="<?= $basePath ?? '' ?>/altalanos/korzethatarok.php">
+            <a href="<?= $basePath ?? '' ?>altalanos/korzethatarok.php">
                 <i class="ti ti-map-2"></i>körzethatárok
             </a>
 
