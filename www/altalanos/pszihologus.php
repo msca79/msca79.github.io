@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Iskola pszihológus' . $pageTitlePostfix; ?>
@@ -98,7 +97,7 @@
                 Formanyomtatvány kellene a titoktartásihoz
             </div>
             <div class="iskola">
-                Validálni Valériával
+                Valériával egyeztetni a szöveget
             </div>
         </div>
 

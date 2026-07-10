@@ -1,7 +1,6 @@
 <?php
 session_start();
-$basePath = '../'; ?>
-<?php include '../includes/constants.php'; ?>
+include '../includes/constants.php'; ?>
 <?php
 $message = $_SESSION['form_message'] ?? "";
 $messageClass = $_SESSION['form_message_class'] ?? "";
@@ -196,6 +195,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </form>
         <?php endif; ?>
+
+        <div class="todo-floating-container">
+            <div class="keszito">
+                A teszt időszakban az email a weboldal készítőnek megy
+            </div>
+        </div>
 
     </section>
 </main>

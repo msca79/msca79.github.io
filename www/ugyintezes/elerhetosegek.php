@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Elérhetőségek' . $pageTitlePostfix; ?>
@@ -190,7 +189,7 @@
 
             <div class="todo-floating-container">
                 <div class="iskola">
-                    Telefonszámok egységes formátuma mi legyen?
+                    Validálni az adatokat
                 </div>
             </div>
 

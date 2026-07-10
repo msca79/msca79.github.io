@@ -32,7 +32,7 @@ window.MENU = [
             {text: "Információk", href: "gimnazium/informaciok.php"},
             {text: "Felvételi", href: "gimnazium/felveteli.php"},
             {text: "Felvett tanulók", href: "gimnazium/felvettek.php"},
-            {text: "Beiratkozás", href: "gimnazium/beiratkozas.php"},
+            // {text: "Beiratkozás", href: "gimnazium/beiratkozas.php"},
             {text: "Érettségi", href: "gimnazium/erettsegi.php"},
             {text: "Központi felvételi", href: "gimnazium/kozponti-felveteli.php"},
             {text: "Gólyatábor", href: "gimnazium/golyatabor.php"},
@@ -103,7 +103,7 @@ function getItemHtml(item) {
 }
 
 function itemHref(item, cat) {
-    const base = window.BASE_PATH || '';
+    const base = (window.BASE_PATH || '')+'/';
     if (typeof item === 'object' && item.href) return base + item.href;
     const itemText = typeof item === 'string' ? item : item.text;
     return cat.link ? base + cat.link + '#' + slug(itemText) : '#' + slug(itemText);

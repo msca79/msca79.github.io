@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
 <?php $pageTitle = 'Általános Iskola információk' . $pageTitlePostfix; ?>
@@ -18,7 +17,7 @@
 
         <div class="todo-floating-container">
             <div class="iskola">
-                anyag
+                anyag kellene
             </div>
         </div>
     </section>

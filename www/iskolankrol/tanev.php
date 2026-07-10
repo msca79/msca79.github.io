@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Tanév rendje' . $pageTitlePostfix; ?>
@@ -137,6 +136,12 @@
         <i> <a href="https://moderniskola.hu/2026/07/itt-a-2026-2027-es-tanev-rendje-naptarral/">
                 adatok forrása a moderniskola.hu</a>
         </i>
+
+        <div class="todo-floating-container">
+            <div class="iskola">
+                ellenőrizni
+            </div>
+        </div>
 
     </section>
 </main>

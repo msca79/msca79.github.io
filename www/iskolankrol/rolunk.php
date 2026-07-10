@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Rólunk' . $pageTitlePostfix; ?>
@@ -15,12 +14,12 @@
 
         <h1>Akikre büszkék vagyunk</h1>
         <p>
-            Itt majd a lenti tábla fotója lenne
+            Ide talán majd a földszinti büszkeségfalról egy fotó kellene
         </p>
 
         <div class="todo-floating-container">
             <div class="iskola">
-                a régi anekdota helyett kellene esetleg egy új
+                anyag szükséges + a régi anekdota helyett kellene esetleg egy új
             </div>
         </div>
 

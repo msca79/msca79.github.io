@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Közzétételi lista' . $pageTitlePostfix; ?>
@@ -15,7 +14,7 @@
 
         <div class="disclosure-list">
 
-            <a href="/altalanos/korzethatarok.php">
+            <a href="<?= $basePath ?? '' ?>/altalanos/korzethatarok.php">
                 <i class="ti ti-map-2"></i>körzethatárok
             </a>
 

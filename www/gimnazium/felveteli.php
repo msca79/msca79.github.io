@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Felvételi információk' . $pageTitlePostfix; ?>
@@ -32,7 +31,7 @@
 
         <div class="todo-floating-container">
             <div class="iskola">
-                még valami?
+                validálni kellene
             </div>
         </div>
 

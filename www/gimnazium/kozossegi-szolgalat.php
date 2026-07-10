@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
 <?php $pageTitle = 'Közösségi szolgálat' . $pageTitlePostfix; ?>
@@ -12,10 +11,10 @@
     <section id="sample-page">
         <h1>Közösségi szolgálat</h1>
 
-        <p style="text-align: center;">
-            <a href="https://www.csvmg.hu/upload/file/k%C3%B6zszolg%C3%A1lat_lista.xlsx"
-               class="btn-large-animated" target="_blank">Partnerek közösségi szolgálathoz</a>
-        </p>
+<!--        <p style="text-align: center;">-->
+<!--            <a href="https://www.csvmg.hu/upload/file/k%C3%B6zszolg%C3%A1lat_lista.xlsx"-->
+<!--               class="btn-large-animated" target="_blank">Partnerek közösségi szolgálathoz</a>-->
+<!--        </p>-->
 
         <p style="text-align: center;">
         <table>

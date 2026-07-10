@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */  ?>
 <?php $pageTitle = 'Általános iskolába felvett tanulók' . $pageTitlePostfix; ?>

@@ -6,7 +6,7 @@ services:
     ports:
       - "81:80"
     volumes:
-      - ./www:/var/www/html
+      - ./www:/var/www/html/uj
     environment:
       - GMAIL_USER=${GMAIL_USER}
       - GMAIL_APP_PASSWORD=${GMAIL_APP_PASSWORD}

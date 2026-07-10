@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Hit- és erkölcstan ' . $pageTitlePostfix; ?>
@@ -120,10 +119,6 @@
                     <div class="item">
                         <strong>Nemes Ágnes</strong>
                     </div>
-                    <div class="item">
-                        <i class="ti ti-globe"> </i>
-                        1103. Budapest Gyömrői út 69.
-                    </div>
                 </div>
             </div>
             <div class="church-materials">
@@ -156,10 +151,6 @@
                     <div class="item">
                         <strong>Czigány Tiborné</strong>
                     </div>
-                    <div class="item">
-                        <i class="ti ti-phone"> </i>
-                        +36 20 971 3054
-                    </div>
                 </div>
             </div>
             <div class="church-materials">
@@ -181,7 +172,7 @@
                 <h2>Református</h2>
                 <div class="church-contact">
                     <div class="item">
-                        <strong>Zámbóné Ivanics Hajnalka, Zámbó András, Filótás Bálint</strong>
+                        <strong> Zámbóné Ivanics Hajnalka</strong>
                     </div>
                 </div>
             </div>

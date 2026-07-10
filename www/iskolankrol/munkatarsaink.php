@@ -1,4 +1,3 @@
-<?php $basePath = '../'; ?>
 <?php include '../includes/constants.php'; ?>
 <?php /*  ------------------ BÖNGÉSZŐ TITLE ----------------------- */ ?>
 <?php $pageTitle = 'Tanáraink' . $pageTitlePostfix; ?>
@@ -156,6 +155,14 @@
             <div>Oroszi-Vigh Ágnes Csilla</div>
 
         </div>
+
+
+        <div class="todo-floating-container">
+            <div class="iskola">
+                ellenőrizni
+            </div>
+        </div>
+
 
     </section>
 </main>
