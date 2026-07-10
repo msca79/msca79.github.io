@@ -1,9 +1,13 @@
 services:
   apache-php:
     build: .
+    image: csokonai-www
     container_name: csokonai-www
     ports:
       - "81:80"
     volumes:
       - ./www:/var/www/html
+    environment:
+      - GMAIL_USER=${GMAIL_USER}
+      - GMAIL_APP_PASSWORD=${GMAIL_APP_PASSWORD}
     restart: unless-stopped
