@@ -137,12 +137,6 @@
                 adatok forrása a moderniskola.hu</a>
         </i>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                ellenőrizni
-            </div>
-        </div>
-
     </section>
 </main>
 

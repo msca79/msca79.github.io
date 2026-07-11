@@ -45,12 +45,6 @@
         </div>
 
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                ezt találtuk. mi legyen itt?
-            </div>
-        </div>
-
     </section>
 </main>
 

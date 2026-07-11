@@ -63,13 +63,6 @@
         </table>
         </p>
 
-
-        <div class="todo-floating-container">
-            <div class="iskola">
-                egyéb anyag?
-            </div>
-        </div>
-
     </section>
 </main>
 

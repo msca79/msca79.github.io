@@ -41,12 +41,6 @@
             </a>
         </div>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                egyéb elérhető foglalkozások (TSMT, stb)
-            </div>
-        </div>
-
 
     </section>
 </main>

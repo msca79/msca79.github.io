@@ -14,15 +14,6 @@
         <p style="text-align: center;">
         </p>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-              képek
-            </div>
-        </div>
-
-
-
-
     </section>
 </main>
 

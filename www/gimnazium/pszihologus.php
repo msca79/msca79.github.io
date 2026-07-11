@@ -38,17 +38,8 @@
         </p>
 
         <p>
-            Üdvözlettel, Simon Valéria
+            Üdvözlettel, Oroszi-Vigh Ágnes Csilla
         </p>
-
-
-
-        <div class="todo-floating-container">
-
-            <div class="iskola">
-                Validálni Oroszi-Vigh Ágnes Csilla
-            </div>
-        </div>
 
 
     </section>

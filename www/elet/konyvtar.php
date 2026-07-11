@@ -12,19 +12,6 @@
         <h1>Könyvtár</h1>
 
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                szabályok tömören, mettől-meddig kölcsönözhet, nyitvatartás, tartozás esetén
-            </div>
-            <div class="iskola">
-                ha megvan a teljes állomány pdf-ben, akkor az is letölthető
-            </div>
-            <div class="iskola">
-                ha összeköthető a könyvtárkezelővel megnézhetik a saját kölcsönzéseiket (ez azért sok idő lefejleszteni)
-            </div>
-        </div>
-
-
     </section>
 </main>
 

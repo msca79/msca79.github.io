@@ -15,11 +15,6 @@
             ...
         </p>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                anyag kellene
-            </div>
-        </div>
     </section>
 </main>
 

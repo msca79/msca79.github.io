@@ -156,14 +156,6 @@
 
         </div>
 
-
-        <div class="todo-floating-container">
-            <div class="iskola">
-                ellenőrizni
-            </div>
-        </div>
-
-
     </section>
 </main>
 

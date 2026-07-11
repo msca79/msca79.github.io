@@ -16,16 +16,6 @@
                class="btn-large-animated" target="_blank">Felvételi előkészítő jelentkezési lap</a>
         </p>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                ez egy régi lap.
-            </div>
-            <div class="iskola">
-               egyéb anyag?
-            </div>
-        </div>
-
-
     </section>
 </main>
 

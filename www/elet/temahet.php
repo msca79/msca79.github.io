@@ -48,11 +48,6 @@
             </div>
         </div>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                Linkek, vagy posztok kellenek
-            </div>
-        </div>
 
         <script>
             function openTab(evt, tabId) {

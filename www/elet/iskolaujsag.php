@@ -11,12 +11,6 @@
     <section id="sample-page">
         <h1>Iskolaújság</h1>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                anyag kellene
-            </div>
-        </div>
-
     </section>
 </main>
 

@@ -29,12 +29,6 @@
                 </p>
             </div>
 
-            <div class="todo-floating-container">
-                <div class="iskola">
-                    készpénzes befizetés mellett infó arról, hogy lehet bankszámláról
-                </div>
-            </div>
-
         </section>
     </main>
 

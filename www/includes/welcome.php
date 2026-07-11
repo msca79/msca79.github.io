@@ -9,7 +9,7 @@
 
 <div class="todo-floating-container">
     <div class="iskola">
-        A régi honlap nem lesz elérhető internet felől. Minden anyag ami ott van és szükséges átemelendő ide
+        A régi honlap nem lesz elérhető internet felől! Minden anyag ami ott van és szükséges átemelendő ide
         (jegyzőkönyvek, stb)
     </div>
 </div>

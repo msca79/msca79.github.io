@@ -1,0 +1,10 @@
+AddHandler application/x-httpd-alt-php84 .php .php5
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]

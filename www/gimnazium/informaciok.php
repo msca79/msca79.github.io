@@ -11,18 +11,6 @@
     <section id="sample-page">
         <h1>Gimnázium információk</h1>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                anyag. ez? https://www.csvmg.hu/koncepcio
-            </div>
-        </div>
-
-        <div class="todo-floating-container">
-            <div class="iskola">
-               anyag kellene
-            </div>
-        </div>
-
 
     </section>
 </main>

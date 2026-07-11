@@ -29,12 +29,6 @@
                class="btn-large-animated" target="_blank">Felvételi tájékoztató 2026-2027</a>
         </p>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                validálni kellene
-            </div>
-        </div>
-
     </section>
 </main>
 

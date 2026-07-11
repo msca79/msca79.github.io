@@ -61,15 +61,15 @@
 
         <div class="disclosure-list">
 
-            <a href="/iskolankrol/alapitvany/alapitvany_beszamolo_2026.docx">
+            <a href="/iskolankrol/alapitvany_files/alapitvany_beszamolo_2026.docx">
                 Jegyzőkönyv 2026. évben
             </a>
 
-            <a href="/iskolankrol/alapitvany/alapitvany_beszamolo_2025.docx">
+            <a href="/iskolankrol/alapitvany_files/alapitvany_beszamolo_2025.docx">
                 Jegyzőkönyv 2025. évben
             </a>
 
-            <a href="/iskolankrol/alapitvany/alapitvany_beszamolo_2024.docx">
+            <a href="/iskolankrol/alapitvany_files/alapitvany_beszamolo_2024.docx">
                 Jegyzőkönyv 2024. évben
             </a>
 
@@ -93,15 +93,15 @@
                 Jegyzőkönyv 2019. évben
             </a>
 
-            <a href="/iskolankrol/alapitvany/alapitvany_beszamolo_2018.docx">
+            <a href="/iskolankrol/alapitvany_files/alapitvany_beszamolo_2018.docx">
                 Jegyzőkönyv 2018. évben
             </a>
 
-            <a href="/iskolankrol/alapitvany/alapitvany_beszamolo_2017.docx">
+            <a href="/iskolankrol/alapitvany_files/alapitvany_beszamolo_2017.docx">
                 Jegyzőkönyv 2017. évben
             </a>
 
-            <a href="/iskolankrol/alapitvany/alapitvany_beszamolo_2016.docx">
+            <a href="/iskolankrol/alapitvany_files/alapitvany_beszamolo_2016.docx">
                 Jegyzőkönyv 2016. évben
             </a>
 
@@ -109,7 +109,7 @@
                 Jegyzőkönyv 2015. évben
             </a>
 
-            <a href="/iskolankrol/alapitvany/alapitvany_beszamolo_2014.docx">
+            <a href="/iskolankrol/alapitvany_files/alapitvany_beszamolo_2014.docx">
                 Jegyzőkönyv 2014. évben
             </a>
 
@@ -120,16 +120,6 @@
             <a href="#">
                 Jegyzőkönyv 2012. évben
             </a>
-
-
-
-            <div class="todo-floating-container">
-                <div class="iskola">
-                   van pár jegyzőkönyv amit nem találtam a mostani oldalon sem.
-                </div>
-            </div>
-
-
 
     </section>
 </main>

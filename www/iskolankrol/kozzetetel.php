@@ -119,14 +119,6 @@
 
         </div>
 
-
-        <div class="todo-floating-container">
-            <div class="iskola">
-                ellenőrizni minden itt van-e és van-e itt olyan ami nem kellene h itt legyen
-            </div>
-        </div>
-
-
     </section>
 </main>
 

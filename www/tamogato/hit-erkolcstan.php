@@ -268,15 +268,6 @@
             Iskolavezetés<br>
         </p>
 
-
-        <div class="todo-floating-container">
-
-            <div class="iskola">
-                Sok link mögött már nincs tartalom, vagy google drive, sharepoint. Ezeket vagy töröljük vagy a fájlt
-                szerezzük meg
-            </div>
-        </div>
-
     </section>
 </main>
 

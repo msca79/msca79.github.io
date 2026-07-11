@@ -14,11 +14,6 @@
         <p>
             itt online jelentkezési rendszer lesz dátumokkal, esetleg a börze időpontját jelezzük
         </p>
-        <div class="todo-floating-container">
-            <div class="iskola">
-                gimnáziumi nyílt nap anyag
-            </div>
-        </div>
 
     </section>
 </main>

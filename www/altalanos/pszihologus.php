@@ -92,16 +92,6 @@
             a beszélgetések során jutok!
         </div>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                Formanyomtatvány kellene a titoktartásihoz
-            </div>
-            <div class="iskola">
-                Valériával egyeztetni a szöveget
-            </div>
-        </div>
-
-
     </section>
 </main>
 

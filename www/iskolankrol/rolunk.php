@@ -17,13 +17,6 @@
             Ide talán majd a földszinti büszkeségfalról egy fotó kellene
         </p>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                anyag szükséges + a régi anekdota helyett kellene esetleg egy új
-            </div>
-        </div>
-
-
     </section>
 
 

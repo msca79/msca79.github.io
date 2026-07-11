@@ -136,13 +136,6 @@
             </tbody>
         </table>
 
-        <div class="todo-floating-container">
-            <div class="iskola">
-                az oltásokról szakaszt szakemberrel validáltatni kell!
-            </div>
-        </div>
-
-
     </section>
 </main>
 

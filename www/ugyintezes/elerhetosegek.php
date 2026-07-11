@@ -186,13 +186,6 @@
                 </tbody>
             </table>
 
-
-            <div class="todo-floating-container">
-                <div class="iskola">
-                    Validálni az adatokat
-                </div>
-            </div>
-
         </section>
     </main>
 

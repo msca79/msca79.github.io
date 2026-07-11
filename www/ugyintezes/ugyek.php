@@ -44,13 +44,6 @@
             </div>
 
 
-            <div class="todo-floating-container">
-                <div class="iskola">
-                    diák és bizonyítvány ügyek vannak? vannak olyanok amik nincsennek?
-                    Van általános ügyintézi infó? pl keresse a gazdasági irodát.
-                </div>
-            </div>
-
         </section>
     </main>
 
