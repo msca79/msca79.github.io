@@ -17,11 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=block" rel="stylesheet">
 
-    <link rel="preload" href="<?= $basePath ?? '' ?>style.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/style.css') ?>" as="style">
-    <link rel="preload" href="<?= $basePath ?? '' ?>menu.js?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/menu.js') ?>" as="script">
-    <link rel="preload" href="<?= $basePath ?? '' ?>vendor/tabler-icons.min.css" as="style">
+    <link rel="preload" href="<?= $basePath ?? '' ?>style.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . $basePath ?? '' . '/style.css') ?>" as="style">
+    <link rel="preload" href="<?= $basePath ?? '' ?>menu.js?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . $basePath ?? '' . '/menu.js') ?>" as="script">
     <link rel="preload" href="<?= $basePath ?? '' ?>images/logo.png" as="image">
-    <link rel="preload" href="<?= $basePath ?? '' ?>vendor/tabler-icons.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="preload" href="<?= $basePath ?? '' ?>images/logo.png" as="image">
     <link rel="preload" href="<?= $basePath ?? '' ?>images/banner5.jpg" as="image">

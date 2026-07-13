@@ -52,20 +52,20 @@
                 <i class="ti ti-trending-up"></i> Továbbtanulási mutatók
             </a>
 
-            <a href="/upload/file/202526/Felvételi tájékoztató  2026-27 (1).pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/202526/Felvételi tájékoztató  2026-27 (1).pdf" target="_blank">
                 <i class="ti ti-info-circle"></i>Felvételi tájékoztató
             </a>
 
-            <a href="/upload/file/Fenntarto altal engedelyezett osztalyok.pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/Fenntarto altal engedelyezett osztalyok.pdf" target="_blank">
                 <i class="ti ti-building"></i>Fenntartó által engedélyezett osztályok
             </a>
 
 
-            <a href="/upload/file/Ellenorzesek vizsgalatok megallapitasok.pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/Ellenorzesek vizsgalatok megallapitasok.pdf" target="_blank">
                 <i class="ti ti-clipboard-check"></i>Ellenőrzések, vizsgálatok, megállapítások
             </a>
 
-            <a href="/upload/file/A tanulok kimaradasa az evismetlessel kapcsolatos adatok.pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/A tanulok kimaradasa az evismetlessel kapcsolatos adatok.pdf" target="_blank">
                 <i class="ti ti-user-x"></i>Tanulókkimaradása, évismétlés
             </a>
 
@@ -74,24 +74,24 @@
             </a>
 
 
-            <a href="/upload/file/Az osztalyozo vizsga szabalyai.pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/Az osztalyozo vizsga szabalyai.pdf" target="_blank">
                 <i class="ti ti-clipboard-list"></i>Az osztályozó vizsga szabályai
             </a>
 
-            <a href="/upload/file/201718/Ertekelesi_szabalyzat_NOKS.pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/201718/Ertekelesi_szabalyzat_NOKS.pdf" target="_blank">
                 <i class="ti ti-report"></i>Értékelési szabályzat
             </a>
 
 
-            <a href="/upload/file/Kozepiskolak visszajelzese.pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/Kozepiskolak visszajelzese.pdf" target="_blank">
                 <i class="ti ti-messages"></i>Középiskolák visszajelzése
             </a>
 
-            <a href="/upload/file/2024 tagozataink.pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/2024 tagozataink.pdf" target="_blank">
                 <i class="ti ti-layout-grid"></i>Választható tagozatok
             </a>
 
-            <a href="/upload/file/Orszagos nyelvi meres eredmenyei.pdf" target="_blank">
+            <a href="https://www.csvmg.hu/upload/file/Orszagos nyelvi meres eredmenyei.pdf" target="_blank">
                 <i class="ti ti-language"></i>Országos nyelvi mérés eredményei
             </a>
 
