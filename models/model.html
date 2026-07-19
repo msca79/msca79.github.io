@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Modellek Összehasonlítása</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+        th:hover {
+            background-color: #0056b3;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .sort-icon {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI Modellek</h1>
+
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Keresés a táblázatban..." onkeyup="filterTable()">
+    </div>
+
+    <table id="modelTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Név <span class="sort-icon">↕</span></th>
+                <th onclick="sortTable(1)">Nyílt/Zárt <span class="sort-icon">↕</span></th>
+                <th onclick="sortTable(2)">Release <span class="sort-icon">↕</span></th>
+                <th onclick="sortTable(3)">Kontextus <span class="sort-icon">↕</span></th>
+                <th onclick="sortTable(4)">Paraméterek <span class="sort-icon">↕</span></th>
+                <th onclick="sortTable(5)">Használat <span class="sort-icon">↕</span></th>
+                <th onclick="sortTable(6)">Cég <span class="sort-icon">↕</span></th>
+                <th onclick="sortTable(7)">Feladat <span class="sort-icon">↕</span></th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Adatok ide kerülnek -->
+        </tbody>
+    </table>
+
+    <script src="model.js"></script>
+    <script>
+        let currentSortColumn = -1;
+        let sortAscending = true;
+
+        function renderTable(data) {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+            data.forEach(model => {
+                const row = `<tr>
+                    <td>${model.name}</td>
+                    <td>${model.access}</td>
+                    <td>${model.releaseDate}</td>
+                    <td>${model.contextSize}</td>
+                    <td>${model.parameters}</td>
+                    <td>${model.useCase}</td>
+                    <td>${model.company}</td>
+                    <td>${model.task}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function filterTable() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const filteredData = models.filter(model => {
+                return Object.values(model).some(val => 
+                    val.toString().toLowerCase().includes(filter)
+                );
+            });
+            renderTable(filteredData);
+        }
+
+        function sortTable(columnIndex) {
+            if (currentSortColumn === columnIndex) {
+                sortAscending = !sortAscending;
+            } else {
+                currentSortColumn = columnIndex;
+                sortAscending = true;
+            }
+
+            const keys = ['name', 'access', 'releaseDate', 'contextSize', 'parameters', 'useCase', 'company', 'task'];
+            const key = keys[columnIndex];
+
+            const sortedData = [...models].sort((a, b) => {
+                const valA = a[key].toString().toLowerCase();
+                const valB = b[key].toString().toLowerCase();
+                
+                if (valA < valB) return sortAscending ? -1 : 1;
+                if (valA > valB) return sortAscending ? 1 : -1;
+                return 0;
+            });
+
+            renderTable(sortedData);
+            updateSortIcons(columnIndex);
+        }
+
+        function updateSortIcons(activeIndex) {
+            const icons = document.querySelectorAll('.sort-icon');
+            icons.forEach((icon, index) => {
+                if (index === activeIndex) {
+                    icon.textContent = sortAscending ? '↑' : '↓';
+                } else {
+                    icon.textContent = '↕';
+                }
+            });
+        }
+
+        // Kezdeti megjelenítés
+        window.onload = () => {
+            renderTable(models);
+        };
+    </script>
+</body>
+</html>
