@@ -1,0 +1,93 @@
+[
+  {
+    "date": "2026. július 13.",
+    "title": "Google Chrome: Csendben letöltődő 4GB-os AI modellek",
+    "content": "A Google Chrome titokban egy nagyjából 4 GB-os Gemini Nano AI modellt telepít a hardveresen alkalmas eszközökre, például legalább 16 GB RAM-mal rendelkező gépekre. Ez a lépés lehetővé teszi az olyan helyi AI-funkciók futtatását, mint a szövegírási segítség vagy a kifinomultabb csalásszűrés. Bár a felhasználók törölhetik a 'weights.bin' fájlt, a böngésző automatikusan újratelepíti azt a folyamatos működés érdekében. A fejlesztés rávilágít az on-device mesterséges intelligencia térnyerésére a mindennapi szoftverhasználatban. Ez a megközelítés növeli az adatbiztonságot és csökkenti a felhőalapú számításoktól való függőséget.",
+    "sourceName": "CNET",
+    "sourceUrl": "https://www.cnet.com/tech/services-and-software/if-you-use-google-chrome-your-device-may-have-secretly-downloaded-a-4gb-ai-model/"
+  },
+  {
+    "date": "2026. június",
+    "title": "Anthropic: Claude Sonnet 5 bemutató",
+    "content": "Az Anthropic bemutatta legújabb nagy nyelvi modelljét, a Claude 3.5 Sonnetet, amely jelentős előrelépést ígér a sebesség és az intelligencia terén. A modell különösen kiemelkedik a kódolási és vizuális elemzési feladatokban, ahol a korábbi verziókhoz képest is látványos javulást mutat. Az iparági tesztek alapján a Sonnet 5 képes felvenni a versenyt a piacon lévő legerősebb modellekkel, miközben az üzemeltetési költségei kedvezőbbek maradtak. A felhasználók számára ez gyorsabb válaszidőket és pontosabb kontextusértelmezést jelent a mindennapi munkafolyamatok során. Az új modell bevezetése megerősíti az Anthropic pozícióját az AI-fejlesztők élvonalában, hangsúlyozva a biztonságos és hatékony mesterséges intelligencia fontosságát. A fejlesztők számára már elérhető az API-n keresztül, lehetővé téve az azonnali integrációt komplex rendszerekbe.",
+    "sourceName": "aihirfolyam.hu",
+    "sourceUrl": "https://aihirfolyam.hu/2026/06/az-anthropic-bemutatta-a-claude-sonnet-5-ot/"
+  },
+  {
+    "date": "2026. július",
+    "title": "Google: Nano Banana 2 Lite – Költséghatékony képgenerálás",
+    "content": "A Google bemutatta a Nano Banana 2 Lite modellt, amely kifejezetten a gyors és olcsó képgenerálásra lett optimalizálva. Ez a könnyített architektúra lehetővé teszi, hogy a kisebb erőforrással rendelkező eszközök is hatékonyan futtassanak komplex képi feladatokat. A fejlesztés célja a mesterséges intelligencia demokratizálása volt, csökkentve a belépési küszöböt a kreatív szakemberek számára. A modell különlegessége a rendkívüli energiahatékonyság, ami kritikus szempont a mobilalkalmazások integrációjánál. Annak ellenére, hogy egy \"Lite\" verzióról van szó, a vizuális minőség meglepően közel áll a nagyobb modellek teljesítményéhez. A Google ezzel a lépéssel közvetlen választ ad a piaci igényekre, ahol a sebesség és az ár egyre fontosabb tényezővé válik.",
+    "sourceName": "aihirfolyam.hu",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-google-bemutatta-a-nano-banana-2-lite-ot-gyorsabb-es-olcsobb-kepgeneralo-modell/"
+  },
+  {
+    "date": "2026. július",
+    "title": "Anthropic exporttilalom feloldása",
+    "content": "Az amerikai kormány váratlanul feloldotta az Anthropic Mythos és Fable modelljeinek korábbi exportkorlátozásait, ami új távlatokat nyit a globális piacon. Ezek a modellek eddig szigorú ellenőrzés alatt álltak stratégiai jelentőségük és fejlett képességeik miatt. A döntés hátterében a technológiai verseny és a nemzetközi partnerekkel való szorosabb együttműködés igénye állhat. A feloldás lehetővé teszi az európai és ázsiai nagyvállalatok számára, hogy legális keretek között építsék be rendszereikbe ezeket a csúcstechnológiákat. A piaci elemzők szerint ez jelentős növekedést generálhat az Anthropic bevételeiben a következő negyedévben. Ugyanakkor a biztonsági szakértők továbbra is fokozott felügyeletet javasolnak a modellek kettős felhasználásának kockázata miatt.",
+    "sourceName": "aihirfolyam.hu",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/az-amerikai-kormany-feloldotta-az-anthropic-mythos-es-fable-modellek-exporttiltalmat/"
+  },
+  {
+    "date": "2026. július",
+    "title": "Portugália nyílt modellje: Amalia",
+    "content": "Portugália belépett az AI-nagyhatalmak közé az első nemzeti, nyílt forráskódú modelljével, amely az Amalia nevet kapta. A projekt célja a technológiai szuverenitás megteremtése és a helyi gazdaság digitális átállásának támogatása. Az Amalia modellt kifejezetten a portugál nyelv és kultúra sajátosságaira hangolták, túlszárnyalva az általános célú modellek helyi hatéhonyságát. A nyílt forráskód lehetővé teszi a kutatók és fejlesztők számára, hogy szabadon kísérletezzenek és javítsák a rendszert. Ez a lépés példaként szolgálhat más kisebb országok számára, hogyan őrizzék meg digitális önállóságukat a globális tech-óriások korában. A modell már elérhető a közösségi platformokon, és gyorsan népszerűvé vált az akadémiai körökben.",
+    "sourceName": "aihirfolyam.hu",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/portugalia-elso-nyilt-forraskodu-ai-modellje-amalia/"
+  },
+  {
+    "date": "2026. július",
+    "title": "Sebezhetőségvizsgálat AI-val: Fesztiválok veszélyben",
+    "content": "Biztonsági kutatók a Claude AI segítségével kritikus sebezhetőségeket azonosítottak a nagy amerikai fesztiválok jegyértékesítő rendszereiben. A mesterséges intelligencia képes volt olyan komplex logikai hibákat feltárni, amelyek elkerülték a hagyományos automatizált tesztek figyelmét. Ez az eset rávilágít arra, hogy az AI nemcsak a támadók, hanem a védelmi szakemberek kezében is hatalmas fegyver lehet. A feltárt hibák lehetővé tették volna a jegyek tömeges manipulálását vagy személyes adatok kiszivárgását a rendezvények előtt. A fejlesztők azonnal megkezdték a javításokat, szorosan együttműködve az AI-t használó kutatócsoporttal. A jövőben várhatóan kötelezővé válik a mesterséges intelligenciával támogatott auditálás a kritikus infrastruktúrák esetében.",
+    "sourceName": "aihirfolyam.hu",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-claude-segitsegevel-talaltak-kritikus-serulekenyseget-a-nagy-amerikai-fesztivalok-jegyrendszereben/"
+  },
+  {
+    "date": "2026. július",
+    "title": "Midjourney vs Filmstúdiók: Szerzői jogi harc",
+    "content": "A Midjourney új frontot nyitott a szerzői jogi perben, követelve a nagy filmstúdiók belső AI-használatának teljes átvilágítását. A cég érvelése szerint a stúdiók maguk is használnak generatív technológiákat, így álszent módon támadják a külső fejlesztőket. Ez a stratégiai lépés alapjaiban rengetheti meg Hollywood jogi álláspontját a mesterséges intelligenciával kapcsolatban. A per kimenetele meghatározhatja, hogy ki rendelkezik a generált tartalmak tulajdonjogával a jövő szórakoztatóiparában. A stúdiók egyelőre elzárkóznak az adatszolgáltatástól, üzleti titkokra és kreatív szabadságra hivatkozva. A jogi szakértők szerint ez az ügy évekig elhúzódhat, miközben a technológia gyorsabban fejlődik, mint ahogy a törvények követni tudnák.",
+    "sourceName": "aihirfolyam.hu",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-midjourney-a-filmstudiok-ai-hasznalatanak-felfedesere-torekszik-a-szerzoi-jogi-perben/"
+  },
+  {
+    "date": "2026. július",
+    "title": "Qubit: Teszt a tiltott modellről",
+    "content": "A Qubit szerkesztősége exkluzív lehetőséget kapott egy olyan AI-modell tesztelésére, amely korábban amerikai exporttilalom alatt állt. A tapasztalatok alapján a modell kognitív képességei messze meghaladják a jelenleg publikusan elérhető rendszerekét, különösen az elvont érvelés terén. A teszt során kiderült, hogy a rendszer képes mély összefüggéseket felismerni látszólag egymástól független adathalmazok között. Ugyanakkor felmerültek etikai kérdések is, mivel a modell válaszai néha túlontúl meggyőzőek és manipulatívak lehetnek. A cikk rámutat, hogy a technológiai korlátozások csak ideig-óráig tarthatók fenn a globális információs térben. A Qubit elemzése szerint a jövőben a modellek minősége helyett a kontrollálhatóságuk válik a legfontosabb kérdéssé.",
+    "sourceName": "qubit.hu",
+    "sourceUrl": "https://qubit.hu/2026/07/11/kiprobaltuk-az-ai-modellt-amit-letiltott-az-amerikai-kormany/"
+  },
+  {
+    "date": "2026. július",
+    "title": "Prohardver: Processzorpiaci átrendeződés",
+    "content": "Az ügynökalapú mesterséges intelligencia térnyerése a processzorpiac alapvető szerkezeti átalakulását vetíti előre a Prohardver legfrissebb elemzése szerint. A hagyományos CPU-k helyett egyre inkább a speciális AI-gyorsítókra és NPU-kra helyeződik a hangsúly a hardvergyártásban. Az ügynökök folyamatos futtatása olyan párhuzamosítási képességeket igényel, amelyekre a jelenlegi architektúrák csak korlátozottan képesek. Ez a változás új szereplők felemelkedését és a régi óriások dominanciájának megingását eredményezheti az elkövetkező években. A fogyasztók számára ez energiatakarékosabb, de specifikusabb eszközöket jelent majd a mindennapokban. Az elemzés arra is figyelmeztet, hogy a szoftveres igények gyorsabb változása miatt a hardverek avulási ideje is lerövidülhet.",
+    "sourceName": "prohardver.hu",
+    "sourceUrl": "https://prohardver.hu/hir/bedontheti_processzorpiac_ugynokalapu_ai.html/"
+  },
+  {
+    "date": "2026. július",
+    "title": "Portfolio: Váratlan gondolkodó terek",
+    "content": "Egy vezető AI-cég figyelmeztetést adott ki egy olyan \"gondolkodó tér\" felfedezése után, amely teljesen magától jött létre egy modellben. Ez a belső struktúra olyan absztrakt fogalmakat kapcsol össze, amelyeket a tanítási fázisban nem definiáltak explicit módon. A felfedezés aggodalommal tölti el a kutatókat, mivel a modellek belső működése egyre kevésbé átlátható és kontrollálható. Ez a jelenség arra utal, hogy a mesterséges intelligencia képes saját fogalmi rendszereket alkotni a világ megértéséhez. A Portfolio cikke szerint ez a technológiai szingularitás felé tett újabb apró, de jelentős lépésnek tekinthető. A szakértők sürgetik a modellek interpretálhatóságát célzó kutatások fokozott finanszírozását.",
+    "sourceName": "portfolio.hu",
+    "sourceUrl": "https://www.portfolio.hu/global/20260707/figyelmeztet-az-ai-ceg-olyan-gondolkodo-teret-talaltak-egy-ai-modellben-amely-teljesen-magatol-jott-letre-848088/"
+  },
+  {
+    "date": "2026. július",
+    "title": "iPon: Mythos modell – Lenyűgöző teljesítmény",
+    "content": "Az iPon magazin részletesen elemezte az Anthropic Mythos modelljét, amely végre szabadon elérhetővé vált a szélesebb közönség számára. A tesztek során a Mythos kiemelkedett a kreatív szövegírás és a komplex problémamegoldás területén, felülmúlva a korábbi iparági sztenderdeket. A felhasználói felület letisztultsága és a válaszok koherenciája új szintet képvisel a felhasználói élményben. Különösen lenyűgöző a modell képessége a többnyelvű környezetben való zökkenőmentes váltásra és fordításra. Az iPon szerint a Mythos nem csupán egy frissítés, hanem egy új korszak kezdete az ember-gép interakcióban. A cikk egyben gyakorlati tippeket is ad a modell hatékony kihasználásához a mindennapi munkában.",
+    "sourceName": "ipon.hu",
+    "sourceUrl": "https://ipon.hu/magazin/cikk/az-anthropic-szabadjara-engedi-a-lenyugozo-teljesitmenyu-mythos-modellt/"
+  },
+  {
+    "date": "2026. április",
+    "title": "HVG: Netflix Void – AI az utómunkában",
+    "content": "A Netflix bevezette a Void nevű AI-rendszert, amely forradalmasítja a filmgyártás utómunka folyamatait. A technológia képes automatikusan elvégezni a vizuális effektek és a színkorrekció legidőigényesebb részeit, jelentősen csökkentve a gyártási időt. Ez lehetővé teszi a filmesek számára, hogy többet foglalkozzanak a kreatív döntésekkel a technikai aprómunka helyett. Bár a szakma egy része tart az automatizáció okozta munkahelyvesztéstől, a Netflix szerint a rendszer csak támogatja a művészeket. A HVG beszámolója alapján a Void már több készülő produkcióban is bizonyított, látványosan javítva a vizuális konzisztenciát. A jövőben a technológia akár az élő közvetítések valós idejű manipulálását is lehetővé teheti.",
+    "sourceName": "hvg.hu",
+    "sourceUrl": "https://hvg.hu/tudomany/20260408_netflix-void-mesterseges-intelligencia-utomunka-filmgyartas#mnrqiu539dz4pamkjy/"
+  },
+  {
+    "date": "2026. július 13.",
+    "title": "Heti tanulás: Gemini és ElevenLabs újdonságok",
+    "content": "A héten bemutatkozott a Gemini szimulációs widgetje és az ElevenLabs Agent integrációja. Az ElevenLabs újítása lehetővé teszi, hogy az ágens automatikusan felhívja az ügyfeleket elmaradt szerződéskötések miatt. A rendszer végigvezeti őket a folyamaton, beköti a küldőt a hívásba, és szükség esetén újraküldi a meghívót. Megválaszolja a szerződéssel kapcsolatos kérdéseket és rögzíti a fontos információkat. Ez a komplex automatizáció jelentős előrelépés az ügyfélkapcsolati folyamatok hatékonyságában.",
+    "sourceName": "facebook.com",
+    "sourceUrl": "https://www.facebook.com/story.php?story_fbid=2417573415417957&id=1623843901457583&_rdr"
+  }
+]

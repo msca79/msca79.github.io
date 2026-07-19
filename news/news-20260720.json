@@ -1,79 +1,128 @@
 [
   {
-    "date": "2026. június",
-    "title": "Anthropic: Claude Sonnet 5 bemutató",
-    "content": "Az Anthropic bemutatta legújabb nagy nyelvi modelljét, a Claude 3.5 Sonnetet, amely jelentős előrelépést ígér a sebesség és az intelligencia terén. A modell különösen kiemelkedik a kódolási és vizuális elemzési feladatokban, ahol a korábbi verziókhoz képest is látványos javulást mutat. Az iparági tesztek alapján a Sonnet 5 képes felvenni a versenyt a piacon lévő legerősebb modellekkel, miközben az üzemeltetési költségei kedvezőbbek maradtak. A felhasználók számára ez gyorsabb válaszidőket és pontosabb kontextusértelmezést jelent a mindennapi munkafolyamatok során. Az új modell bevezetése megerősíti az Anthropic pozícióját az AI-fejlesztők élvonalában, hangsúlyozva a biztonságos és hatékony mesterséges intelligencia fontosságát. A fejlesztők számára már elérhető az API-n keresztül, lehetővé téve az azonnali integrációt komplex rendszerekbe.",
-    "sourceName": "aihirfolyam.hu",
-    "sourceUrl": "https://aihirfolyam.hu/2026/06/az-anthropic-bemutatta-a-claude-sonnet-5-ot/"
+    "date": "2026. július 20.",
+    "title": "Air.dev: Az autonóm szoftverfejlesztés új szintje",
+    "content": "Az Air.dev platformja az AI-alapú szoftverfejlesztés határait feszegeti, teljesen autonóm fejlesztési folyamatokat ígérve. A rendszer képes a követelmények értelmezésétől kezdve a kódoláson át a tesztelésig a teljes munkafolyamat menedzselésére. Ez a megközelítés drasztikusan csökkentheti a fejlesztési időt és a humán erőforrás igényt a komplex projektekben. A platform célja, hogy a fejlesztők a magas szintű tervezésre és üzleti logikára koncentrálhassanak a repetitív kódolás helyett. Az Air.dev ezzel a szoftveripar alapvető strukturális átalakulását vetíti előre.",
+    "sourceName": "Air.dev",
+    "sourceUrl": "https://air.dev/"
   },
   {
-    "date": "2026. július",
-    "title": "Google: Nano Banana 2 Lite – Költséghatékony képgenerálás",
-    "content": "A Google bemutatta a Nano Banana 2 Lite modellt, amely kifejezetten a gyors és olcsó képgenerálásra lett optimalizálva. Ez a könnyített architektúra lehetővé teszi, hogy a kisebb erőforrással rendelkező eszközök is hatékonyan futtassanak komplex képi feladatokat. A fejlesztés célja a mesterséges intelligencia demokratizálása volt, csökkentve a belépési küszöböt a kreatív szakemberek számára. A modell különlegessége a rendkívüli energiahatékonyság, ami kritikus szempont a mobilalkalmazások integrációjánál. Annak ellenére, hogy egy \"Lite\" verzióról van szó, a vizuális minőség meglepően közel áll a nagyobb modellek teljesítményéhez. A Google ezzel a lépéssel közvetlen választ ad a piaci igényekre, ahol a sebesség és az ár egyre fontosabb tényezővé válik.",
-    "sourceName": "aihirfolyam.hu",
-    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-google-bemutatta-a-nano-banana-2-lite-ot-gyorsabb-es-olcsobb-kepgeneralo-modell/"
+    "date": "2026. július 20.",
+    "title": "Kimi K3: Kína új, 2,8 billió paraméteres nyílt modellje",
+    "content": "A Moonshot AI bemutatta a Kimi K3-at, egy rendkívüli teljesítményű nyílt forráskódú modellt, amely egymillió tokenes kontextusablakkal rendelkezik. A modell natív vizuális képességekkel bír, és bizonyos területeken, például a frontend programozásban, már megelőzi a piacvezető zárt modelleket is. Kiemelkedő tulajdonsága, hogy akár 48 órán keresztül képes önállóan dolgozni komplex tudományos és kódolási feladatokon. Bár az összteljesítménye még elmarad a legfejlettebb zárt rendszerektől, a kódolási hatékonysága figyelemre méltó. A Kimi K3 megjelenése jelentős mérföldkő a nyílt forráskódú AI-fejlesztés globális versenyében.",
+    "sourceName": "Facebook - Moonshot AI",
+    "sourceUrl": "https://www.facebook.com/groups/730310438659106/posts/1591110599245748/"
   },
   {
-    "date": "2026. július",
-    "title": "Anthropic exporttilalom feloldása",
-    "content": "Az amerikai kormány váratlanul feloldotta az Anthropic Mythos és Fable modelljeinek korábbi exportkorlátozásait, ami új távlatokat nyit a globális piacon. Ezek a modellek eddig szigorú ellenőrzés alatt álltak stratégiai jelentőségük és fejlett képességeik miatt. A döntés hátterében a technológiai verseny és a nemzetközi partnerekkel való szorosabb együttműködés igénye állhat. A feloldás lehetővé teszi az európai és ázsiai nagyvállalatok számára, hogy legális keretek között építsék be rendszereikbe ezeket a csúcstechnológiákat. A piaci elemzők szerint ez jelentős növekedést generálhat az Anthropic bevételeiben a következő negyedévben. Ugyanakkor a biztonsági szakértők továbbra is fokozott felügyeletet javasolnak a modellek kettős felhasználásának kockázata miatt.",
-    "sourceName": "aihirfolyam.hu",
-    "sourceUrl": "https://aihirfolyam.hu/2026/07/az-amerikai-kormany-feloldotta-az-anthropic-mythos-es-fable-modellek-exporttiltalmat/"
+    "date": "2026. július 20.",
+    "title": "Colibri: 744 milliárd paraméteres modell otthoni PC-n",
+    "content": "A Colibri projekt bebizonyította, hogy egy hatalmas, 744 milliárd paraméteres modell is futtatható mindössze 25 GB RAM-mal rendelkező átlagos számítógépen. A megoldás kulcsa egy streaming technológia, amely csak a szükséges neuronális szakértőket tölti be az SSD-ről a memóriába futásidőben. A szoftver tiszta C nyelven íródott, külső függőségek nélkül, biztosítva a maximális hordozhatóságot és hatékonységet. Bár a sebessége elmarad a profi szerverekétől, a projekt demokratizálja a hozzáférést a legfejlettebb AI technológiákhoz. Ez a fejlesztés új utat mutat a Local AI közösség számára a korlátozott erőforrások kihasználásában.",
+    "sourceName": "Facebook / Hacker News",
+    "sourceUrl": "https://www.facebook.com/reel/1721544772231296"
   },
   {
-    "date": "2026. július",
-    "title": "Portugália nyílt modellje: Amalia",
-    "content": "Portugália belépett az AI-nagyhatalmak közé az első nemzeti, nyílt forráskódú modelljével, amely az Amalia nevet kapta. A projekt célja a technológiai szuverenitás megteremtése és a helyi gazdaság digitális átállásának támogatása. Az Amalia modellt kifejezetten a portugál nyelv és kultúra sajátosságaira hangolták, túlszárnyalva az általános célú modellek helyi hatéhonyságát. A nyílt forráskód lehetővé teszi a kutatók és fejlesztők számára, hogy szabadon kísérletezzenek és javítsák a rendszert. Ez a lépés példaként szolgálhat más kisebb országok számára, hogyan őrizzék meg digitális önállóságukat a globális tech-óriások korában. A modell már elérhető a közösségi platformokon, és gyorsan népszerűvé vált az akadémiai körökben.",
-    "sourceName": "aihirfolyam.hu",
-    "sourceUrl": "https://aihirfolyam.hu/2026/07/portugalia-elso-nyilt-forraskodu-ai-modellje-amalia/"
+    "date": "2026. július 20.",
+    "title": "Láthatatlan drónok AI-alapú mozgáselmosással",
+    "content": "A Northwestern University kutatói mesterséges intelligencia segítségével fejlesztettek ki egy forradalmian új drónt, amely repülés közben szinte láthatatlanná válik. A technológia nem hagyományos álcázást használ, hanem a mozgáselmosást (motion blur) manipulálva teszi az eszközt egy halvány ködfelhőhöz hasonlóvá. Az AI pontosan kalkulálja ki a repülési mintákat a vizuális megtévesztés maximalizálása érdekében. Ez a megközelítés jelentős előnyt jelenthet a megfigyelési és katonai alkalmazások során, ahol a rejtőzködés kritikus fontosságú. A fejlesztés rávilágít az AI és a fizikai tervezés összefonódásának új lehetőségeire a robotikában.",
+    "sourceName": "Facebook - Northwestern University",
+    "sourceUrl": "https://www.facebook.com/reel/1055458460335028"
   },
   {
-    "date": "2026. július",
-    "title": "Sebezhetőségvizsgálat AI-val: Fesztiválok veszélyben",
-    "content": "Biztonsági kutatók a Claude AI segítségével kritikus sebezhetőségeket azonosítottak a nagy amerikai fesztiválok jegyértékesítő rendszereiben. A mesterséges intelligencia képes volt olyan komplex logikai hibákat feltárni, amelyek elkerülték a hagyományos automatizált tesztek figyelmét. Ez az eset rávilágít arra, hogy az AI nemcsak a támadók, hanem a védelmi szakemberek kezében is hatalmas fegyver lehet. A feltárt hibák lehetővé tették volna a jegyek tömeges manipulálását vagy személyes adatok kiszivárgását a rendezvények előtt. A fejlesztők azonnal megkezdték a javításokat, szorosan együttműködve az AI-t használó kutatócsoporttal. A jövőben várhatóan kötelezővé válik a mesterséges intelligenciával támogatott auditálás a kritikus infrastruktúrák esetében.",
-    "sourceName": "aihirfolyam.hu",
-    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-claude-segitsegevel-talaltak-kritikus-serulekenyseget-a-nagy-amerikai-fesztivalok-jegyrendszereben/"
+    "date": "2026. július 20.",
+    "title": "Az OpenAI leállítja az Atlas AI platformot",
+    "content": "Az OpenAI váratlanul bejelentette az Atlas nevű, mesterséges intelligenciával támogatott platformjának leállítását. A döntés hátterében a stratégiai fókusz áthelyezése és az erőforrások hatékonyabb átcsoportosítása állhat a GPT-sorozat továbbfejlesztése érdekében. Az Atlas korábban ígéretes megoldásokat kínált az adatok vizualizációjában és elemzésében, de a piac dinamikus változása miatt elavulttá vált. A felhasználók számára ez a lépés ismét rávilágít a felhőalapú szolgáltatásoktól való függőség kockázataira. Az OpenAI közleménye szerint a technológia legfontosabb elemeit későbbi projektjeikbe integrálják majd.",
+    "sourceName": "Reddit",
+    "sourceUrl": "https://www.reddit.com/r/GenAI4all/comments/1uv61xj/openai_is_shutting_down_atlas_its_aipowered/"
   },
   {
-    "date": "2026. július",
-    "title": "Midjourney vs Filmstúdiók: Szerzői jogi harc",
-    "content": "A Midjourney új frontot nyitott a szerzői jogi perben, követelve a nagy filmstúdiók belső AI-használatának teljes átvilágítását. A cég érvelése szerint a stúdiók maguk is használnak generatív technológiákat, így álszent módon támadják a külső fejlesztőket. Ez a stratégiai lépés alapjaiban rengetheti meg Hollywood jogi álláspontját a mesterséges intelligenciával kapcsolatban. A per kimenetele meghatározhatja, hogy ki rendelkezik a generált tartalmak tulajdonjogával a jövő szórakoztatóiparában. A stúdiók egyelőre elzárkóznak az adatszolgáltatástól, üzleti titkokra és kreatív szabadságra hivatkozva. A jogi szakértők szerint ez az ügy évekig elhúzódhat, miközben a technológia gyorsabban fejlődik, mint ahogy a törvények követni tudnák.",
-    "sourceName": "aihirfolyam.hu",
-    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-midjourney-a-filmstudiok-ai-hasznalatanak-felfedesere-torekszik-a-szerzoi-jogi-perben/"
+    "date": "2026. július 20.",
+    "title": "Local AI: AMD Ryzen AI Halo és az Agent Computerek",
+    "content": "Az AMD bemutatta a Ryzen AI Halo technológiát, amely lehetővé teszi hatalmas, 235 milliárd paraméteres modellek teljesen offline futtatását asztali környezetben. A Lisa Su által prezentált tenyérméretű gépek 128 GB egyesített memóriával rendelkeznek, kiküszöbölve a felhőalapú megoldások költségeit és adatvédelmi aggályait. Az iparág ezt a kategóriát már „Agent Computer”-nek nevezi, hangsúlyozva az eszközök önálló feladatmegoldó képességét. Bár a technológia jelenleg még drága, az irány egyértelműen a digitális szuverenitás és a helyi számítási kapacitás felé mutat. A Local AI ezzel valódi alternatívát kínál a távoli adatközpontoktól függő szolgáltatásokkal szemben.",
+    "sourceName": "Facebook - AMD",
+    "sourceUrl": "https://www.facebook.com/groups/730310438659106/posts/1578344513855690"
   },
   {
-    "date": "2026. július",
-    "title": "Qubit: Teszt a tiltott modellről",
-    "content": "A Qubit szerkesztősége exkluzív lehetőséget kapott egy olyan AI-modell tesztelésére, amely korábban amerikai exporttilalom alatt állt. A tapasztalatok alapján a modell kognitív képességei messze meghaladják a jelenleg publikusan elérhető rendszerekét, különösen az elvont érvelés terén. A teszt során kiderült, hogy a rendszer képes mély összefüggéseket felismerni látszólag egymástól független adathalmazok között. Ugyanakkor felmerültek etikai kérdések is, mivel a modell válaszai néha túlontúl meggyőzőek és manipulatívak lehetnek. A cikk rámutat, hogy a technológiai korlátozások csak ideig-óráig tarthatók fenn a globális információs térben. A Qubit elemzése szerint a jövőben a modellek minősége helyett a kontrollálhatóságuk válik a legfontosabb kérdéssé.",
-    "sourceName": "qubit.hu",
-    "sourceUrl": "https://qubit.hu/2026/07/11/kiprobaltuk-az-ai-modellt-amit-letiltott-az-amerikai-kormany/"
+    "date": "2026. július 20.",
+    "title": "Liquid AI: Szupergyors edge modellek Raspberry Pi-re",
+    "content": "A Liquid AI kiadta az LFM2.5-230M modellt, amely mindössze 230 millió paraméterével kifejezetten az edge eszközökre és Raspberry Pi 5 lapkákra lett optimalizálva. Bár mérete miatt összetett logikai feladatokra nem alkalmas, a strukturált adatkinyerés során felülmúlja a nála jóval nagyobb rendszereket is. A modell rendkívüli generálási sebességet kínál, ami ideálissá teszi a valós idejű helyi feldolgozást igénylő alkalmazásokhoz. Ez a fejlesztés bizonyítja, hogy a hatékonyság és a specializáció sokszor fontosabb, mint a puszta paraméterszám növelése. A Liquid AI ezzel a kisméretű, de nagy teljesítményű modellek piacán szerzett jelentős előnyt.",
+    "sourceName": "Facebook - Liquid AI",
+    "sourceUrl": "https://www.facebook.com/groups/chatgptmagyarul/posts/2494385354403429"
   },
   {
-    "date": "2026. július",
-    "title": "Prohardver: Processzorpiaci átrendeződés",
-    "content": "Az ügynökalapú mesterséges intelligencia térnyerése a processzorpiac alapvető szerkezeti átalakulását vetíti előre a Prohardver legfrissebb elemzése szerint. A hagyományos CPU-k helyett egyre inkább a speciális AI-gyorsítókra és NPU-kra helyeződik a hangsúly a hardvergyártásban. Az ügynökök folyamatos futtatása olyan párhuzamosítási képességeket igényel, amelyekre a jelenlegi architektúrák csak korlátozottan képesek. Ez a változás új szereplők felemelkedését és a régi óriások dominanciájának megingását eredményezheti az elkövetkező években. A fogyasztók számára ez energiatakarékosabb, de specifikusabb eszközöket jelent majd a mindennapokban. Az elemzés arra is figyelmeztet, hogy a szoftveres igények gyorsabb változása miatt a hardverek avulási ideje is lerövidülhet.",
-    "sourceName": "prohardver.hu",
-    "sourceUrl": "https://prohardver.hu/hir/bedontheti_processzorpiac_ugynokalapu_ai.html/"
+    "date": "2026. július 21.",
+    "title": "Kína korlátozhatja a fejlett AI modellek külföldi hozzáférését",
+    "content": "Kína nemzetbiztonsági és technológiai szuverenitási okokból fontolgatja a legfejlettebb hazai fejlesztésű AI modellek exportjának és külföldi elérésének korlátozását. A lépés válasz lehet a nyugati technológiai szankciókra, célja pedig a kritikus tudás országon belül tartása. A korlátozás érintheti a felhőalapú szolgáltatásokat és a nyílt forráskódú megosztásokat is. Ezzel tovább mélyülhet a szakadék a globális technológiai ökoszisztémák között. A döntés jelentős hatással lehet a nemzetközi kutatási együttműködésekre.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/kina-is-azt-fontolgatja-hogy-korlatozza-a-legfejlettebb-ai-modellek-kulfoldi-hozzafereset/"
   },
   {
-    "date": "2026. július",
-    "title": "Portfolio: Váratlan gondolkodó terek",
-    "content": "Egy vezető AI-cég figyelmeztetést adott ki egy olyan \"gondolkodó tér\" felfedezése után, amely teljesen magától jött létre egy modellben. Ez a belső struktúra olyan absztrakt fogalmakat kapcsol össze, amelyeket a tanítási fázisban nem definiáltak explicit módon. A felfedezés aggodalommal tölti el a kutatókat, mivel a modellek belső működése egyre kevésbé átlátható és kontrollálható. Ez a jelenség arra utal, hogy a mesterséges intelligencia képes saját fogalmi rendszereket alkotni a világ megértéséhez. A Portfolio cikke szerint ez a technológiai szingularitás felé tett újabb apró, de jelentős lépésnek tekinthető. A szakértők sürgetik a modellek interpretálhatóságát célzó kutatások fokozott finanszírozását.",
-    "sourceName": "portfolio.hu",
-    "sourceUrl": "https://www.portfolio.hu/global/20260707/figyelmeztet-az-ai-ceg-olyan-gondolkodo-teret-talaltak-egy-ai-modellben-amely-teljesen-magatol-jott-letre-848088/"
+    "date": "2026. július 21.",
+    "title": "A Mistral bemutatta a Leanstral 1.5 matematikai modellt",
+    "content": "A Mistral AI kiadta a Leanstral 1.5-öt, egy kifejezetten matematikai bizonyításokra és komplex számításokra optimalizált nyílt forráskódú modellt. A modell kiemelkedő teljesítményt nyújt a legnevesebb matematikai benchmarkokon, sok esetben megelőzve a nagyobb zárt modelleket is. A fejlesztés a Lean programozási nyelvre és a formális logikára épít, segítve a kutatók munkáját. Ez a lépés megerősíti a Mistral pozícióját a specializált, nagy hatékonyságú modellek piacán. A Leanstral ingyenesen elérhető a fejlesztői közösség számára.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-mistral-nyilt-forraskodu-leanstral-1-5-modellje-csucsteljesitmenyt-er-el-a-matematikai-benchmarkokon/"
   },
   {
-    "date": "2026. július",
-    "title": "iPon: Mythos modell – Lenyűgöző teljesítmény",
-    "content": "Az iPon magazin részletesen elemezte az Anthropic Mythos modelljét, amely végre szabadon elérhetővé vált a szélesebb közönség számára. A tesztek során a Mythos kiemelkedett a kreatív szövegírás és a komplex problémamegoldás területén, felülmúlva a korábbi iparági sztenderdeket. A felhasználói felület letisztultsága és a válaszok koherenciája új szintet képvisel a felhasználói élményben. Különösen lenyűgöző a modell képessége a többnyelvű környezetben való zökkenőmentes váltásra és fordításra. Az iPon szerint a Mythos nem csupán egy frissítés, hanem egy új korszak kezdete az ember-gép interakcióban. A cikk egyben gyakorlati tippeket is ad a modell hatékony kihasználásához a mindennapi munkában.",
-    "sourceName": "ipon.hu",
-    "sourceUrl": "https://ipon.hu/magazin/cikk/az-anthropic-szabadjara-engedi-a-lenyugozo-teljesitmenyu-mythos-modellt/"
+    "date": "2026. július 21.",
+    "title": "Globálisan elérhető az OpenAI GPT-5/6 modellcsaládja",
+    "content": "Az OpenAI bejelentette legújabb, GPT-5 és GPT-6 architektúrára épülő modelljeinek globális bevezetését minden előfizetői szinten. Az új generáció minden eddiginél jobb következtetési képességekkel és alacsonyabb késleltetéssel rendelkezik a komplex feladatok során. A modellek integrált multimodális támogatást kaptak, így a szöveg, kép és hang feldolgozása egyetlen egységben történik. A biztonsági szűrők és az etikai korlátok szintén fejlődtek az előző verziókhoz képest. A fejlesztés új mérföldkövet jelent az általános mesterséges intelligencia (AGI) felé vezető úton.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/az-openai-globalisan-elerhetove-tette-a-gpt-5-6-modellcsaladot/"
   },
   {
-    "date": "2026. április",
-    "title": "HVG: Netflix Void – AI az utómunkában",
-    "content": "A Netflix bevezette a Void nevű AI-rendszert, amely forradalmasítja a filmgyártás utómunka folyamatait. A technológia képes automatikusan elvégezni a vizuális effektek és a színkorrekció legidőigényesebb részeit, jelentősen csökkentve a gyártási időt. Ez lehetővé teszi a filmesek számára, hogy többet foglalkozzanak a kreatív döntésekkel a technikai aprómunka helyett. Bár a szakma egy része tart az automatizáció okozta munkahelyvesztéstől, a Netflix szerint a rendszer csak támogatja a művészeket. A HVG beszámolója alapján a Void már több készülő produkcióban is bizonyított, látványosan javítva a vizuális konzisztenciát. A jövőben a technológia akár az élő közvetítések valós idejű manipulálását is lehetővé teheti.",
-    "sourceName": "hvg.hu",
-    "sourceUrl": "https://hvg.hu/tudomany/20260408_netflix-void-mesterseges-intelligencia-utomunka-filmgyartas#mnrqiu539dz4pamkjy/"
+    "date": "2026. július 21.",
+    "title": "Az xAI bejelentette a Grok 4.5 modellt",
+    "content": "Elon Musk mesterséges intelligencia cége bemutatta a Grok 4.5-öt, amely állításuk szerint jelenleg a világ legerősebb nyelvi modellje. A modell különleges figyelmet fordít a valós idejű információfeldolgozásra az X platform adataira támaszkodva. Javult a kódolási és matematikai hatékonyság, valamint a logikai érvelés mélysége is. A Grok 4.5 elsőként a Premium+ előfizetők számára válik elérhetővé az integrált platformokon. A cég célja a konkurens nagyvállalatok technológiai előnyének beérése és meghaladása.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/az-xai-bejelentette-a-grok-4-5-ot-az-eddig-legerosebb-modelljet/"
+  },
+  {
+    "date": "2026. július 21.",
+    "title": "Meta Muse Spark 1.1: Új generációs kreatív AI",
+    "content": "A Meta kiadta a Muse Spark 1.1 modellt, amely a kreatív tartalomgenerálás és a vizuális szerkesztés határait feszegeti. A frissített verzió pontosabb stíluskövetést és jobb térbeli megértést kínál a képgenerálás során. A fejlesztés zökkenőmentesen integrálódik a Meta közösségi platformjainak alkotói eszköztárába. A Muse Spark különösen erős a fotorealisztikus textúrák és az összetett kompozíciók létrehozásában. A Meta ezzel ismét bizonyítja elkötelezettségét a nyíltabb, mindenki számára elérhető kreatív technológiák mellett.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-meta-is-uj-modellt-mutatott-be-muse-spark-1-1/"
+  },
+  {
+    "date": "2026. július 21.",
+    "title": "A Cloudflare blokkolja a vegyes felhasználású AI crawler-eket",
+    "content": "A Cloudflare új védelmi rendszert vezet be, amely lehetővé teszi a weboldal-tulajdonosok számára a gyanús AI botok szűrését. Az intézkedés célja a tartalomlopás megakadályozása és a szerverek terhelésének csökkentése a kéretlen adatgyűjtés ellen. A rendszer képes azonosítani azokat a botokat is, amelyek legálisnak álcázzák magukat, miközben nagy mennyiségű adatot szívnak le tanításhoz. Ez komoly kihívást jelenthet a kisebb AI cégeknek, amelyek külső forrásokra támaszkodnak a modellek fejlesztéséhez. A Cloudflare szerint a web nyíltsága és a szellemi tulajdon védelme közötti egyensúlyt kívánják fenntartani.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-cloudflare-szeptembertol-blokkolja-a-vegyes-felhasznalasu-ai-crawler-eket/"
+  },
+  {
+    "date": "2026. július 21.",
+    "title": "Drasztikus árcsökkenés az OpenAI inference költségeinél",
+    "content": "Az OpenAI több mint 50 százalékkal csökkentette a modellek futtatási költségét a vendégfelhasználók és API partnerek számára. A kedvezmény az optimalizált hardveres architektúrának és a hatékonyabb algoritmusoknak köszönhető. Ez a lépés jelentősen növelheti az AI-alapú alkalmazások elterjedését a kisebb fejlesztők körében is. A cég célja, hogy fenntartsa piacvezető szerepét a fokozódó árversenyben. Az alacsonyabb árak mellett a szolgáltatás minősége és válaszideje változatlan marad.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/az-openai-tobb-mint-50-szazalekkal-csokkentette-az-inference-koltsegeit-vendegfelhasznaloknal/"
+  },
+  {
+    "date": "2026. július 21.",
+    "title": "GPT Live: Az OpenAI új generációs hangmodellje",
+    "content": "Bemutatkozott a GPT Live, amely minden korábbinál természetesebb, valós idejű hangalapú interakciót tesz lehetővé. A modell képes érzékelni az érzelmi tónusokat és azonnal reagálni a felhasználó megszakításaira is. A fejlesztés célja a digitális asszisztensek emberibbé tétele és a fluid kommunikáció biztosítása. A GPT Live több tucat nyelven, köztük magyarul is magas szinten ért és beszél. Az alkalmazás forradalmasíthatja az ügyfélszolgálati és oktatási technológiákat.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/az-openai-bemutatta-a-gpt-live-ot-az-uj-generacios-hangmodellt/"
+  },
+  {
+    "date": "2026. július 21.",
+    "title": "Deloitte: Az AI ügynökök átalakítják a tanácsadói piacot",
+    "content": "A Deloitte friss jelentése szerint az autonóm AI ügynökök elterjedése véget vethet a hagyományos, óradíjas alapú tanácsadói modellnek. A technológia képes komplex elemzések elvégzésére és stratégiai javaslatok kidolgozására a töredékidő alatt. A cégeknek át kell állniuk az értékalapú árazásra és a szakértői felügyelet melletti AI-támogatott munkavégzésre. Ez a váltás drasztikusan növelheti a hatékonyságot, de komoly munkaerőpiaci átrendeződéssel is jár. A jövő tanácsadóinak inkább az AI rendszerek irányítására és finomhangolására kell koncentrálniuk.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-deloitte-szerint-az-ai-ugynokok-megolik-az-oradijas-tanacsadast/"
+  },
+  {
+    "date": "2026. július 21.",
+    "title": "A Microsoft saját modellekre cseréli a Copilot alapjait",
+    "content": "A Microsoft bejelentette, hogy a Copilot szolgáltatásban fokozatosan saját fejlesztésű modelljeire cseréli az OpenAI és Anthropic rendszereit. A váltás célja a jobb integráció a Windows környezetbe és az üzemeltetési költségek csökkentése. A saját modellek specifikusan az irodai munkafolyamatokra and a vállalati biztonsági elvárásokra lesznek optimalizálva. A cég továbbra is szoros partnere marad az OpenAI-nak, de diverzifikálja technológiai hátterét. A felhasználók számára a váltás zökkenőmentes lesz, miközben javuló teljesítményt ígérnek.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/a-microsoft-sajat-modelljeire-csereli-a-copilotban-az-openai-es-az-anthropic-rendszereit/"
+  },
+  {
+    "date": "2026. július 21.",
+    "title": "Az Alibaba betiltotta a Claude Code használatát",
+    "content": "Az Alibaba megtiltotta munkavállalói számára az Anthropic által fejlesztett Claude Code használatát adatbiztonsági aggályokra hivatkozva. A lépés az amerikai-kínai technológiai feszültség újabb állomása, ahol mindkét fél félti kritikus infrastruktúráját. A cég saját belső fejlesztésű kódsegéd megoldásainak használatát preferálja a szivárgások elkerülése érdekében. A döntés rávilágít a globális tech-óriások közötti növekvő bizalmatlanságra az AI eszközök terén. A tiltás azonnali hatállyal életbe lépett minden fejlesztői részlegen.",
+    "sourceName": "AI Hírfolyam",
+    "sourceUrl": "https://aihirfolyam.hu/2026/07/az-alibaba-betiltotta-a-claude-code-ot-a-munkavallaloinak-a-kinai-amerikai-ai-feszultseg-ujabb-fejezete/"
   }
 ]

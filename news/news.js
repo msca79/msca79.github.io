@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Elérhető hírfájlok listája (időrendben, legújabb utoljára)
     const newsArchives = [
-        { id: '20260719', file: 'news-20260719.json', label: '2026. július 19.' },
-        { id: '20260720', file: 'news-20260720.json', label: '2026. július 20.' }
+        { id: '20260713', file: 'news-20260713.json', label: '2026. július 13.' },
+        { id: '20260720', file: 'news-20260720.json', label: '2026. július 20.' },
     ];
 
     // Legördülő menü feltöltése
